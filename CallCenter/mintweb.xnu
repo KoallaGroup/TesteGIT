@@ -1,0 +1,15 @@
+			<MenuItem Status="Enable">
+				<Title lang="pt">Integração WebLine</Title>
+				<Title lang="es">Integração WebLine</Title>
+				<Title lang="en">Integração WebLine</Title>
+				<Function>MINTWEB</Function>
+				<Type>3</Type>
+				<Access>xxxxxxxxxx</Access>
+				<Module>13</Module>
+				<Owner>13</Owner>
+				<KeyWord>
+					<KeyWord lang="pt">Telemarketing</KeyWord>
+					<KeyWord lang="es">Telemarketing</KeyWord>
+					<KeyWord lang="en">Telemarketing</KeyWord>
+				</KeyWord>
+			</MenuItem>

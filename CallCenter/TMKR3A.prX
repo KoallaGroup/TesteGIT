@@ -1,0 +1,20 @@
+#INCLUDE 'PROTHEUS.CH'
+#INCLUDE 'RWMAKE.CH'
+
+/*
++------------+---------+--------+--------------------+-------+--------------+
+| Programa:  | TMKR3A  | Autor: | Rogério Alves      | Data: | Outubro/2014 |
++------------+---------+--------+--------------------+-------+--------------+
+| Descrição: | Ponto de entrada para chamada do relatório ITMKR01           |
++------------+--------------------------------------------------------------+
+| Uso:       | Isapa                                                        |
++------------+--------------------------------------------------------------+
+*/
+
+
+User Function TMKR3A(cPedido)
+
+uPorPrograma := .F.
+U_ITMKR01(cPedido)
+
+Return

@@ -1,0 +1,25 @@
+#include "rwmake.ch"        // incluido pelo assistente de conversao do AP6 IDE em 25/06/04
+
+User Function BROC020D()        // incluido pelo assistente de conversao do AP6 IDE em 25/06/04
+
+/*/
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+±±ÚÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄ¿±±
+±±³Fun‡…o    ³ BROC020D ³ Autor ³ Alex Egydio           ³ Data ³ 24/09/97 ³±±
+±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄ´±±
+±±³Descri‡…o ³ Dialog para Consulta                                       ³±±
+±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´±±
+±±³ Uso      ³ Especifico para BRONZEARTE                                 ³±±
+±±ÀÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ±±
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+/*/
+#IFDEF WINDOWS
+	@ 0,0 TO 245,230 DIALOG oDlg1 TITLE "Consultas"
+	@ 5,5 TO 120,090
+	@ 020,010 BUTTON "Fatura"  SIZE 60,20 ACTION ExecBlock("BROC020V",.F.,.F.)
+	@ 050,010 BUTTON "Analise" SIZE 60,20 ACTION ExecBlock("BROC020I",.F.,.F.)
+	@ 080,010 BUTTON "Sair"    SIZE 60,20 ACTION Close(oDlg1)
+	ACTIVATE DIALOG oDlg1 CENTERED
+#ENDIF
+
+RETURN

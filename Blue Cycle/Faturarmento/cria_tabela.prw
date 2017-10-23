@@ -1,0 +1,31 @@
+#include "protheus.ch"
+#include "topconn.ch"
+
+User Function cria_tabela()
+
+
+//CHKFILE("SZ7")
+CHKFILE("SZ8")
+CHKFILE("SZ9")
+CHKFILE("SZB")
+CHKFILE("SZA")
+CHKFILE("SZD")
+CHKFILE("SZE")
+CHKFILE("SZF")
+CHKFILE("SZG")
+CHKFILE("SZH")
+CHKFILE("SZI")
+CHKFILE("SZJ")
+CHKFILE("SZK")
+CHKFILE("SZM")
+CHKFILE("SZN")
+CHKFILE("SZO")
+CHKFILE("Z05")
+CHKFILE("SZ5")
+CHKFILE("SZ0")
+CHKFILE("Z15")
+CHKFILE("SZQ")
+CHKFILE("SZ1")
+
+
+Return .T.

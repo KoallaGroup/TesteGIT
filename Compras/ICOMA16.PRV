@@ -1,0 +1,68 @@
+/*
+|-----------------------------------------------------------------------------------------------|	
+|	Programa : ICOMA15B			  		| 	Junho de 2015		   		  					    |
+|-----------------------------------------------------------------------------------------------|
+|	Desenvolvido por Jose Augusto Ferraraz Pereira Alves - Anadi								|
+|-----------------------------------------------------------------------------------------------|	
+|	Descrição : Grava informacao de redespacho na entrada		   							  	|
+|-----------------------------------------------------------------------------------------------|	
+*/
+
+User Function ICOMA15B()            
+ 
+Local _cCdtPdc := ""
+Local _cEmisDc := ""
+Local _cSerDc  := ""
+Local _cNumDc  := ""      
+Local _cCdFilial := ""
+  
+DbSelectArea("GW1")
+GW1->(DbSetOrder(11))   
+If DbSeek(XFilial("GW1") + Padr(SF1->F1_SERIE,TamSX3("GW1_SERDC")[1]) + Padr(SF1->F1_DOC,TamSX3("F1_DOC")[1]) )                        
+	Reclock("GW1", .F.)       
+		If SF1->F1_TPFRETE == "C" .And. SF1->F1__TPFRED == "C"
+	    	GW1->GW1_TPFRET := "2"   
+	 	Else
+	    	GW1->GW1_TPFRET := "4"   	 	
+	 	EndIf
+	    _cCdFilial := GW1->GW1_FILIAL
+	    _cCdtPdc :=  GW1->GW1_CDTPDC
+		_cEmisDc :=  GW1->GW1_EMISDC
+		_cSerDc  :=  GW1->GW1_SERDC
+		_cNumDc  :=  GW1->GW1_NRDC
+	GW1->(MsUnlock())
+EndIf 
+
+DbSelectArea("SA4")
+DbSeek(XFilial("SA4") + SF1->F1__TRARED)
+_cCnpjTra1 := SA4->A4_CGC
+
+DbSelectArea("GU3")
+DbSeek(XFilial("GU3") + _cCnpjTra1)
+_cCid1 := GU3->GU3_NRCID
+             
+DbSelectArea("GWU")
+GWU->(DbSetOrder(1)) 
+//GWU_FILIAL+GWU_CDTPDC+GWU_EMISDC+GWU_SERDC+GWU_NRDC+GWU_SEQ 
+If DbSeek(XFilial("GWU") + _cCdtPdc + _cEmisDc + _cSerDc + _cNumDc + "01")   
+	Reclock("GWU", .F.)
+		_cCid2 := GWU->GWU_NRCIDD   
+		GWU->GWU_NRCIDD := _cCid1  
+		GWU->GWU_PAGAR := IIf(SF1->F1_TPFRETE == "C", "2", "1") 
+	GWU->(MsUnlock())
+EndIf   
+
+If Reclock("GWU", .T.) 
+	GWU->GWU_FILIAL := _cCdFilial 
+	GWU->GWU_CDTPDC := _cCdtPdc
+	GWU->GWU_EMISDC := _cEmisDc
+	GWU->GWU_SERDC  := _cSerDc
+	GWU->GWU_NRDC   := _cNumDc
+	GWU->GWU_SEQ    := "02"                                
+	GWU->GWU_CDTRP  := Posicione("SA4",1, xFilial("SA4")+SF1->F1__TRARED, "A4_CGC") 
+	GWU->GWU_NRCIDD := _cCid2
+	GWU->GWU_PAGAR := IIf(SF1->F1__TPFRED == "C", "2", "1")  
+	GWU->(MsUnlock())                                       
+EndIf
+	
+Return          

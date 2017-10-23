@@ -1,0 +1,2787 @@
+<ApMenu>
+	<DocumentProperties>
+		<Module>SIGAFIN</Module>
+		<Version>10.1</Version>
+	</DocumentProperties>
+	<Menu Status="Enable">
+		<Title lang="pt">&Atualizações</Title>
+		<Title lang="es">&Actualizaciones</Title>
+		<Title lang="en">&Updates</Title>
+		<Menu Status="Enable">
+			<Title lang="pt">Cadastros</Title>
+			<Title lang="es">Archivos</Title>
+			<Title lang="en">File</Title>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Fornecedores</Title>
+				<Title lang="es">Proveedores</Title>
+				<Title lang="en">Suppliers</Title>
+				<Function>MATA020</Function>
+				<Type>1</Type>
+				<Tables>SA2</Tables>
+				<Tables>SC7</Tables>
+				<Tables>SE2</Tables>
+				<Tables>SF1</Tables>
+				<Tables>SA5</Tables>
+				<Tables>SC1</Tables>
+				<Tables>SAD</Tables>
+				<Tables>SB6</Tables>
+				<Tables>AC8</Tables>
+				<Tables>AC9</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>2</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Clientes</Title>
+				<Title lang="es">Clientes</Title>
+				<Title lang="en">Customers</Title>
+				<Function>MATA030</Function>
+				<Type>1</Type>
+				<Tables>SA1</Tables>
+				<Tables>SC5</Tables>
+				<Tables>SD1</Tables>
+				<Tables>SE1</Tables>
+				<Tables>SDE</Tables>
+				<Tables>VCB</Tables>
+				<Tables>SAO</Tables>
+				<Tables>AC8</Tables>
+				<Tables>AC9</Tables>
+				<Tables>SY6</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>5</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Vendedores</Title>
+				<Title lang="es">Vendedores</Title>
+				<Title lang="en">Sales Represent.</Title>
+				<Function>MATA040</Function>
+				<Type>1</Type>
+				<Tables>SA3</Tables>
+				<Tables>SC5</Tables>
+				<Tables>SE3</Tables>
+				<Tables>SF5</Tables>
+				<Tables>SJ1</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>5</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Bancos</Title>
+				<Title lang="es">Bancos</Title>
+				<Title lang="en">Banks</Title>
+				<Function>MATA070</Function>
+				<Type>1</Type>
+				<Tables>SA6</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>6</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Moedas</Title>
+				<Title lang="es">Monedas</Title>
+				<Title lang="en">Currencies</Title>
+				<Function>MATA090</Function>
+				<Type>1</Type>
+				<Tables>SM2</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>6</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Naturezas</Title>
+				<Title lang="es">Modalidades</Title>
+				<Title lang="en">Classes</Title>
+				<Function>FINA010</Function>
+				<Type>1</Type>
+				<Tables>SED</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Orcamentos</Title>
+				<Title lang="es">Presupuestos</Title>
+				<Title lang="en">Budgets</Title>
+				<Function>FINA020</Function>
+				<Type>1</Type>
+				<Tables>SE7</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Contatos</Title>
+				<Title lang="es">Contactos</Title>
+				<Title lang="en">Contacts</Title>
+				<Function>TMKA070</Function>
+				<Type>1</Type>
+				<Tables>SU5</Tables>
+				<Tables>SQO</Tables>
+				<Tables>SQB</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>13</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Lancamento Padrao</Title>
+				<Title lang="es">Asiento Estandar</Title>
+				<Title lang="en">Standard Entry</Title>
+				<Function>CTBA080</Function>
+				<Type>1</Type>
+				<Tables>CT5</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>34</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Tipos de Titulos</Title>
+				<Title lang="es">Tipos de Titulos</Title>
+				<Title lang="en">Bill Types</Title>
+				<Function>FINA015</Function>
+				<Type>1</Type>
+				<Tables>SES</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>6</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Contrato Bancario</Title>
+				<Title lang="es">Contrato Bancario</Title>
+				<Title lang="en">Bank Contract</Title>
+				<Function>FINA120</Function>
+				<Type>1</Type>
+				<Tables>SE9</Tables>
+				<Tables>SE0</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>6</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Ocorrencias  Cnab</Title>
+				<Title lang="es">Ocurrencias Cnab</Title>
+				<Title lang="en">Cnab Events</Title>
+				<Function>FINA140</Function>
+				<Type>1</Type>
+				<Tables>SEB</Tables>
+				<Tables>SE1</Tables>
+				<Tables>SI1</Tables>
+				<Tables>SI2</Tables>
+				<Tables>SI5</Tables>
+				<Tables>SI6</Tables>
+				<Tables>SI7</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>6</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Ocorrenc.extratos</Title>
+				<Title lang="es">Ocurren. Extractos</Title>
+				<Title lang="en">Statement Events</Title>
+				<Function>FINA480</Function>
+				<Type>1</Type>
+				<Tables>SEJ</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>6</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Parametros Bancos</Title>
+				<Title lang="es">Parametros Bancos</Title>
+				<Title lang="en">Bank Parameters</Title>
+				<Function>FINA130</Function>
+				<Type>1</Type>
+				<Tables>SEE</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>6</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Cond Pagamento</Title>
+				<Title lang="es">Condiciones Pago</Title>
+				<Title lang="en">Payment Terms</Title>
+				<Function>MATA360</Function>
+				<Type>1</Type>
+				<Tables>SE4</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>4</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Formulas</Title>
+				<Title lang="es">Formulas</Title>
+				<Title lang="en">Formulas</Title>
+				<Function>CFGX019</Function>
+				<Type>1</Type>
+				<Tables>SM2</Tables>
+				<Tables>SM4</Tables>
+				<Tables>SU0</Tables>
+				<Tables>SU5</Tables>
+				<Tables>SU7</Tables>
+				<Tables>SUS</Tables>
+				<Tables>SUV</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>99</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Indices Aplicados</Title>
+				<Title lang="es">Indices Aplicados</Title>
+				<Title lang="en">Indexes Applied</Title>
+				<Function>FINA530</Function>
+				<Type>1</Type>
+				<Tables>SEP</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Tabela de Ioc</Title>
+				<Title lang="es">Tabla de Ioc</Title>
+				<Title lang="en">I O C Table</Title>
+				<Function>FINA500</Function>
+				<Type>1</Type>
+				<Tables>SEO</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Planos de Venda</Title>
+				<Title lang="es">Planes de Venta</Title>
+				<Title lang="en">Sales Plans</Title>
+				<Function>FINA520</Function>
+				<Type>1</Type>
+				<Tables>SEN</Tables>
+				<Tables>SEQ</Tables>
+				<Tables>SEO</Tables>
+				<Tables>SEP</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Adm. Financeira</Title>
+				<Title lang="es">Adm. Financiera</Title>
+				<Title lang="en">Financ. Administ.</Title>
+				<Function>LOJA070</Function>
+				<Type>1</Type>
+				<Tables>SEA</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>12</Owner>
+			</MenuItem>
+		</Menu>
+		<Menu Status="Enable">
+			<Title lang="pt">Gestao Financeira</Title>
+			<Title lang="es">Gestion Financ.</Title>
+			<Title lang="en">Finance Manag.</Title>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Painel Financeiro</Title>
+				<Title lang="es">Panel Financiero</Title>
+				<Title lang="en">Financ.panel</Title>
+				<Function>FINA705</Function>
+				<Type>1</Type>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Painel Gestor</Title>
+				<Title lang="es">Panel Gerente</Title>
+				<Title lang="en">Manag.panel</Title>
+				<Function>FINA701</Function>
+				<Type>1</Type>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Painel Tesouraria</Title>
+				<Title lang="es">Panel Tesoreria</Title>
+				<Title lang="en">Treasury Panel</Title>
+				<Function>FINA702</Function>
+				<Type>1</Type>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Painel C. Pagar</Title>
+				<Title lang="es">Panel C.pagar</Title>
+				<Title lang="en">Acc.payb.panel</Title>
+				<Function>FINA703</Function>
+				<Type>1</Type>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Painel C. Receber</Title>
+				<Title lang="es">Panel C.cobrar</Title>
+				<Title lang="en">Acc.recb.panel</Title>
+				<Function>FINA704</Function>
+				<Type>1</Type>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+		</Menu>
+		<Menu Status="Enable">
+			<Title lang="pt">Contas a Receber</Title>
+			<Title lang="es">Cuentas Por Cobrar</Title>
+			<Title lang="en">Accts. Receivable</Title>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Funcöes Ctas a Rec</Title>
+				<Title lang="es">Func. Ctas P/ Cobr</Title>
+				<Title lang="en">Acc. Rec. Function</Title>
+				<Function>FINA740</Function>
+				<Type>1</Type>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Contas a Receber</Title>
+				<Title lang="es">Cuentas Por Cobrar</Title>
+				<Title lang="en">Acct. Receivable</Title>
+				<Function>FINA040</Function>
+				<Type>1</Type>
+				<Tables>SA1</Tables>
+				<Tables>SA3</Tables>
+				<Tables>SA6</Tables>
+				<Tables>SE1</Tables>
+				<Tables>SE2</Tables>
+				<Tables>SED</Tables>
+				<Tables>SI1</Tables>
+				<Tables>SI2</Tables>
+				<Tables>SI3</Tables>
+				<Tables>SI5</Tables>
+				<Tables>SI6</Tables>
+				<Tables>SM2</Tables>
+				<Tables>SI7</Tables>
+				<Tables>VCB</Tables>
+				<Tables>SEV</Tables>
+				<Tables>AFR</Tables>
+				<Tables>SEZ</Tables>
+				<Tables>SK1</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Recebtos Diversos</Title>
+				<Title lang="es">Cobranzas Div.</Title>
+				<Title lang="en">Sundry Collections</Title>
+				<Function>FINA087A</Function>
+				<Type>1</Type>
+				<Tables>SA1</Tables>
+				<Tables>SA6</Tables>
+				<Tables>SEL</Tables>
+				<Tables>SE1</Tables>
+				<Tables>SE5</Tables>
+				<Tables>SFF</Tables>
+				<Tables>VCB</Tables>
+				<Tables>SAQ</Tables>
+				<Tables>SEX</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Renegociacao C.r</Title>
+				<Title lang="es">Reneg. Ctas P/ Cob</Title>
+				<Title lang="en">A R Renegotiation</Title>
+				<Function>FINA045</Function>
+				<Type>1</Type>
+				<Tables>SE1</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Transferencias</Title>
+				<Title lang="es">Transferencias</Title>
+				<Title lang="en">Transfers</Title>
+				<Function>FINA060</Function>
+				<Type>1</Type>
+				<Tables>SA1</Tables>
+				<Tables>SA6</Tables>
+				<Tables>SE1</Tables>
+				<Tables>SE5</Tables>
+				<Tables>SE8</Tables>
+				<Tables>SEA</Tables>
+				<Tables>SI1</Tables>
+				<Tables>SI2</Tables>
+				<Tables>SI3</Tables>
+				<Tables>SI5</Tables>
+				<Tables>SI6</Tables>
+				<Tables>SM2</Tables>
+				<Tables>SI7</Tables>
+				<Tables>VCB</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Baixas a Receber</Title>
+				<Title lang="es">Bajas Por Cobrar</Title>
+				<Title lang="en">Post. Receivable</Title>
+				<Function>FINA070</Function>
+				<Type>1</Type>
+				<Tables>SE1</Tables>
+				<Tables>SE3</Tables>
+				<Tables>SI1</Tables>
+				<Tables>SI2</Tables>
+				<Tables>SI3</Tables>
+				<Tables>SI4</Tables>
+				<Tables>SI5</Tables>
+				<Tables>SI6</Tables>
+				<Tables>SI7</Tables>
+				<Tables>SE5</Tables>
+				<Tables>SID</Tables>
+				<Tables>SIC</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Baixas Rec Automat</Title>
+				<Title lang="es">Bajas Cob. Autom.</Title>
+				<Title lang="en">Autom. Pst. Receiv</Title>
+				<Function>FINA110</Function>
+				<Type>1</Type>
+				<Tables>SE1</Tables>
+				<Tables>SE3</Tables>
+				<Tables>SI1</Tables>
+				<Tables>SI2</Tables>
+				<Tables>SI3</Tables>
+				<Tables>SI4</Tables>
+				<Tables>SI5</Tables>
+				<Tables>SI6</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Faturas a Receber</Title>
+				<Title lang="es">Fact. Por Cobrar</Title>
+				<Title lang="en">Inv. Receivable</Title>
+				<Function>FINA280</Function>
+				<Type>1</Type>
+				<Tables>SE1</Tables>
+				<Tables>SE4</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Bordero Cheques</Title>
+				<Title lang="es">Bordero Cheques</Title>
+				<Title lang="en">Check Bordereau</Title>
+				<Function>FINA160</Function>
+				<Type>1</Type>
+				<Tables>SE5</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Manutencao Bordero</Title>
+				<Title lang="es">Mantenim. Bordero</Title>
+				<Title lang="en">Maintain Bordereau</Title>
+				<Function>FINA590</Function>
+				<Type>1</Type>
+				<Tables>SEA</Tables>
+				<Tables>SE1</Tables>
+				<Tables>SE2</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Compensacao Cr</Title>
+				<Title lang="es">Compensacion Cc</Title>
+				<Title lang="en">A R Off-set</Title>
+				<Function>FINA330</Function>
+				<Type>1</Type>
+				<Tables>SE1</Tables>
+				<Tables>SE5</Tables>
+				<Tables>SA6</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Compens. Carteiras</Title>
+				<Title lang="es">Comp. Carteras</Title>
+				<Title lang="en">Portfolio Off-set</Title>
+				<Function>FINA450</Function>
+				<Type>1</Type>
+				<Tables>SE1</Tables>
+				<Tables>SE2</Tables>
+				<Tables>SE5</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Canc.rec.diversos</Title>
+				<Title lang="es">Anular Cob. Diver.</Title>
+				<Title lang="en">Canc. Misc. Coll.</Title>
+				<Function>FINA088</Function>
+				<Type>1</Type>
+				<Tables>SA1</Tables>
+				<Tables>SEL</Tables>
+				<Tables>SEK</Tables>
+				<Tables>SE5</Tables>
+				<Tables>VCB</Tables>
+				<Tables>SAQ</Tables>
+				<Tables>SEX</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Cheques Recebidos</Title>
+				<Title lang="es">Cheques Cobrados</Title>
+				<Title lang="en">Checks Collected</Title>
+				<Function>FINA191</Function>
+				<Type>1</Type>
+				<Tables>SA1</Tables>
+				<Tables>SE1</Tables>
+				<Tables>SEF</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Devolucao Cheques</Title>
+				<Title lang="es">Devolucion Cheques</Title>
+				<Title lang="en">Checks Returned</Title>
+				<Function>LOJA190</Function>
+				<Type>1</Type>
+				<Tables>SA1</Tables>
+				<Tables>SE1</Tables>
+				<Tables>SEF</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>12</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Liquidacao</Title>
+				<Title lang="es">Liquidacion</Title>
+				<Title lang="en">Settlement</Title>
+				<Function>FINA460</Function>
+				<Type>1</Type>
+				<Tables>SE1</Tables>
+				<Tables>SE5</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Solic. de Transf.</Title>
+				<Title lang="es">Solicitud Transf.</Title>
+				<Title lang="en">Request Transfer</Title>
+				<Function>FINA620</Function>
+				<Type>1</Type>
+				<Tables>SE1</Tables>
+				<Tables>SE6</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Aprov/Rej. Transf.</Title>
+				<Title lang="es">Aprob/ Rech. Trans</Title>
+				<Title lang="en">App./Rej. Transfer</Title>
+				<Function>FINA630</Function>
+				<Type>1</Type>
+				<Tables>SE1</Tables>
+				<Tables>SE6</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+		</Menu>
+		<Menu Status="Enable">
+			<Title lang="pt">Contas a Pagar</Title>
+			<Title lang="es">Cuentas Por Pagar</Title>
+			<Title lang="en">Accounts Payable</Title>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Funcöes Ctas a Pag</Title>
+				<Title lang="es">Fun. Ctas. Por Pag</Title>
+				<Title lang="en">Acc. Payable Func.</Title>
+				<Function>FINA750</Function>
+				<Type>1</Type>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Contas a Pagar</Title>
+				<Title lang="es">Cuentas Por Pagar</Title>
+				<Title lang="en">Accounts Payable</Title>
+				<Function>FINA050</Function>
+				<Type>1</Type>
+				<Tables>SA1</Tables>
+				<Tables>SA2</Tables>
+				<Tables>SA6</Tables>
+				<Tables>SE1</Tables>
+				<Tables>SE2</Tables>
+				<Tables>SED</Tables>
+				<Tables>SI1</Tables>
+				<Tables>SI2</Tables>
+				<Tables>SI3</Tables>
+				<Tables>SI5</Tables>
+				<Tables>SI6</Tables>
+				<Tables>SM2</Tables>
+				<Tables>SI7</Tables>
+				<Tables>VCB</Tables>
+				<Tables>SEV</Tables>
+				<Tables>AFR</Tables>
+				<Tables>SEZ</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Baixas Pagar Man</Title>
+				<Title lang="es">Bajas Pagar Manual</Title>
+				<Title lang="en">Manual Post. Payab</Title>
+				<Function>FINA080</Function>
+				<Type>1</Type>
+				<Tables>SE2</Tables>
+				<Tables>SE3</Tables>
+				<Tables>SI1</Tables>
+				<Tables>SI2</Tables>
+				<Tables>SI3</Tables>
+				<Tables>SI4</Tables>
+				<Tables>SI5</Tables>
+				<Tables>SI6</Tables>
+				<Tables>SEF</Tables>
+				<Tables>SI7</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Baixas Pagar Autom</Title>
+				<Title lang="es">Bajas Pagar Autom.</Title>
+				<Title lang="en">Autom. Post. Payab</Title>
+				<Function>FINA090</Function>
+				<Type>1</Type>
+				<Tables>SE2</Tables>
+				<Tables>SE3</Tables>
+				<Tables>SI1</Tables>
+				<Tables>SI2</Tables>
+				<Tables>SI3</Tables>
+				<Tables>SI4</Tables>
+				<Tables>SI5</Tables>
+				<Tables>SI6</Tables>
+				<Tables>SEF</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Bordero Pagamentos</Title>
+				<Title lang="es">Bordero Pagos</Title>
+				<Title lang="en">Payment Bordero</Title>
+				<Function>FINA240</Function>
+				<Type>1</Type>
+				<Tables>SE2</Tables>
+				<Tables>SEA</Tables>
+				<Tables>SA6</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Manutencao Bordero</Title>
+				<Title lang="es">Mantenim. Bordero</Title>
+				<Title lang="en">Maintain Bordereau</Title>
+				<Function>FINA590</Function>
+				<Type>1</Type>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Faturas a Pagar</Title>
+				<Title lang="es">Facturas Por Pagar</Title>
+				<Title lang="en">Invoices Payable</Title>
+				<Function>FINA290</Function>
+				<Type>1</Type>
+				<Tables>SE2</Tables>
+				<Tables>SE4</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Cheques S/Titulos</Title>
+				<Title lang="es">Cheques S/ Titulos</Title>
+				<Title lang="en">Checks On Bills</Title>
+				<Function>FINA390</Function>
+				<Type>1</Type>
+				<Tables>SE2</Tables>
+				<Tables>SE5</Tables>
+				<Tables>SEF</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Geracao Cheques</Title>
+				<Title lang="es">Generac. Cheques</Title>
+				<Title lang="en">Issue Checks</Title>
+				<Function>FINA190</Function>
+				<Type>1</Type>
+				<Tables>SEF</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Compensacao Cp</Title>
+				<Title lang="es">Compensacion Cp</Title>
+				<Title lang="en">Offset a P</Title>
+				<Function>FINA340</Function>
+				<Type>1</Type>
+				<Tables>SE2</Tables>
+				<Tables>SE5</Tables>
+				<Tables>SA6</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Compens. Carteiras</Title>
+				<Title lang="es">Compens. Carteras</Title>
+				<Title lang="en">Offset Portfolios</Title>
+				<Function>FINA450</Function>
+				<Type>1</Type>
+				<Tables>SE1</Tables>
+				<Tables>SE2</Tables>
+				<Tables>SE5</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Liberacao P/ Baixa</Title>
+				<Title lang="es">Aprob. P/ Baja</Title>
+				<Title lang="en">Release F/Posting</Title>
+				<Function>FINA580</Function>
+				<Type>1</Type>
+				<Tables>SE2</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Liquidacao</Title>
+				<Title lang="es">Liquidacion</Title>
+				<Title lang="en">Liquidation</Title>
+				<Function>FINA565</Function>
+				<Type>1</Type>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+		</Menu>
+		<Menu Status="Enable">
+			<Title lang="pt">Movimento Bancario</Title>
+			<Title lang="es">Movim. Bancario</Title>
+			<Title lang="en">Bank Transactions</Title>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Saldos Bancarios</Title>
+				<Title lang="es">Saldos Bancarios</Title>
+				<Title lang="en">Bank Balances</Title>
+				<Function>FINA030</Function>
+				<Type>1</Type>
+				<Tables>SE8</Tables>
+				<Tables>SA6</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Movimento Bancario</Title>
+				<Title lang="es">Movim. Bancario</Title>
+				<Title lang="en">Bank Transactions</Title>
+				<Function>FINA100</Function>
+				<Type>1</Type>
+				<Tables>SE5</Tables>
+				<Tables>AF8</Tables>
+				<Tables>AF9</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Concil. Bancaria</Title>
+				<Title lang="es">Concil. Bancaria</Title>
+				<Title lang="en">Bank Reconciliat.</Title>
+				<Function>FINA380</Function>
+				<Type>1</Type>
+				<Tables>SE5</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Concil. Automatica</Title>
+				<Title lang="es">Conciliacion Aut.</Title>
+				<Title lang="en">Autom. Reconcil.</Title>
+				<Function>FINA470</Function>
+				<Type>1</Type>
+				<Tables>SE5</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+		</Menu>
+		<Menu Status="Enable">
+			<Title lang="pt">Diversos</Title>
+			<Title lang="es">Diversos</Title>
+			<Title lang="en">Miscellaneous</Title>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Bordero de Cdci</Title>
+				<Title lang="es">Bordero de Cdci</Title>
+				<Title lang="en">D C C I Bordero</Title>
+				<Function>FINA540</Function>
+				<Type>1</Type>
+				<Tables>SEQ</Tables>
+				<Tables>SER</Tables>
+				<Tables>SEM</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+		</Menu>
+		<Menu Status="Enable">
+			<Title lang="pt">Caixinha</Title>
+			<Title lang="es">Caja Chica</Title>
+			<Title lang="en">Petty Cash</Title>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Manutencao</Title>
+				<Title lang="es">Mantenimiento</Title>
+				<Title lang="en">Maintenance</Title>
+				<Function>FINA550</Function>
+				<Type>1</Type>
+				<Tables>SA2</Tables>
+				<Tables>SET</Tables>
+				<Tables>SEU</Tables>
+				<Tables>SE5</Tables>
+				<Tables>SA6</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Movimentos</Title>
+				<Title lang="es">Movimientos</Title>
+				<Title lang="en">Transactions</Title>
+				<Function>FINA560</Function>
+				<Type>1</Type>
+				<Tables>SA2</Tables>
+				<Tables>SET</Tables>
+				<Tables>SEU</Tables>
+				<Tables>SE5</Tables>
+				<Tables>SA6</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+		</Menu>
+		<Menu Status="Enable">
+			<Title lang="pt">Aplicacoes/Emprest</Title>
+			<Title lang="es">Invers / Prest</Title>
+			<Title lang="en">Investments/Loans</Title>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Aplicac/Emprestimo</Title>
+				<Title lang="es">Invers./ Prestamos</Title>
+				<Title lang="en">Invest/Loan</Title>
+				<Function>FINA171</Function>
+				<Type>1</Type>
+				<Tables>SEG</Tables>
+				<Tables>SEH</Tables>
+				<Tables>SEI</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Resg/Pag Emprest.</Title>
+				<Title lang="es">Reint./ Pag Prest.</Title>
+				<Title lang="en">Pay Loan/Redeem</Title>
+				<Function>FINA181</Function>
+				<Type>1</Type>
+				<Tables>SEG</Tables>
+				<Tables>SE5</Tables>
+				<Tables>SA6</Tables>
+				<Tables>SI1</Tables>
+				<Tables>SI2</Tables>
+				<Tables>SI6</Tables>
+				<Tables>SI7</Tables>
+				<Tables>SI8</Tables>
+				<Tables>SEH</Tables>
+				<Tables>SEI</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+		</Menu>
+		<Menu Status="Enable">
+			<Title lang="pt">Comissoes</Title>
+			<Title lang="es">Comisiones</Title>
+			<Title lang="en">Commissions</Title>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Manut. Comissoes</Title>
+				<Title lang="es">Mant. Comisiones</Title>
+				<Title lang="en">Maint Commissions</Title>
+				<Function>MATA490</Function>
+				<Type>1</Type>
+				<Tables>SE3</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>5</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Atual. Pagto Comis</Title>
+				<Title lang="es">Act. Pago Comis.</Title>
+				<Title lang="en">Update Comm. Paym.</Title>
+				<Function>MATA530</Function>
+				<Type>1</Type>
+				<Tables>SE3</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>5</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Rec.comis Cobrador</Title>
+				<Title lang="es">Cob.comis.cobr.</Title>
+				<Title lang="en">Collct.comm.rec.</Title>
+				<Function>FINA016</Function>
+				<Type>1</Type>
+				<Tables>SEX</Tables>
+				<Tables>SEL</Tables>
+				<Tables>SAQ</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+		</Menu>
+		<Menu Status="Enable">
+			<Title lang="pt">Comunic. Bancaria</Title>
+			<Title lang="es">Comunic. Bancaria</Title>
+			<Title lang="en">Bank Communicat.</Title>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Arquivo Cobranças</Title>
+				<Title lang="es">Archivo Cobranzas</Title>
+				<Title lang="en">Collection File</Title>
+				<Function>FINA150</Function>
+				<Type>1</Type>
+				<Tables>SE1</Tables>
+				<Tables>SEE</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Instr. Cobranças</Title>
+				<Title lang="es">Inst. Cobranzas</Title>
+				<Title lang="en">Collection Instr.</Title>
+				<Function>FINA151</Function>
+				<Type>1</Type>
+				<Tables>SE1</Tables>
+				<Tables>FI2</Tables>
+				<Tables>SEB</Tables>
+				<Tables>SEE</Tables>
+				<Tables>SEA</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Retorno Cobranças</Title>
+				<Title lang="es">Retorno Cobranzas</Title>
+				<Title lang="en">Return Collections</Title>
+				<Function>FINA200</Function>
+				<Type>1</Type>
+				<Tables>SE1</Tables>
+				<Tables>SEE</Tables>
+				<Tables>SEB</Tables>
+				<Tables>SE5</Tables>
+				<Tables>SE3</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Arquivo Pagamentos</Title>
+				<Title lang="es">Archivo Pagos</Title>
+				<Title lang="en">Payment File</Title>
+				<Function>FINA420</Function>
+				<Type>1</Type>
+				<Tables>SE2</Tables>
+				<Tables>SE5</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Retorno Pagamentos</Title>
+				<Title lang="es">Retorno Pagos</Title>
+				<Title lang="en">Payment Return</Title>
+				<Function>FINA430</Function>
+				<Type>1</Type>
+				<Tables>SE5</Tables>
+				<Tables>SE2</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Sispag</Title>
+				<Title lang="es">Sispag</Title>
+				<Title lang="en">Sispag</Title>
+				<Function>FINA300</Function>
+				<Type>1</Type>
+				<Tables>SE5</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+		</Menu>
+		<Menu Status="Enable">
+			<Title lang="pt">Controle de Viagens</Title>
+			<Title lang="es">Control de viajes</Title>
+			<Title lang="en">Travel control</Title>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Solicitacao</Title>
+				<Title lang="es">Solicitud</Title>
+				<Title lang="en">Request</Title>
+				<Function>AE_SVIAG</Function>
+				<Type>4</Type>
+				<Tables>LHP</Tables>
+				<Tables>SA1</Tables>
+				<Tables>SA9</Tables>
+				<Tables>SI3</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+            </MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Aprovação de Solic.</Title>
+				<Title lang="es">Aprobacion de solic.</Title>
+				<Title lang="en">Request approval</Title>
+				<Function>AE_APVSOL</Function>
+				<Type>4</Type>
+				<Tables>SA1</Tables>
+				<Tables>SA9</Tables>
+				<Tables>SI3</Tables>
+				<Tables>LHQ</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Dpto de Viagens</Title>
+				<Title lang="es">Dpto de Viagens</Title>
+				<Title lang="en">Travel Dept.</Title>
+				<Function>AE_FINAN</Function>
+				<Type>4</Type>
+				<Tables>SA2</Tables>
+				<Tables>SA9</Tables>
+				<Tables>SE2</Tables>
+				<Tables>LHQ</Tables>
+				<Tables>LHR</Tables>
+				<Tables>LHS</Tables>accounts settlementaccounts settlement
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Prestacao de Contas</Title>
+				<Title lang="es">Rendicion de cuentas</Title>
+				<Title lang="en">Accounts settlement</Title>
+				<Function>AE_DESPV</Function>
+				<Type>4</Type>
+				<Tables>SA1</Tables>
+				<Tables>SA2</Tables>
+				<Tables>SA9</Tables>
+				<Tables>LHQ</Tables>
+				<Tables>LHR</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<Menu Status="Enable">
+				<Title lang="pt">Configuracoes</Title>
+				<Title lang="es">Configuraciones</Title>
+				<Title lang="en">Setup</Title>
+				<MenuItem Status="Enable">
+					<Title lang="pt">Importar Colaboradores</Title>
+					<Title lang="es">Importar empleados</Title>
+					<Title lang="en">Import employees</Title>
+					<Function>AE_IMPFOL</Function>
+					<Type>4</Type>
+					<Tables></Tables>
+					<Access>xxxxxxxxxx</Access>
+					<Module>06</Module>
+					<Owner>0</Owner>
+				</MenuItem>
+				<MenuItem Status="Enable">
+					<Title lang="pt">Autoriza uso Despesas</Title>
+					<Title lang="es">Autoriza uso gastos</Title>
+					<Title lang="en">Authorize expenses use</Title>
+					<Function>TipoAut</Function>
+					<Type>4</Type>
+					<Tables></Tables>
+					<Access>xxxxxxxxxx</Access>
+					<Module>06</Module>
+					<Owner>0</Owner>
+				</MenuItem>
+				<MenuItem Status="Enable">
+					<Title lang="pt">Prazo Solic Viagem</Title>
+					<Title lang="es">Travel req. deadline</Title>
+					<Title lang="en">Plazo Sol. Viaje</Title>
+					<Function>AE_SV008</Function>
+					<Type>4</Type>
+					<Tables>LJ8</Tables>
+					<Access>xxxxxxxxxx</Access>
+					<Module>06</Module>
+					<Owner>0</Owner>
+				</MenuItem>
+			</Menu>
+		<Menu Status="Enable">
+                        <Title lang="pt">Cadastros</Title>
+                        <Title lang="es">Cadastros</Title>
+                        <Title lang="en">Cadastros</Title>
+			<MenuItem Status="Enable">
+                                <Title lang="pt">Municipios</Title>
+                                <Title lang="es">Municipios</Title>
+                                <Title lang="en">Cities</Title>
+                                <Function>AE_MUNIC</Function>
+                                <Type>4</Type>
+                                <Tables>LDY</Tables>
+                                <Access>xxxxxxxxxx</Access>
+                                <Module>06</Module>
+                        </MenuItem>
+			<MenuItem Status="Enable">
+                                <Title lang="pt">Cargos</Title>
+                                <Title lang="es">Cargos</Title>
+                                <Title lang="en">Positions</Title>
+                                <Function>AE_CARGOS</Function>
+                                <Type>4</Type>
+                                <Tables>LX5</Tables>
+                                <Access>xxxxxxxxxx</Access>
+                                <Module>06</Module>
+                        </MenuItem>
+                        <MenuItem Status="Enable">
+                                <Title lang="pt">Despesas</Title>
+                                <Title lang="es">Gastos</Title>
+                                <Title lang="en">Expenses</Title>
+                                <Function>AE_DESP</Function>
+                                <Type>4</Type>
+                                <Tables>LHQ</Tables>
+                                <Access>xxxxxxxxxx</Access>
+                                <Module>06</Module>
+			</MenuItem>
+			<MenuItem Status="Enable">
+                                <Title lang="pt">Viajantes/Aprovadores</Title>
+                                <Title lang="es">Viajantes/Aprobadores</Title>
+                                <Title lang="en">Travellers/Approvers</Title>
+                                <Function>AE_COLAB</Function>
+                                <Type>4</Type>
+                                <Tables>LHT</Tables>
+                                <Access>xxxxxxxxxx</Access>
+                                <Module>06</Module>
+                        </MenuItem>
+			<MenuItem Status="Enable">
+                                <Title lang="pt">Hoteis</Title>
+                                <Title lang="es">Hoteles</Title>
+                                <Title lang="en">Hotels</Title>
+                                <Function>AE_HOTEIS</Function>
+                                <Type>4</Type>
+                                <Tables>LJ3</Tables>
+                                <Access>xxxxxxxxxx</Access>
+                                <Module>06</Module>
+                        </MenuItem>
+                        </Menu>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Relacao de viagens</Title>
+				<Title lang="es">Listado de viajes</Title>
+				<Title lang="en">Travels report</Title>
+				<Function>RVIA001</Function>
+				<Type>4</Type>
+				<Tables>LHT</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+			</MenuItem>
+		</Menu>
+	</Menu>
+	<Menu Status="Enable">
+		<Title lang="pt">&Consultas</Title>
+		<Title lang="es">&Consultas</Title>
+		<Title lang="en">&Queries</Title>
+		<Menu Status="Enable">
+			<Title lang="pt">Cadastros</Title>
+			<Title lang="es">Archivos</Title>
+			<Title lang="en">File</Title>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Genericos</Title>
+				<Title lang="es">Genericos</Title>
+				<Title lang="en">Generic</Title>
+				<Function>EDAPP</Function>
+				<Type>1</Type>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+		</Menu>
+		<Menu Status="Enable">
+			<Title lang="pt">Contas a Receber</Title>
+			<Title lang="es">Ctas.  Por Cobr.</Title>
+			<Title lang="en">Accts. Receivable</Title>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Posicao de Cliente</Title>
+				<Title lang="es">Situacion Cliente</Title>
+				<Title lang="en">Customer Status</Title>
+				<Function>FINC010</Function>
+				<Type>1</Type>
+				<Tables>SC5</Tables>
+				<Tables>SF2</Tables>
+				<Tables>SE1</Tables>
+				<Tables>SA1</Tables>
+				<Tables>SC6</Tables>
+				<Tables>SC9</Tables>
+				<Tables>VCB</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Posicao Titulo Rec</Title>
+				<Title lang="es">Sit. Titulos Cobr.</Title>
+				<Title lang="en">Bills Rec. Status</Title>
+				<Function>FINC040</Function>
+				<Type>1</Type>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+		</Menu>
+		<Menu Status="Enable">
+			<Title lang="pt">Contas a Pagar</Title>
+			<Title lang="es">Cuentas Por Pagar</Title>
+			<Title lang="en">Accts. Payable</Title>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Posicao Fornecedor</Title>
+				<Title lang="es">Situacion Proveed.</Title>
+				<Title lang="en">Supplier Status</Title>
+				<Function>FINC030</Function>
+				<Type>1</Type>
+				<Tables>SC5</Tables>
+				<Tables>SF2</Tables>
+				<Tables>SE1</Tables>
+				<Tables>SA1</Tables>
+				<Tables>VCB</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Posicao Titulo Pag</Title>
+				<Title lang="es">Sit. Titulos Pag.</Title>
+				<Title lang="en">Bill Payab. Status</Title>
+				<Function>FINC050</Function>
+				<Type>1</Type>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+		</Menu>
+		<Menu Status="Enable">
+			<Title lang="pt">Movimento Bancario</Title>
+			<Title lang="es">Movim. Bancario</Title>
+			<Title lang="en">Bank Transactions</Title>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Fluxo de Caixa</Title>
+				<Title lang="es">Flujo de Caja</Title>
+				<Title lang="en">Cash Flow</Title>
+				<Function>FINC021</Function>
+				<Type>1</Type>
+				<Tables>SE1</Tables>
+				<Tables>SE2</Tables>
+				<Tables>SE8</Tables>
+				<Tables>SC5</Tables>
+				<Tables>SC6</Tables>
+				<Tables>SB1</Tables>
+				<Tables>SE4</Tables>
+				<Tables>SC7</Tables>
+				<Tables>SF4</Tables>
+				<Tables>SAH</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Orcadosxreais Mes</Title>
+				<Title lang="es">Pres. Vs Real Mes</Title>
+				<Title lang="en">Budg.vs Act. Month</Title>
+				<Function>FINC720</Function>
+				<Type>1</Type>
+				<Tables>SED</Tables>
+				<Tables>SE1</Tables>
+				<Tables>SE2</Tables>
+				<Tables>SE5</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Orcadosxreais Ano</Title>
+				<Title lang="es">Pres. Vs Real Ano</Title>
+				<Title lang="en">Budg.vs Act. Year</Title>
+				<Function>FINC730</Function>
+				<Type>1</Type>
+				<Tables>SED</Tables>
+				<Tables>SE1</Tables>
+				<Tables>SE2</Tables>
+				<Tables>SE5</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+		</Menu>
+	</Menu>
+	<Menu Status="Enable">
+		<Title lang="pt">&Relatorios</Title>
+		<Title lang="es">&Informes</Title>
+		<Title lang="en">&Reports</Title>
+		<Menu Status="Enable">
+			<Title lang="pt">Cadastros</Title>
+			<Title lang="es">Archivos</Title>
+			<Title lang="en">File</Title>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Clientes</Title>
+				<Title lang="es">Clientes</Title>
+				<Title lang="en">Customers</Title>
+				<Function>MATR020</Function>
+				<Type>1</Type>
+				<Tables>SA1</Tables>
+				<Tables>VCB</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>5</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Fornecedores</Title>
+				<Title lang="es">Proveedores</Title>
+				<Title lang="en">Vendors</Title>
+				<Function>MATR030</Function>
+				<Type>1</Type>
+				<Tables>SA2</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>2</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Ficha Cadastral</Title>
+				<Title lang="es">Ficha de Registro</Title>
+				<Title lang="en">Registration Card</Title>
+				<Function>MATR040</Function>
+				<Type>1</Type>
+				<Tables>SA1</Tables>
+				<Tables>VCB</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>5</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Vendedores</Title>
+				<Title lang="es">Vendedores</Title>
+				<Title lang="en">Sales Represent.</Title>
+				<Function>MATR050</Function>
+				<Type>1</Type>
+				<Tables>SA3</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>5</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Bancos</Title>
+				<Title lang="es">Bancos</Title>
+				<Title lang="en">Banks</Title>
+				<Function>MATR070</Function>
+				<Type>1</Type>
+				<Tables>SA6</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>6</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Relacao Naturezas</Title>
+				<Title lang="es">Lista Modalidad</Title>
+				<Title lang="en">List Classes</Title>
+				<Function>FINR010</Function>
+				<Type>1</Type>
+				<Tables>SED</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Mala Direta-cartas</Title>
+				<Title lang="es">Correo Dir. Cartas</Title>
+				<Title lang="en">Direct Mail-letter</Title>
+				<Function>LOJR060</Function>
+				<Type>1</Type>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>12</Owner>
+			</MenuItem>
+		</Menu>
+		<Menu Status="Enable">
+			<Title lang="pt">Contas a Receber</Title>
+			<Title lang="es">Ctas. Por Cobrar</Title>
+			<Title lang="en">Accts. Receivable</Title>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Titulos a Receber</Title>
+				<Title lang="es">Titulos Por Cobrar</Title>
+				<Title lang="en">Bills Receivable</Title>
+				<Function>FINR130</Function>
+				<Type>1</Type>
+				<Tables>SE1</Tables>
+				<Tables>SA1</Tables>
+				<Tables>SA6</Tables>
+				<Tables>VCB</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Tit.rec.p/Vendedor</Title>
+				<Title lang="es">Tit. Cob. P Vended</Title>
+				<Title lang="en">Bills Rec. By S. R</Title>
+				<Function>FINR137</Function>
+				<Type>1</Type>
+				<Tables>SE1</Tables>
+				<Tables>SA1</Tables>
+				<Tables>SA6</Tables>
+				<Tables>VCB</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Recebtos. Diversos</Title>
+				<Title lang="es">Cobros Diversos</Title>
+				<Title lang="en">Sundry Collections</Title>
+				<Function>FINR087</Function>
+				<Type>1</Type>
+				<Tables>SEL</Tables>
+				<Tables>SA1</Tables>
+				<Tables>VCB</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Rec.div. X Cliente</Title>
+				<Title lang="es">Cob. Div. Vs. Clie</Title>
+				<Title lang="en">Sund. Coll.vs. Cst</Title>
+				<Function>FINR898</Function>
+				<Type>1</Type>
+				<Tables>SE1</Tables>
+				<Tables>SA1</Tables>
+				<Tables>SEL</Tables>
+				<Tables>VCB</Tables>
+				<Tables>SAQ</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Informe Rec.divers</Title>
+				<Title lang="es">Informe Cob. Div.</Title>
+				<Title lang="en">Sundry Coll. Rep.</Title>
+				<Function>FINR899</Function>
+				<Type>1</Type>
+				<Tables>SE1</Tables>
+				<Tables>SA1</Tables>
+				<Tables>SEL</Tables>
+				<Tables>VCB</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Historico Clientes</Title>
+				<Title lang="es">Historial Clientes</Title>
+				<Title lang="en">Customer History</Title>
+				<Function>FINR270</Function>
+				<Type>1</Type>
+				<Tables>SA1</Tables>
+				<Tables>VCB</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Juros Recebidos</Title>
+				<Title lang="es">Intereses Cobrados</Title>
+				<Title lang="en">Interest Collected</Title>
+				<Function>FINR280</Function>
+				<Type>1</Type>
+				<Tables>SE1</Tables>
+				<Tables>SA1</Tables>
+				<Tables>VCB</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Juros dev.n.pagos</Title>
+				<Title lang="es">Inter Adeud. No Pg</Title>
+				<Title lang="en">Unpaid Int. Due</Title>
+				<Function>FINR290</Function>
+				<Type>1</Type>
+				<Tables>SE1</Tables>
+				<Tables>SA1</Tables>
+				<Tables>VCB</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Maiores devedores</Title>
+				<Title lang="es">Mayores deudores</Title>
+				<Title lang="en">Largest debtors</Title>
+				<Function>FINR300</Function>
+				<Type>1</Type>
+				<Tables>SE1</Tables>
+				<Tables>SA1</Tables>
+				<Tables>VCB</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Aging</Title>
+				<Title lang="es">Aging</Title>
+				<Title lang="en">Aging</Title>
+				<Function>FINR133</Function>
+				<Type>1</Type>
+				<Tables>SE1</Tables>
+				<Tables>SA1</Tables>
+				<Tables>SA6</Tables>
+				<Tables>VCB</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Pos.geral Cobranca</Title>
+				<Title lang="es">Sit. Gral. Cobr.</Title>
+				<Title lang="en">Collec. Gen. Stat.</Title>
+				<Function>FINR320</Function>
+				<Type>1</Type>
+				<Tables>SE1</Tables>
+				<Tables>SE2</Tables>
+				<Tables>SC6</Tables>
+				<Tables>SE5</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Posicao Clientes</Title>
+				<Title lang="es">Situacion Clientes</Title>
+				<Title lang="en">Customer Status</Title>
+				<Function>FINR340</Function>
+				<Type>1</Type>
+				<Tables>SE1</Tables>
+				<Tables>SA1</Tables>
+				<Tables>VCB</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Sugestao Bloqueio</Title>
+				<Title lang="es">Sugerencia Bloqueo</Title>
+				<Title lang="en">Block Suggestion</Title>
+				<Function>FINR450</Function>
+				<Type>1</Type>
+				<Tables>SA1</Tables>
+				<Tables>SM2</Tables>
+				<Tables>VCB</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Boleto Generico</Title>
+				<Title lang="es">Boleta Generica</Title>
+				<Title lang="en">Generic Slip</Title>
+				<Function>FINR600</Function>
+				<Type>1</Type>
+				<Tables>SE1</Tables>
+				<Tables>SA1</Tables>
+				<Tables>SA6</Tables>
+				<Tables>VCB</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Emissao de Faturas</Title>
+				<Title lang="es">Emision Facturas</Title>
+				<Title lang="en">Issue Invoices</Title>
+				<Function>DUPLI</Function>
+				<Type>3</Type>
+				<Tables>SE1</Tables>
+				<Tables>SD2</Tables>
+				<Tables>SF2</Tables>
+				<Tables>SF4</Tables>
+				<Tables>SA4</Tables>
+				<Tables>SA3</Tables>
+				<Tables>SA1</Tables>
+				<Tables>VCB</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>6</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Tit. Enviados Bco.</Title>
+				<Title lang="es">Tit. Enviados Bco.</Title>
+				<Title lang="en">Bills Sent To Bank</Title>
+				<Function>FINR660</Function>
+				<Type>1</Type>
+				<Tables>SE1</Tables>
+				<Tables>SEE</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Boleto - Rdmake</Title>
+				<Title lang="es">Boleta - Rdmake</Title>
+				<Title lang="en">Slip - Rdmake</Title>
+				<Function>FINR740</Function>
+				<Type>1</Type>
+				<Tables>SE1</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Eficienc.cobranca</Title>
+				<Title lang="es">Eficienc. Cobranza</Title>
+				<Title lang="en">Collection Effic.</Title>
+				<Function>FINR750</Function>
+				<Type>1</Type>
+				<Tables>SE1</Tables>
+				<Tables>SE5</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Liquidacao</Title>
+				<Title lang="es">Liquidacion</Title>
+				<Title lang="en">Settlement</Title>
+				<Function>FINR500</Function>
+				<Type>1</Type>
+				<Tables>SE1</Tables>
+				<Tables>SE5</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Livro Duplicatas</Title>
+				<Title lang="es">Libro Fac. de Cred</Title>
+				<Title lang="en">Trade Note Record</Title>
+				<Function>FINR020</Function>
+				<Type>1</Type>
+				<Tables>SE1</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Movto. Mes a Mes</Title>
+				<Title lang="es">Mov. Mes a Mes</Title>
+				<Title lang="en">Monthly Transact.</Title>
+				<Function>FINR801</Function>
+				<Type>1</Type>
+				<Tables>SE1</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Cheques devolvidos</Title>
+				<Title lang="es">Cheques devueltos</Title>
+				<Title lang="en">Returned Checks</Title>
+				<Function>LOJR190</Function>
+				<Type>1</Type>
+				<Tables>SEF</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>12</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Rel Retencao Inss</Title>
+				<Title lang="es">Inf Ret. Seg. Soc.</Title>
+				<Title lang="en">Inss Withhold. Rep</Title>
+				<Function>FINR860</Function>
+				<Type>1</Type>
+				<Tables>SE1</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Tit Rec.c/Ret Imp</Title>
+				<Title lang="es">Tit. Cob. Ret. Imp</Title>
+				<Title lang="en">Bill Rec.w/Tax Wit</Title>
+				<Function>FINR940</Function>
+				<Type>1</Type>
+				<Tables>SE1</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Emissao Borderos</Title>
+				<Title lang="es">Emision Bordero</Title>
+				<Title lang="en">Issue Bordereaux</Title>
+				<Function>FINR170</Function>
+				<Type>1</Type>
+				<Tables>SE1</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Tit. Receber Nf-e</Title>
+				<Title lang="es">Tit.cobrar Nf-e</Title>
+				<Title lang="en">Bills Rec. Nf-e</Title>
+				<Function>FINR139</Function>
+				<Type>1</Type>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+		</Menu>
+		<Menu Status="Enable">
+			<Title lang="pt">Contas a Pagar</Title>
+			<Title lang="es">Cuentas Por Pagar</Title>
+			<Title lang="en">Accounts Payable</Title>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Titulos a Pagar</Title>
+				<Title lang="es">Titulos Por Pagar</Title>
+				<Title lang="en">Bills Payable</Title>
+				<Function>FINR150</Function>
+				<Type>1</Type>
+				<Tables>SE2</Tables>
+				<Tables>SA1</Tables>
+				<Tables>SA6</Tables>
+				<Tables>VCB</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Emissao Borderos</Title>
+				<Title lang="es">Emision Bordero</Title>
+				<Title lang="en">Issue Bordereau</Title>
+				<Function>FINR170</Function>
+				<Type>1</Type>
+				<Tables>SE1</Tables>
+				<Tables>SE2</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Pos.fornecedores</Title>
+				<Title lang="es">Sit. Proveedores</Title>
+				<Title lang="en">Supplier Status</Title>
+				<Function>FINR350</Function>
+				<Type>1</Type>
+				<Tables>SE2</Tables>
+				<Tables>SA2</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Relacao Cheques</Title>
+				<Title lang="es">Lista Cheques</Title>
+				<Title lang="en">List Checks</Title>
+				<Function>FINR400</Function>
+				<Type>1</Type>
+				<Tables>SEF</Tables>
+				<Tables>SA6</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Cheques Especiais</Title>
+				<Title lang="es">Cheques Especiales</Title>
+				<Title lang="en">Special Checks</Title>
+				<Function>FINR460</Function>
+				<Type>1</Type>
+				<Tables>SEF</Tables>
+				<Tables>SA6</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Impressao Cheques</Title>
+				<Title lang="es">Impresion Cheques</Title>
+				<Title lang="en">Print Checks</Title>
+				<Function>FINR480</Function>
+				<Type>1</Type>
+				<Tables>SEF</Tables>
+				<Tables>SA6</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Aging</Title>
+				<Title lang="es">Aging</Title>
+				<Title lang="en">Aging</Title>
+				<Function>FINR134</Function>
+				<Type>1</Type>
+				<Tables>SE2</Tables>
+				<Tables>SA2</Tables>
+				<Tables>SA6</Tables>
+				<Tables>VCB</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Copia de Cheques</Title>
+				<Title lang="es">Copia de Cheques</Title>
+				<Title lang="en">Check Copy</Title>
+				<Function>FINR490</Function>
+				<Type>1</Type>
+				<Tables>SEF</Tables>
+				<Tables>SA6</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Cheques Cancelados</Title>
+				<Title lang="es">Cheques Anulados</Title>
+				<Title lang="en">Cancelled Checks</Title>
+				<Function>FINR540</Function>
+				<Type>1</Type>
+				<Tables>SA6</Tables>
+				<Tables>SEF</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Bordero Pagamentos</Title>
+				<Title lang="es">Bordero Pagos</Title>
+				<Title lang="en">Payment Bordereaux</Title>
+				<Function>FINR710</Function>
+				<Type>1</Type>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Eficiencia C.pagar</Title>
+				<Title lang="es">Eficienc. C. Pagar</Title>
+				<Title lang="en">Acc. Payabl. Effic</Title>
+				<Function>FINR760</Function>
+				<Type>1</Type>
+				<Tables>SA3</Tables>
+				<Tables>SE3</Tables>
+				<Tables>SE1</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Mapa de Rateio</Title>
+				<Title lang="es">Mapa de Prorrateo</Title>
+				<Title lang="en">Apportionment Map</Title>
+				<Function>FINR195</Function>
+				<Type>1</Type>
+				<Tables>SE2</Tables>
+				<Tables>SEK</Tables>
+				<Tables>CTK</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Emissão de Darf</Title>
+				<Title lang="es">Emision de Darf</Title>
+				<Title lang="en">Generate D a R F</Title>
+				<Function>FINRSRF</Function>
+				<Type>1</Type>
+				<Tables>SE2</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Emissão de Gps</Title>
+				<Title lang="es">Emision de Gps</Title>
+				<Title lang="en">Generate G P S</Title>
+				<Function>FINRGPS</Function>
+				<Type>1</Type>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Pos Geral C.pagar</Title>
+				<Title lang="es">Sit. Gr. C. Pagar</Title>
+				<Title lang="en">Acc. Pay.gen.st.</Title>
+				<Function>FINR330</Function>
+				<Type>1</Type>
+				<Tables>SE2</Tables>
+				<Tables>SE5</Tables>
+				<Tables>SC7</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Retencao Impostos</Title>
+				<Title lang="es">Retenc. Impuestos</Title>
+				<Title lang="en">Tax Withholdings</Title>
+				<Function>FINR865</Function>
+				<Type>1</Type>
+				<Tables>SE2</Tables>
+				<Tables>SA2</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Tit Pagar C/Ret Im</Title>
+				<Title lang="es">Tit. Pg C/ Ret Imp</Title>
+				<Title lang="en">Bill Pay W/Taxw</Title>
+				<Function>FINR855</Function>
+				<Type>1</Type>
+				<Tables>SE2</Tables>
+				<Tables>SA2</Tables>
+				<Tables>SE5</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Rel Agluitinadores</Title>
+				<Title lang="es">Lis. Agrupadores</Title>
+				<Title lang="en">Groupers Report</Title>
+				<Function>FINR875</Function>
+				<Type>1</Type>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Rel Aglut. Imposto</Title>
+				<Title lang="es">Lis. Agrup. Imp.</Title>
+				<Title lang="en">Tax Grouping Rep.</Title>
+				<Function>FINR930</Function>
+				<Type>1</Type>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+		</Menu>
+		<Menu Status="Enable">
+			<Title lang="pt">Comissoes</Title>
+			<Title lang="es">Comisiones</Title>
+			<Title lang="en">Commissions</Title>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Previsao Comissoes</Title>
+				<Title lang="es">Previs. Comisiones</Title>
+				<Title lang="en">Commiss. Forecast</Title>
+				<Function>FINR610</Function>
+				<Type>1</Type>
+				<Tables>SE1</Tables>
+				<Tables>SE3</Tables>
+				<Tables>SA1</Tables>
+				<Tables>SA3</Tables>
+				<Tables>VCB</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Relacao Comissoes</Title>
+				<Title lang="es">Lista Comisiones</Title>
+				<Title lang="en">Commission Report</Title>
+				<Function>MATR540</Function>
+				<Type>1</Type>
+				<Tables>SA3</Tables>
+				<Tables>SE3</Tables>
+				<Tables>SE1</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>5</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Rel.comis Cobrador</Title>
+				<Title lang="es">Lista Comis. Cobr.</Title>
+				<Title lang="en">Coll. Comm. Rep.</Title>
+				<Function>FINR897</Function>
+				<Type>1</Type>
+				<Tables>SAQ</Tables>
+				<Tables>SEX</Tables>
+				<Tables>SA1</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+		</Menu>
+		<Menu Status="Enable">
+			<Title lang="pt">Movimento Bancario</Title>
+			<Title lang="es">Movim. Bancario</Title>
+			<Title lang="en">Bank Transactions</Title>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Extrato Bancario</Title>
+				<Title lang="es">Extracto Bancario</Title>
+				<Title lang="en">Bank Statement</Title>
+				<Function>FINR470</Function>
+				<Type>1</Type>
+				<Tables>SE8</Tables>
+				<Tables>SA6</Tables>
+				<Tables>SE5</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Mov Financ Diario</Title>
+				<Title lang="es">Mov Financ Diario</Title>
+				<Title lang="en">Daily Financ.trans</Title>
+				<Function>FINR530</Function>
+				<Type>1</Type>
+				<Tables>SA6</Tables>
+				<Tables>SEG</Tables>
+				<Tables>SE5</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Moviment.bancaria</Title>
+				<Title lang="es">Movim. Bancario</Title>
+				<Title lang="en">Bank Transactions</Title>
+				<Function>FINR620</Function>
+				<Type>1</Type>
+				<Tables>SE5</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Movim Caixa Diario</Title>
+				<Title lang="es">Movim. Caja Diario</Title>
+				<Title lang="en">Daily Cash Trans.</Title>
+				<Function>FINR120</Function>
+				<Type>1</Type>
+				<Tables>SA6</Tables>
+				<Tables>SE5</Tables>
+				<Tables>SED</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Fluxo Caixa Realiz</Title>
+				<Title lang="es">Flujo Caja Realiz.</Title>
+				<Title lang="en">Realized Cash Flow</Title>
+				<Function>FINR770</Function>
+				<Type>1</Type>
+				<Tables>SE8</Tables>
+				<Tables>SA6</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Fluxo Caixa Analit</Title>
+				<Title lang="es">Flujo Caja Analit.</Title>
+				<Title lang="en">Detailed Cash Flow</Title>
+				<Function>FINR140</Function>
+				<Type>1</Type>
+				<Tables>SE8</Tables>
+				<Tables>SA6</Tables>
+				<Tables>SE1</Tables>
+				<Tables>SE2</Tables>
+				<Tables>SC5</Tables>
+				<Tables>SC6</Tables>
+				<Tables>SC7</Tables>
+				<Tables>SE4</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Relacao de Baixas</Title>
+				<Title lang="es">Lista de Bajas</Title>
+				<Title lang="en">Posting List</Title>
+				<Function>FINR190</Function>
+				<Type>1</Type>
+				<Tables>SE1</Tables>
+				<Tables>SE2</Tables>
+				<Tables>SE5</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Baixas Por Lote</Title>
+				<Title lang="es">Bajas Por Lote</Title>
+				<Title lang="en">Postings By Lot</Title>
+				<Function>FINR180</Function>
+				<Type>1</Type>
+				<Tables>SE1</Tables>
+				<Tables>SE2</Tables>
+				<Tables>SE5</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+		</Menu>
+		<Menu Status="Enable">
+			<Title lang="pt">Resumo Financeiro</Title>
+			<Title lang="es">Resumen Financ.</Title>
+			<Title lang="en">Financial Summary</Title>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Resumo Financeiro</Title>
+				<Title lang="es">Resumen Financier</Title>
+				<Title lang="en">Financial Summary</Title>
+				<Function>FINR840</Function>
+				<Type>1</Type>
+				<Tables>SE1</Tables>
+				<Tables>SE2</Tables>
+				<Tables>SE3</Tables>
+				<Tables>SE5</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Diario Auxiliar</Title>
+				<Title lang="es">Diario Auxiliar</Title>
+				<Title lang="en">Subsidiary Journal</Title>
+				<Function>FINR510</Function>
+				<Type>1</Type>
+				<Tables>SE1</Tables>
+				<Tables>SE2</Tables>
+				<Tables>SE5</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Razonete</Title>
+				<Title lang="es">Cuenta T</Title>
+				<Title lang="en">Trial Balance</Title>
+				<Function>FINR550</Function>
+				<Type>1</Type>
+				<Tables>SE1</Tables>
+				<Tables>SE2</Tables>
+				<Tables>SA1</Tables>
+				<Tables>SA2</Tables>
+				<Tables>VCB</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Diar.sint.p/Natur</Title>
+				<Title lang="es">Diar. Sint. P. Mod</Title>
+				<Title lang="en">Summ. Jrn.by Class</Title>
+				<Function>FINR200</Function>
+				<Type>1</Type>
+				<Tables>SE1</Tables>
+				<Tables>SE2</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Mapa Multi Naturez</Title>
+				<Title lang="es">Mapa Multi Modal.</Title>
+				<Title lang="en">Mult. Class Map</Title>
+				<Function>FINR590</Function>
+				<Type>1</Type>
+				<Tables>SE1</Tables>
+				<Tables>SE2</Tables>
+				<Tables>SE5</Tables>
+				<Tables>SEV</Tables>
+				<Tables>SEZ</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Orcxreais Ano Cc</Title>
+				<Title lang="es">Pres X Real Ano Cc</Title>
+				<Title lang="en">Budg./Real Yr. Cc</Title>
+				<Function>FINR731</Function>
+				<Type>1</Type>
+				<Tables>SE7</Tables>
+				<Tables>SE5</Tables>
+				<Tables>SEW</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Rel.comp.carteiras</Title>
+				<Title lang="es">Lis. Com. Carteras</Title>
+				<Title lang="en">Portf. Off-set Rep</Title>
+				<Function>FINR520</Function>
+				<Type>1</Type>
+				<Tables>SA1</Tables>
+				<Tables>SA2</Tables>
+				<Tables>SE1</Tables>
+				<Tables>SE2</Tables>
+				<Tables>SE5</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Recibos Pendentes</Title>
+				<Title lang="es">Recibos Pendientes</Title>
+				<Title lang="en">Pending Receipts</Title>
+				<Function>FINR014</Function>
+				<Type>1</Type>
+				<Tables>SAQ</Tables>
+				<Tables>SEY</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Orcadosxreais Mes</Title>
+				<Title lang="es">Pres. Vs Real Mes</Title>
+				<Title lang="en">Budgeted/Real Mth.</Title>
+				<Function>FINR720</Function>
+				<Type>1</Type>
+				<Tables>SE7</Tables>
+				<Tables>SE5</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Orcadosxreais Ano</Title>
+				<Title lang="es">Pres. Vs Real Ano</Title>
+				<Title lang="en">Budgeted/Real Year</Title>
+				<Function>FINR730</Function>
+				<Type>1</Type>
+				<Tables>SE7</Tables>
+				<Tables>SE5</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Orcxreais Mes Cc</Title>
+				<Title lang="es">Pres. Vs. Real Mes</Title>
+				<Title lang="en">Budg./Real Mth. Cc</Title>
+				<Function>FINR721</Function>
+				<Type>1</Type>
+				<Tables>SE7</Tables>
+				<Tables>SE5</Tables>
+				<Tables>SEW</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+		</Menu>
+		<Menu Status="Enable">
+			<Title lang="pt">Caixinha</Title>
+			<Title lang="es">Caja Chica</Title>
+			<Title lang="en">Petty Cash</Title>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Movimentos</Title>
+				<Title lang="es">Movimientos</Title>
+				<Title lang="en">Transactions</Title>
+				<Function>FINR560</Function>
+				<Type>1</Type>
+				<Tables>SA2</Tables>
+				<Tables>SET</Tables>
+				<Tables>SEU</Tables>
+				<Tables>SE5</Tables>
+				<Tables>SA6</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Status de Caixa</Title>
+				<Title lang="es">Estatus de Caja</Title>
+				<Title lang="en">Cash Status</Title>
+				<Function>FINR570</Function>
+				<Type>1</Type>
+				<Tables>SA2</Tables>
+				<Tables>SET</Tables>
+				<Tables>SEU</Tables>
+				<Tables>SE5</Tables>
+				<Tables>SA6</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Baixa de Caixa</Title>
+				<Title lang="es">Baja de Caja</Title>
+				<Title lang="en">Cash Posting</Title>
+				<Function>FINR580</Function>
+				<Type>1</Type>
+				<Tables>SA2</Tables>
+				<Tables>SET</Tables>
+				<Tables>SEU</Tables>
+				<Tables>SE5</Tables>
+				<Tables>SA6</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Recibo de Caixa</Title>
+				<Title lang="es">Recibo de Caja</Title>
+				<Title lang="en">Cash Receipt</Title>
+				<Function>FINR565</Function>
+				<Type>1</Type>
+				<Tables>SA2</Tables>
+				<Tables>SET</Tables>
+				<Tables>SEU</Tables>
+				<Tables>SE5</Tables>
+				<Tables>SA6</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+		</Menu>
+		<Menu Status="Enable">
+			<Title lang="pt">Comunic. Bancaria</Title>
+			<Title lang="es">Comunic. Bancaria</Title>
+			<Title lang="en">Bank Communicat.</Title>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Rel Retorno Cnab</Title>
+				<Title lang="es">Inf. devol. Cnab</Title>
+				<Title lang="en">Cnab Return Rep.</Title>
+				<Function>FINR650</Function>
+				<Type>1</Type>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Rel Extrato Cnab</Title>
+				<Title lang="es">Inf. Extracto Cnab</Title>
+				<Title lang="en">Cnab Statem. Rep.</Title>
+				<Function>FINR680</Function>
+				<Type>1</Type>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Rel Retorno Sispag</Title>
+				<Title lang="es">Inf. devol. Sispag</Title>
+				<Title lang="en">Sispag Return Rep.</Title>
+				<Function>FINR850</Function>
+				<Type>1</Type>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+		</Menu>
+		<Menu Status="Enable">
+			<Title lang="pt">AplicaÇÕes/Emprest</Title>
+			<Title lang="es">Invers. / Prest.</Title>
+			<Title lang="en">Investments/Loans</Title>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Demonst Emprestimo</Title>
+				<Title lang="es">Estado Prestamo</Title>
+				<Title lang="en">Loan Statement</Title>
+				<Function>FINR870</Function>
+				<Type>1</Type>
+				<Tables>SEH</Tables>
+				<Tables>SEG</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Demonst.aplicacao</Title>
+				<Title lang="es">Estado Inversion</Title>
+				<Title lang="en">Investment Statem.</Title>
+				<Function>FINR820</Function>
+				<Type>1</Type>
+				<Tables>SEH</Tables>
+				<Tables>SEI</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Hist. de Aplicacao</Title>
+				<Title lang="es">Hist. de Invers.</Title>
+				<Title lang="en">Investment History</Title>
+				<Function>FINR830</Function>
+				<Type>1</Type>
+				<Tables>SEH</Tables>
+				<Tables>SEI</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+		</Menu>
+	</Menu>
+	<Menu Status="Enable">
+		<Title lang="pt">&Miscelanea</Title>
+		<Title lang="es">&Miscelanea</Title>
+		<Title lang="en">&Miscellaneous</Title>
+		<Menu Status="Enable">
+			<Title lang="pt">Recalculos</Title>
+			<Title lang="es">N. Calculos</Title>
+			<Title lang="en">Recalculation</Title>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Rec.saldos Bancar</Title>
+				<Title lang="es">N. Cal. Sdos. Banc</Title>
+				<Title lang="en">Recalc. Bank Bal.</Title>
+				<Function>FINA210</Function>
+				<Type>1</Type>
+				<Tables>SA6</Tables>
+				<Tables>SE5</Tables>
+				<Tables>SE8</Tables>
+				<Tables>SEF</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Refaz Acumulados</Title>
+				<Title lang="es">Rehace Acumulados</Title>
+				<Title lang="en">Redo Accruals</Title>
+				<Function>FINA360</Function>
+				<Type>1</Type>
+				<Tables>SE1</Tables>
+				<Tables>SE2</Tables>
+				<Tables>SE5</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Ref Dados Cli/For</Title>
+				<Title lang="es">Reh. Dat. Cli/ Pro</Title>
+				<Title lang="en">Redo Cust/Sup Data</Title>
+				<Function>FINA410</Function>
+				<Type>1</Type>
+				<Tables>SE1</Tables>
+				<Tables>SE2</Tables>
+				<Tables>SE5</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Recalc. Comissao</Title>
+				<Title lang="es">Recalc. Comision</Title>
+				<Title lang="en">Recalc. Commiss.</Title>
+				<Function>FINA440</Function>
+				<Type>1</Type>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Aglut. Imposto</Title>
+				<Title lang="es">Agrup. Impuestos</Title>
+				<Title lang="en">Group Tax</Title>
+				<Function>FINA376</Function>
+				<Type>1</Type>
+				<Tables>SA2</Tables>
+				<Tables>SE2</Tables>
+				<Tables>SE5</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Apuracao Inss</Title>
+				<Title lang="es">Calcul. Inss</Title>
+				<Title lang="en">Calculate I N S S</Title>
+				<Function>FINA377</Function>
+				<Type>1</Type>
+				<Tables>SA2</Tables>
+				<Tables>SE2</Tables>
+				<Tables>SE4</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Aglut. Pis/Cof/Csl</Title>
+				<Title lang="es">Agrup. Pis/Cof/Csl</Title>
+				<Title lang="en">Grp Pis/Cof/Csl</Title>
+				<Function>FINA378</Function>
+				<Type>1</Type>
+				<Tables>SA2</Tables>
+				<Tables>SE2</Tables>
+				<Tables>SE5</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Recalculo Caixinha</Title>
+				<Title lang="es">Rec. Caja Chica</Title>
+				<Title lang="en">Recalc. Petty Cash</Title>
+				<Function>FINA570</Function>
+				<Type>1</Type>
+				<Tables>SA2</Tables>
+				<Tables>SET</Tables>
+				<Tables>SEU</Tables>
+				<Tables>SE5</Tables>
+				<Tables>SA6</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+		</Menu>
+		<Menu Status="Enable">
+			<Title lang="pt">Contabil</Title>
+			<Title lang="es">Contable</Title>
+			<Title lang="en">Accounting</Title>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Contabil Off Line</Title>
+				<Title lang="es">Contable Off Line</Title>
+				<Title lang="en">Offline Accounting</Title>
+				<Function>FINA370</Function>
+				<Type>1</Type>
+				<Tables>SE1</Tables>
+				<Tables>SE2</Tables>
+				<Tables>SE5</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Contab Var. Monet.</Title>
+				<Title lang="es">Contab. Var. Mon.</Title>
+				<Title lang="en">Account Indexation</Title>
+				<Function>FINA350</Function>
+				<Type>1</Type>
+				<Tables>SE1</Tables>
+				<Tables>SE2</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Aprop.apl/Emp.fin.</Title>
+				<Title lang="es">Atr. Inv/ Pre. Fin</Title>
+				<Title lang="en">Fin. Inv/Loan Appr</Title>
+				<Function>FINA182</Function>
+				<Type>1</Type>
+				<Tables>SEH</Tables>
+				<Tables>SEI</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Aprop.apl.p/Cotas</Title>
+				<Title lang="es">Atr. Inv. P Cuotas</Title>
+				<Title lang="en">Quota.inv/Loan App</Title>
+				<Function>FINA183</Function>
+				<Type>1</Type>
+				<Tables>SEH</Tables>
+				<Tables>SEI</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+		</Menu>
+		<Menu Status="Enable">
+			<Title lang="pt">Integracoes</Title>
+			<Title lang="es">Integraciones</Title>
+			<Title lang="en">Integration</Title>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Planilha Excel</Title>
+				<Title lang="es">Planilla Excel</Title>
+				<Title lang="en">Excel Worksheet</Title>
+				<Function>APEXCEL</Function>
+				<Type>1</Type>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Dicionario Crystal</Title>
+				<Title lang="es">Diccionar. Crystal</Title>
+				<Title lang="en">Crystal Dictionary</Title>
+				<Function>CALLDICT</Function>
+				<Type>1</Type>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+		</Menu>
+		<Menu Status="Enable">
+			<Title lang="pt">Arquivos</Title>
+			<Title lang="es">Archivos</Title>
+			<Title lang="en">Files</Title>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Serasa Relato</Title>
+				<Title lang="es">Serasa Informe</Title>
+				<Title lang="en">Serasa Report</Title>
+				<Function>SERASA</Function>
+				<Type>1</Type>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Cheques</Title>
+				<Title lang="es">Cheques</Title>
+				<Title lang="en">Checks</Title>
+				<Function>CFGX015</Function>
+				<Type>1</Type>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>99</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Tabela Mot.baixas</Title>
+				<Title lang="es">Tabla Mot. Bajas</Title>
+				<Title lang="en">Reasons F/Post. Tb</Title>
+				<Function>FINA490</Function>
+				<Type>1</Type>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Elim. de Residuos</Title>
+				<Title lang="es">Elim. de Residuos</Title>
+				<Title lang="en">Eliminate Residues</Title>
+				<Function>FINA415</Function>
+				<Type>1</Type>
+				<Tables>SE1</Tables>
+				<Tables>SE2</Tables>
+				<Tables>SE3</Tables>
+				<Tables>SE5</Tables>
+				<Tables>SEF</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Limpeza Mensal</Title>
+				<Title lang="es">Limpieza Mensual</Title>
+				<Title lang="en">Monthly Cleanup</Title>
+				<Function>FINA400</Function>
+				<Type>1</Type>
+				<Tables>SE1</Tables>
+				<Tables>SE2</Tables>
+				<Tables>SE3</Tables>
+				<Tables>SE5</Tables>
+				<Tables>SE8</Tables>
+				<Tables>SEA</Tables>
+				<Tables>SEF</Tables>
+				<Tables>SEG</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Gera Dados P/Dirf</Title>
+				<Title lang="es">Gen. Datos Dirf</Title>
+				<Title lang="en">Gen. Data F/D I Rf</Title>
+				<Function>FINA401</Function>
+				<Type>1</Type>
+				<Tables>SE2</Tables>
+				<Tables>SRL</Tables>
+				<Tables>SR4</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Gera Dados Sefip</Title>
+				<Title lang="es">Gen. Datos Sefip</Title>
+				<Title lang="en">Gen.data F/S e Fip</Title>
+				<Function>FINA402</Function>
+				<Type>1</Type>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+		</Menu>
+		<Menu Status="Enable">
+			<Title lang="pt">Workflow</Title>
+			<Title lang="es">Workflow</Title>
+			<Title lang="en">Workflow</Title>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Rastreabilidade</Title>
+				<Title lang="es">Trazabilidad</Title>
+				<Title lang="en">Trackability</Title>
+				<Function>WFC001</Function>
+				<Type>1</Type>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Processos Usuarios</Title>
+				<Title lang="es">Procesos Usuarios</Title>
+				<Title lang="en">User Processes</Title>
+				<Function>WFC002</Function>
+				<Type>1</Type>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+			<MenuItem Status="Enable">
+				<Title lang="pt">Messenger</Title>
+				<Title lang="es">Messenger</Title>
+				<Title lang="en">Messenger</Title>
+				<Function>WFATASKRMT</Function>
+				<Type>1</Type>
+				<Tables>WF6</Tables>
+				<Access>xxxxxxxxxx</Access>
+				<Module>06</Module>
+				<Owner>0</Owner>
+			</MenuItem>
+		</Menu>
+	</Menu>
+</ApMenu>

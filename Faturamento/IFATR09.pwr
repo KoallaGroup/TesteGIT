@@ -1,0 +1,384 @@
+#INCLUDE "PROTHEUS.CH"
+#INCLUDE "rwmake.ch"
+#Include "TopConn.ch"
+
+/*
+|-----------------------------------------------------------------------------------------------|
+|	Programa : IFATR06				 	| 	Novembro de 2014                                    |
+|-----------------------------------------------------------------------------------------------|
+|	Desenvolvido por Rogério Alves - Anadi                                                      |
+|-----------------------------------------------------------------------------------------------|
+|	Descrição : Resumo de Vendas de Representantes Acumulado                                    |
+|-----------------------------------------------------------------------------------------------|
+*/
+
+User Function IFATR06()
+
+Local oButton1
+Local oButton2
+Local oGroup1
+Local oSay1
+Local nRet 			:= 0
+Local oFont 		:= tFont():New("Tahoma",,12,,.t.) 
+
+Static oDlg
+
+Private oGet1
+Private oGet2
+Private dDataRef	:= CTOD("  \  \  ")
+Private cLocalDe	:= space(2)
+Private cLocalAte	:= space(2)
+Private cRepresDe	:= space(TAMSX3("A3_COD")[1])
+Private cRepresAte	:= space(TAMSX3("A3_COD")[1])
+
+
+DEFINE MSDIALOG oDlg TITLE "Resumo de Vendas de Representantes Acumulado" FROM 000, 000  TO 250, 400 COLORS 0, 16777215 PIXEL
+
+//@ 010,006 GROUP oGroup1 TO 145, 298 PROMPT "Filtro" OF oDlg COLOR 0, 16777215 PIXEL
+
+@ 026,015 SAY "Data de Referência" SIZE 60, 10 OF oDlg PIXEL //FONT oFont
+@ 025,080 MsGet dDataRef when .T. Picture "@D" Size 050,10 of oDlg PIXEL FONT oFont
+
+@ 046,015 SAY "Local" SIZE 30, 10 OF oDlg PIXEL //FONT oFont
+@ 046,065 SAY "De" SIZE 30, 10 OF oDlg PIXEL //FONT oFont
+@ 045,080 MsGet cLocalDe when .T. Picture "@!" Size 040,10 of oDlg PIXEL FONT oFont F3 "SM0" VALID(iif (empty(cLocalDe), .T., existCpo("SM0",cEmpAnt+cLocalDe)))
+@ 046,130 SAY "Até" SIZE 30, 10 OF oDlg PIXEL //FONT oFont
+@ 045,145 MsGet cLocalAte when .T. Picture "@!" Size 040,10 of oDlg PIXEL FONT oFont F3 "SM0" VALID(iif (empty(cLocalAte) .or. upper(cLocalAte) == "ZZ", .T., existCpo("SM0",cEmpAnt+cLocalAte)))
+
+@ 066,015 SAY "Representante" SIZE 40, 10 OF oDlg PIXEL //FONT oFont
+@ 066,065 SAY "De" SIZE 30, 10 OF oDlg PIXEL //FONT oFont
+@ 065,080 MsGet cRepresDe when .T. Picture "@!" Size 040,10 of oDlg PIXEL FONT oFont F3 "SA3" VALID(buscaRep(cRepresDe))
+@ 066,130 SAY "Até" SIZE 30, 10 OF oDlg PIXEL //FONT oFont
+@ 065,145 MsGet cRepresAte when .T. Picture "@!" Size 040,10 of oDlg PIXEL FONT oFont F3 "SA3" VALID(buscaRep(cRepresAte))
+
+@ 100,080 BUTTON oButton1 PROMPT "Processar" SIZE 040, 012 OF oDlg PIXEL ACTION U_IFATR06A()
+@ 100,145 BUTTON oButton2 PROMPT "Cancelar" SIZE 037, 012 OF oDlg PIXEL ACTION oDlg:End()
+
+ACTIVATE MSDIALOG oDlg CENTERED
+
+Return
+
+
+User Function IFATR06A()
+
+Local aArea   	:= GetArea()
+Local cQUERY	:= ""
+Local xTEMP		:= {}
+Local aFil		:= {}
+Local _aStru1	:= {}
+Local _cInd1	:= ""
+Local cArqTrab 	:= ""
+Local xSF2		:= {}
+Local cOptions 	:= ""
+Local cParams	:= ""
+Local cUseId	:= __cUserId
+Local dIniMes	:= Substr(dtos(dDataRef),1,6) + "01"
+
+aTam := TamSX3("PA5_USER")
+AADD(_aStru1,{"USUARIO"     ,aTam[3],aTam[1],aTam[2]})
+aTam := TamSX3("PA5_FIL")
+AADD(_aStru1,{"FILIAL"    	,aTam[3],aTam[1],aTam[2]})
+aTam := TamSX3("PA5_NOMFIL")
+AADD(_aStru1,{"NOMFIL"    	,aTam[3],aTam[1],aTam[2]})
+aTam := TamSX3("PA5_SEGISP")
+AADD(_aStru1,{"CODSEG"     	,aTam[3],aTam[1],aTam[2]})
+aTam := TamSX3("PA5_DESCSE")
+AADD(_aStru1,{"DESCSEG"    	,aTam[3],aTam[1],aTam[2]})
+aTam := TamSX3("PA5_VALMER")
+AADD(_aStru1,{"VALMER"     	,aTam[3],aTam[1],aTam[2]})
+aTam := TamSX3("PA5_VALIPI")
+AADD(_aStru1,{"VALIPI"     	,aTam[3],aTam[1],aTam[2]})
+aTam := TamSX3("PA5_FRETE")
+AADD(_aStru1,{"FRETE"     	,aTam[3],aTam[1],aTam[2]})
+aTam := TamSX3("PA5_DESCON")
+AADD(_aStru1,{"DESCONTO"   	,aTam[3],aTam[1],aTam[2]})
+aTam := TamSX3("PA5_VALBRU")
+AADD(_aStru1,{"VALBRU"     ,aTam[3],aTam[1],aTam[2]})
+aTam := TamSX3("PA5_ICMSRE")
+AADD(_aStru1,{"ICMSRE"	    ,aTam[3],aTam[1],aTam[2]})
+aTam := TamSX3("PA5_BRINDE")
+AADD(_aStru1,{"BRINDE"     	,aTam[3],aTam[1],aTam[2]})
+aTam := TamSX3("PA5_PARTIC")
+AADD(_aStru1,{"PARTIC"     	,aTam[3],aTam[1],aTam[2]})
+aTam := TamSX3("PA5_VLMEME")
+AADD(_aStru1,{"VLMEME"     	,aTam[3],aTam[1],aTam[2]})
+aTam := TamSX3("PA5_VIPIME")
+AADD(_aStru1,{"VIPIME"     	,aTam[3],aTam[1],aTam[2]})
+aTam := TamSX3("PA5_DESCME")
+AADD(_aStru1,{"DESCME"     	,aTam[3],aTam[1],aTam[2]})
+aTam := TamSX3("PA5_FRETME")
+AADD(_aStru1,{"FRETME"     	,aTam[3],aTam[1],aTam[2]})
+aTam := TamSX3("PA5_VLBUME")
+AADD(_aStru1,{"VLBUME"     	,aTam[3],aTam[1],aTam[2]})                                                      
+aTam := TamSX3("PA5_ICREME")
+AADD(_aStru1,{"ICREME"     	,aTam[3],aTam[1],aTam[2]})
+aTam := TamSX3("PA5_BRINME")
+AADD(_aStru1,{"BRINME"     	,aTam[3],aTam[1],aTam[2]})
+
+cArqTrab := CriaTrab(_aStru1,.t.)
+DbUseArea(.t.,,cArqTrab,"xSF2",.t.)
+_cInd1 := CriaTrab(Nil,.f.)
+IndRegua("xSF2",_cInd1,"USUARIO+FILIAL+CODSEG",,,"Selecionando Registros...")//PA5_FILIAL+PA5_USER+PA5_FIL+PA5_SEGISP
+
+DbSelectArea("xSF2")
+
+For i := 1 to 2
+	
+	cQUERY := "SELECT DISTINCT F2_FILIAL FILIAL, UA__SEGISP SEGISP, SUM(F2_VALBRUT) TOTSEG, SUM(F2_VALMERC + F2_VALIPI) PRODIPI, SUM(F2_FRETE) FRETE, SUM(F2_DESCONT) DESCONTO, "
+	cQUERY += "SUM(F2_VALIPI) VALIPI, SUM(D2_ICMSRET) ICMSST "
+	cQUERY += "FROM " + RetSqlName("SF2") + " SF2 "
+	cQuery += "INNER JOIN " + RetSqlName("SD2") + " SD2 ON F2_FILIAL = D2_FILIAL AND F2_DOC = D2_DOC AND F2_SERIE = D2_SERIE AND SD2.D_E_L_E_T_ = ' ' "
+	cQuery += "INNER JOIN " + RetSqlName("SF4") + " SF4 ON D2_FILIAL = F4_FILIAL AND D2_TES = F4_CODIGO AND SF4.D_E_L_E_T_ = ' ' "
+	cQuery += "INNER JOIN " + RetSqlName("SC5") + " SC5 ON F2_FILIAL = C5_FILIAL AND F2_DOC = C5_NOTA AND F2_SERIE = C5_SERIE AND SC5.D_E_L_E_T_ = ' ' "
+	cQuery += "LEFT  JOIN " + RetSqlName("SUA") + " SUA ON C5_FILIAL = UA_FILIAL AND C5_NUM = UA_NUM AND SUA.D_E_L_E_T_ = ' ' "
+	cQUERY += "WHERE SF2.D_E_L_E_T_ = ' ' "
+	cQUERY += "AND F4_DUPLIC = 'S' "
+	cQUERY += "AND F2_FILIAL BETWEEN '" + cLocalDe + "' AND '" + cLocalAte + "' "
+	cQUERY += "AND F2_EMISSAO BETWEEN '" + dIniMes + "' AND '" + DTOS(dDataRef) + "' "
+	cQUERY += "AND C5_VEND1 BETWEEN '" + cRepresDe + "' AND '" + cRepresAte + "' "
+	cQUERY += "AND UA__SEGISP <> '  ' "
+	cQUERY += "GROUP BY F2_FILIAL, UA__SEGISP "
+	cQUERY += "ORDER BY F2_FILIAL, UA__SEGISP "
+	
+	If Select("xTEMP") > 0
+		xTEMP->(dbCloseArea())
+	EndIf
+	
+	cQUERY := ChangeQuery(cQUERY)
+	
+	TcQuery cQUERY New Alias "xTEMP"
+	
+	cQUERY	:= ""
+	
+	dbSelectArea("xTEMP")
+	dbGoTop()
+	
+	If i == 1
+		
+		While !Eof()
+			
+			While !RecLock("xSF2",.t.)
+			Enddo
+			xSF2->USUARIO	:= cUseId
+			xSF2->FILIAL	:= xTEMP->FILIAL
+			xSF2->NOMFIL	:= Posicione("SZE",1,cEmpAnt+xTEMP->FILIAL,"ZE_FILIAL")
+			xSF2->CODSEG 	:= xTEMP->SEGISP
+			xSF2->DESCSEG	:= Posicione("SZ7",1,xFilial("SZ7")+xTEMP->SEGISP,"Z7_DESCRIC")
+			xSF2->VLMEME	:= xTEMP->PRODIPI
+			xSF2->VIPIME	:= xTEMP->VALIPI
+			xSF2->FRETME	:= xTEMP->FRETE
+			xSF2->DESCME	:= xTEMP->DESCONTO
+			xSF2->VLBUME	:= xTEMP->TOTSEG
+			xSF2->ICREME	:= xTEMP->ICMSST
+			
+			MsUnLock()
+			
+			DbSelectArea("xTEMP")
+			DbSkip()
+			
+		EndDo
+		
+	Else
+		
+		While !Eof()
+		
+			DbSelectArea("xSF2")
+			dbSetOrder(1)
+			If DbSeek(cUseId+xTEMP->FILIAL+xTEMP->SEGISP)
+			
+				While !RecLock("xSF2",.f.)
+				Enddo
+
+				xSF2->VALMER	:= xTEMP->PRODIPI
+				xSF2->VALIPI	:= xTEMP->VALIPI
+				xSF2->FRETE		:= xTEMP->FRETE
+				xSF2->DESCONTO	:= xTEMP->DESCONTO
+				xSF2->VALBRU	:= xTEMP->TOTSEG
+				xSF2->ICMSRE	:= xTEMP->ICMSST
+				
+				MsUnLock()
+
+			EndIf
+						
+			DbSelectArea("xTEMP")
+			DbSkip()
+			
+		EndDo
+		
+	EndIf
+	
+	If Select("xTEMP") > 0
+		xTEMP->(dbCloseArea())
+	EndIf
+	
+	//Localiza o valor do brinde
+	
+	cQUERY := "SELECT DISTINCT F2_FILIAL FILIAL, UA__SEGISP SEGISP, SUM(F2_VALBRUT) BRINDE "
+	cQUERY += "FROM " + RetSqlName("SF2") + " SF2 "
+	cQuery += "INNER JOIN " + RetSqlName("SD2") + " SD2 ON F2_FILIAL = D2_FILIAL AND F2_DOC = D2_DOC AND F2_SERIE = D2_SERIE AND SD2.D_E_L_E_T_ = ' ' "
+	cQuery += "INNER JOIN " + RetSqlName("SC5") + " SC5 ON F2_FILIAL = C5_FILIAL AND F2_DOC = C5_NOTA AND F2_SERIE = C5_SERIE AND SC5.D_E_L_E_T_ = ' ' "
+	cQuery += "LEFT  JOIN " + RetSqlName("SUA") + " SUA ON C5_FILIAL = UA_FILIAL AND C5_NUM = UA_NUM AND SUA.D_E_L_E_T_ = ' ' "
+	cQUERY += "WHERE SF2.D_E_L_E_T_ = ' ' "
+	cQUERY += "AND UA__TIPPED = '6' "
+	cQUERY += "AND F2_FILIAL BETWEEN '" + cLocalDe + "' AND '" + cLocalAte + "' "
+	cQUERY += "AND F2_EMISSAO BETWEEN '" + dIniMes + "' AND '" + DTOS(dDataRef) + "' "
+	cQUERY += "AND C5_VEND1 BETWEEN '" + cRepresDe + "' AND '" + cRepresAte + "' "
+	cQUERY += "GROUP BY F2_FILIAL, UA__SEGISP "
+	
+	If Select("xTEMP") > 0
+		xTEMP->(dbCloseArea())
+	EndIf
+	
+	cQUERY := ChangeQuery(cQUERY)
+	
+	TcQuery cQUERY New Alias "xTEMP"
+	
+	cQUERY	:= ""
+	
+	dbSelectArea("xTEMP")
+	dbGoTop()
+	
+	If i == 1
+		
+		While !Eof()
+			
+			DbSelectArea("xSF2")
+			dbSetOrder(1)
+			If DbSeek(cUseId+xTEMP->FILIAL+xTEMP->SEGISP)
+				
+				While !RecLock("xSF2",.F.)
+				Enddo
+				xSF2->BRINME	:= xTEMP->BRINDE
+				MsUnLock()
+				
+			EndIf
+			
+			DbSelectArea("xTEMP")
+			DbSkip()
+			
+		EndDo
+		
+	Else
+		
+		While !Eof()
+			
+			DbSelectArea("xSF2")
+			dbSetOrder(1)
+			If DbSeek(cUseId+xTEMP->FILIAL+xTEMP->SEGISP)
+				
+				While !RecLock("xSF2",.F.)
+				Enddo
+				xSF2->BRINDE	:= xTEMP->BRINDE
+				MsUnLock()
+				
+			EndIf
+			
+			DbSelectArea("xTEMP")
+			DbSkip()
+			
+		EndDo
+		
+	EndIf
+
+	dIniMes := DTOS(dDataRef)
+	
+Next
+
+If Select("xTEMP") > 0
+	xTEMP->(dbCloseArea())
+EndIf
+
+IF TcCanOpen(RetSqlName("PA5"))
+	cQuery := " DELETE "+RetSqlName("PA5")
+	cQuery += " WHERE PA5_FILIAL = '"+xFilial("PA5")+"' "
+	cQuery += " AND PA5_USER = '"+cUseId+"' "
+	TCSqlExec(cQuery)
+ENDIF
+
+DbSelectArea("xSF2")
+DbGoTop()
+
+While !EOf()
+	
+	While !RecLock("PA5",.t.)
+	Enddo     
+		
+	PA5_USER	:= xSF2->USUARIO
+	PA5_FIL		:= xSF2->FILIAL
+	PA5_NOMFIL	:= xSF2->NOMFIL
+	PA5_SEGISP	:= xSF2->CODSEG
+	PA5_VALMER	:= xSF2->VALMER
+	PA5_VALIPI 	:= xSF2->VALIPI
+	PA5_FRETE 	:= xSF2->FRETE
+	PA5_DESCON 	:= xSF2->DESCONTO
+	PA5_VALBRU	:= xSF2->VALBRU
+	PA5_ICMSRE	:= xSF2->ICMSRE
+	PA5_BRINDE 	:= xSF2->BRINDE
+	PA5_PARTIC 	:= 0
+	PA5_DESCSE 	:= xSF2->DESCSEG
+	PA5_VLMEME	:= xSF2->VLMEME
+	PA5_VIPIME	:= xSF2->VIPIME
+	PA5_FRETME	:= xSF2->FRETME
+	PA5_DESCME	:= xSF2->DESCME
+	PA5_VLBUME	:= xSF2->VLBUME
+	PA5_ICREME	:= xSF2->ICREME
+	PA5_BRINME	:= xSF2->BRINME
+	
+	MsUnLock()
+	
+	DbSelectArea("xSF2")
+	DbSkip()
+	
+EndDo
+
+If Select("xSF2") > 0
+	xSF2->(dbCloseArea())
+EndIf
+
+If Select("xTEMP") > 0
+	xTEMP->(dbCloseArea())
+EndIf
+
+cOptions 	:= "1;0;1;Resumo de Vendas de Representantes Acumulado" // 1(visualiza tela) 2 (direto impressora) 6(pdf) ; 0 (atualiza dados) ; 1 (número de cópias)
+
+cParams := cUseId 			+ ";"		//Usuário
+cParams += DTOC(dDataRef) 	+ ";" 		//Data Referência
+cParams += cLocalDe 		+ ";" 		//Local De
+cParams += cLocalAte 		+ ";" 		//Local Ate
+cParams += cRepresDe 		+ ";"		//Representante De
+cParams += cRepresAte 					//Representante Ate
+
+CallCrys("IFATCR06",cParams,cOptions)
+
+IF TcCanOpen(RetSqlName("PA5"))
+cQuery := " DELETE "+RetSqlName("PA5")
+cQuery += " WHERE PA5_FILIAL = '"+xFilial("PA5")+"' "
+cQuery += " AND PA5_USER = '"+cUseId+"' "
+TCSqlExec(cQuery)
+ENDIF
+
+oDlg:End()
+
+RestArea(aArea)
+
+Return Nil
+
+////////////////////////////////////////////////
+//Representante
+////////////////////////////////////////////////
+
+static function buscaRep(cRepres)
+
+Local aArea 	:= getArea()
+
+dbSelectArea("SA3")
+dbSetOrder(1)
+
+if !dbSeek(xFilial("SA3")+cRepres) .and. !empty(cRepres) .and. !(upper(cRepres) $ "ZZZZZZ")
+	msgAlert ("Representante não encontrado !!")
+	return .F.
+endif
+
+restarea(aArea)
+
+return .T.

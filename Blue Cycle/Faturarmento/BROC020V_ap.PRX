@@ -1,0 +1,207 @@
+#include "rwmake.ch"        // incluido pelo assistente de conversao do AP6 IDE em 25/06/04
+#IFNDEF WINDOWS
+	#DEFINE PSAY SAY
+#ENDIF
+
+User Function BROC020V()        // incluido pelo assistente de conversao do AP6 IDE em 25/06/04
+
+//ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+//³ Declaracao de variaveis utilizadas no programa atraves da funcao    ³
+//³ SetPrvt, que criara somente as variaveis definidas pelo usuario,    ³
+//³ identificando as variaveis publicas do sistema utilizadas no codigo ³
+//³ Incluido pelo assistente de conversao do AP6 IDE                    ³
+//ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+SetPrvt("AFIELDS,AHEADER,ACOLS,CTRBARQ,NNUMEM,ACGD")
+SetPrvt("CLINOK,CTUDOK,LRETMOD2,")
+
+#IFNDEF WINDOWS
+// Movido para o inicio do arquivo pelo assistente de conversao do AP5 IDE em 25/06/04 ==> 	#DEFINE PSAY SAY
+#ENDIF
+
+/*
+ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+±±ÚÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄ¿±±
+±±³Fun‡…o    ³ BROC020V ³ Autor ³ Fabricio Carlos David ³ Data ³ 24/09/97 ³±±
+±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄ´±±
+±±³Descri‡…o ³ Visualizacao de pedidos nao faturados por produto.         ³±±
+±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´±±
+±±³ Uso      ³ BROC020                                                    ³±±
+±±ÀÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ±±
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+*/
+//ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+//³ Defini array para geracao do arquivo de trabalho.            ³
+//ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+aFields:={}
+aHeader:={}
+aCols:={}
+AADD(aFields,{"C6_NUM"	  ,"C",06,0 } )
+AADD(aFields,{"C6_ITEM"   ,"C",15,0 } )
+AADD(aFields,{"C6_PRODUTO","C",15,0 } )
+AADD(aFields,{"C6_UM"     ,"C",02,0 } )
+AADD(aFields,{"C6_QTDVEN" ,"N",09,2 } )
+AADD(aFields,{"C6_PRCVEN" ,"N",11,2 } )
+AADD(aFields,{"C6_VALOR"  ,"N",12,2 } )
+AADD(aFields,{"C6_QTDRES" ,"N",11,2 } )
+AADD(aFields,{"C6_QTDLIB" ,"N",09,2 } )
+AADD(aFields,{"C6_TES"    ,"C",03,0 } )
+AADD(aFields,{"C6_CF"     ,"C",03,0 } )
+AADD(aFields,{"C6_SEGUM"  ,"C",02,0 } )
+AADD(aFields,{"C6_LOCAL"  ,"C",02,0 } )
+AADD(aFields,{"C6_UNSVEN" ,"N",09,2 } )
+AADD(aFields,{"C6_DESCONT","N",05,2 } )
+AADD(aFields,{"C6_VALDESC","N",14,2 } )
+AADD(aFields,{"C6_ENTREG" ,"D",08,0 } )
+AADD(aFields,{"C6_COMIS1" ,"N",05,2 } )
+AADD(aFields,{"C6_COMIS2" ,"N",05,2 } )
+AADD(aFields,{"C6_COMIS3" ,"N",05,2 } )
+AADD(aFields,{"C6_COMIS4" ,"N",05,2 } )
+AADD(aFields,{"C6_COMIS5" ,"N",05,2 } )
+AADD(aFields,{"C6_NUMCLI" ,"C",09,0 } )
+AADD(aFields,{"C6_DESCRI" ,"C",30,0 } )
+AADD(aFields,{"C6_PRUNIT" ,"N",11,2 } )
+AADD(aFields,{"C6_OP"     ,"C",01,0 } )
+AADD(aFields,{"C6_NUMLOTE","C",06,0 } )
+AADD(aFields,{"C6_PICMRET","N",05,2 } )
+AADD(aFields,{"C6_IDENTB6","C",06,0 } )
+AADD(aFields,{"C6_BLQ"    ,"C",01,0 } )
+AADD(aFields,{"C6_CODISS" ,"C",04,0 } )
+AADD(aFields,{"C6_GRADE"  ,"C",01,0 } )
+AADD(aFields,{"C6_ITEMGRD","C",02,0 } )
+AADD(aFields,{"C6_IPIDEV" ,"N",14,2 } )
+#IFDEF WINDOWS
+	cTrbArq:=CriaTrab(aFields)
+	dbUseArea( .T.,, cTrbArq, "TMP", .T. , .F. )
+	
+	dbSelectArea("SM0")
+	nNumEm := Recno()
+	dbSeek( Subst(cNumEmp,1,2) )
+	While ! EOF().And. SM0->M0_CODIGO ==  Subst(cNumEmp,1,2)
+		dbSelectArea("SC6")
+		dbGoTop()
+		dbSetOrder(2)
+		dbSeek( SM0->M0_CODFIL+SB1->B1_COD,.T.)
+		While !EOF() .And. C6_PRODUTO == SB1->B1_COD 
+			If !Empty(C6_NOTA) .Or. !Empty(C6_SERIE)	
+				dbSelectArea("SC6")
+				dbSkip()
+				Loop
+			EndIf
+			dbSelectArea("TMP")
+			RecLock("TMP",.T.)
+				TMP->C6_NUM		:=SC6->C6_NUM
+				TMP->C6_ITEM	:=SC6->C6_ITEM
+				TMP->C6_PRODUTO:=SC6->C6_PRODUTO
+				TMP->C6_UM		:=SC6->C6_UM   
+				TMP->C6_QTDVEN	:=SC6->C6_QTDVEN
+				TMP->C6_PRCVEN	:=SC6->C6_PRCVEN
+				TMP->C6_VALOR	:=SC6->C6_VALOR
+                                TMP->C6_QTDRES  :=SC6->C6_QTDVEN - SC6->C6_QTDENT
+                                TMP->C6_QTDLIB	:=SC6->C6_QTDLIB
+				TMP->C6_TES		:=SC6->C6_TES 
+				TMP->C6_CF		:=SC6->C6_CF  
+				TMP->C6_SEGUM	:=SC6->C6_SEGUM
+				TMP->C6_LOCAL	:=SC6->C6_LOCAL
+				TMP->C6_UNSVEN	:=SC6->C6_UNSVEN
+				TMP->C6_DESCONT:=SC6->C6_DESCONT
+				TMP->C6_VALDESC:=SC6->C6_VALDESC
+				TMP->C6_ENTREG	:=SC6->C6_ENTREG
+				TMP->C6_COMIS1	:=SC6->C6_COMIS1
+				TMP->C6_COMIS2	:=SC6->C6_COMIS2
+				TMP->C6_COMIS3	:=SC6->C6_COMIS3
+				TMP->C6_COMIS4	:=SC6->C6_COMIS4
+				TMP->C6_COMIS5	:=SC6->C6_COMIS5
+				TMP->C6_NUMCLI	:=SC6->C6_NUMCLI
+				TMP->C6_DESCRI	:=SC6->C6_DESCRI
+				TMP->C6_PRUNIT	:=SC6->C6_PRUNIT
+				TMP->C6_OP		:=SC6->C6_OP   
+				TMP->C6_NUMLOTE:=SC6->C6_NUMLOTE
+				TMP->C6_PICMRET:=SC6->C6_PICMRET
+				TMP->C6_IDENTB6:=SC6->C6_IDENTB6
+				TMP->C6_BLQ		:=SC6->C6_BLQ 
+				TMP->C6_CODISS	:=SC6->C6_CODISS
+				TMP->C6_GRADE	:=SC6->C6_GRADE
+				TMP->C6_ITEMGRD:=SC6->C6_ITEMGRD
+				TMP->C6_IPIDEV	:=SC6->C6_IPIDEV
+			MsUnlock()
+			dbSelectArea("SC6")
+			dbSkip()
+		End
+		dbSelectArea("SM0")
+		dbSkip()
+	End
+	dbSelectArea("SM0")
+	dbGoto( nNumEm )
+#ENDIF
+//ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+//³ Definicao do aHeader.                                        ³
+//ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+dbSelectArea("TMP")
+AADD(aHeader,{"N§ Pedido" ,"TMP->C6_NUM"		, "@!", 15, 0, , , "C", , } )
+AADD(aHeader,{"Item"      ,"TMP->C6_ITEM"		, "@!", 02, 0, , , "C", , } )
+AADD(aHeader,{"Produto"   ,"TMP->C6_PRODUTO", "@!", 15, 0, , , "C", , } )
+AADD(aHeader,{"UM"        ,"TMP->C6_UM"		, "@!", 02, 0, , , "C", , } )
+AADD(aHeader,{"Qtd.Vend"  ,"TMP->C6_QTDVEN"	, "99,999.99", 09, 2, , , "N", , } )
+AADD(aHeader,{"Prc.Vend"  ,"TMP->C6_PRCVEN"	, "9.999,999.99", 12, 2, , , "N", , } )
+AADD(aHeader,{"Valor"     ,"TMP->C6_VALOR"	, "9.999,999.99", 12, 2, , , "N", , } )
+AADD(aHeader,{"Qtd.Rest." ,"TMP->C6_QTDRES" , "99,999.99", 09, 2, , , "N", , } )
+AADD(aHeader,{"Qtd.Lib."  ,"TMP->C6_QTDLIB"	, "99,999.99", 09, 2, , , "N", , } )
+AADD(aHeader,{"TES"       ,"TMP->C6_TES"	, "@!", 03, 0, , , "C", , } )
+AADD(aHeader,{"CF"        ,"TMP->C6_CF"		, "@!", 03, 0, , , "C", , } )
+AADD(aHeader,{"2Un.Med"   ,"TMP->C6_SEGUM"	, "@!", 02, 0, , , "C", , } )
+AADD(aHeader,{"Almoxarif.","TMP->C6_LOCAL"	, "@!", 02, 0, , , "C", , } )
+AADD(aHeader,{"Qt.Ori.Ped","TMP->C6_UNSVEN"	, "99,999.99", 09, 2, , , "N", , } )
+AADD(aHeader,{"Desconto"  ,"TMP->C6_DESCONT", "99.99", 05, 2, , , "N", , } )
+AADD(aHeader,{"Val.Desc"  ,"TMP->C6_VALDESC", "9.999,999.99", 12, 2, , , "N", , } )
+AADD(aHeader,{"Entrega"   ,"TMP->C6_ENTREG"	, "@D", 08, 0, , , "D", , } )
+AADD(aHeader,{"Comissao1" ,"TMP->C6_COMIS1"	, "99.99", 05, 2, , , "N", , } )
+AADD(aHeader,{"Comissao2" ,"TMP->C6_COMIS2"	, "99.99", 05, 2, , , "N", , } )
+AADD(aHeader,{"Comissao3" ,"TMP->C6_COMIS3"	, "99.99", 05, 2, , , "N", , } )
+AADD(aHeader,{"Comissao4" ,"TMP->C6_COMIS4"	, "99.99", 05, 2, , , "N", , } )
+AADD(aHeader,{"Comissao5" ,"TMP->C6_COMIS5"	, "99.99", 05, 2, , , "N", , } )
+AADD(aHeader,{"Ped.Cli"   ,"TMP->C6_NUMCLI"	, "@!", 09, 0, , , "C", , } )
+AADD(aHeader,{"Descri‡„o" ,"TMP->C6_DESCRI"	, "@!", 30, 0, , , "C", , } )
+AADD(aHeader,{"Pr.Unit"   ,"TMP->C6_PRUNIT"	, "9.999,999.99", 12, 2, , , "N", , } )
+AADD(aHeader,{"OP"        ,"TMP->C6_OP"		, "@!", 01, 0, , , "C", , } )
+AADD(aHeader,{"Num.Lote"  ,"TMP->C6_NUMLOTE", "@!", 06, 0, , , "C", , } )
+AADD(aHeader,{"Icm.Retido","TMP->C6_PICMRET", "@!", 05, 2, , , "N", , } )
+AADD(aHeader,{"Id.Pod3"   ,"TMP->C6_IDENTB6", "@!", 06, 0, , , "C", , } )
+AADD(aHeader,{"Bloqueio"  ,"TMP->C6_BLQ"	, "@!", 01, 0, , , "C", , } )
+AADD(aHeader,{"Cod.ISS"   ,"TMP->C6_CODISS"	, "@!", 04, 0, , , "C", , } )
+AADD(aHeader,{"Grade"     ,"TMP->C6_GRADE"	, "@!", 01, 0, , , "C", , } )
+AADD(aHeader,{"Item Grade","TMP->C6_ITEMGRD", "@!", 02, 0, , , "C", , } )
+AADD(aHeader,{"Vl.Ipi.Dev","TMP->C6_IPIDEV"	, "9.999,999.99", 12, 2, , , "N", , } )
+
+//ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+//³ Definicao do aCols.                                          ³
+//ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+dbGotop()
+While !Eof()
+        AADD(aCols,{C6_NUM,C6_ITEM,C6_PRODUTO,C6_UM,C6_QTDVEN,C6_PRCVEN,C6_VALOR,C6_QTDRES,C6_QTDLIB,C6_TES,;
+			C6_CF,C6_SEGUM,C6_LOCAL,C6_UNSVEN,C6_DESCONT,C6_VALDESC,C6_ENTREG,C6_COMIS1,;
+			C6_COMIS2,C6_COMIS3,C6_COMIS4,C6_COMIS5,C6_NUMCLI,C6_DESCRI,C6_PRUNIT,;
+			C6_OP,C6_NUMLOTE,C6_PICMRET,C6_IDENTB6,C6_BLQ,C6_CODISS,C6_GRADE,C6_ITEMGRD,;
+			C6_IPIDEV,.F. } )
+	dbSkip()
+Enddo
+
+dbSelectArea("TMP")
+dbGoTop()
+#IFDEF WINDOWS
+	aCGD:={30,5,118,315}
+	If RecCount() == 0
+		MsgBox ("N„o existem pedidos para este produto ou o pedido ja foi faturado!","INFO")
+	Else
+		cLinOk:="AllWaysTrue()"
+		cTudOk:="AllWaysTrue()"		
+		lRetMod2:=Modelo2(OemToAnsi("Pedidos n„o Faturados"),"","",aCGD,2,cLinOk,cTudOk)
+	EndIf
+#ENDIF
+dbCloseArea("TMP")
+FErase(cTrbArq + ".DBF")
+// Substituido pelo assistente de conversao do AP6 IDE em 25/06/04 ==> __Return( .T. )
+Return( .T. )        // incluido pelo assistente de conversao do AP6 IDE em 25/06/04

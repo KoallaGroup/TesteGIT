@@ -1,0 +1,1622 @@
+Group Isapa - Producao
+   Version=7.0
+   VSSDB=
+   HasProperties=1
+   Properties
+      BeforeApply=
+      AfterApply=
+      Icon=
+      ID=
+      Version=
+      PalmName=
+      OutPut=
+   End
+   ProjectsCount=14
+   Project Faturamento
+      FoldersCount=5
+      Folder Atualizações
+         VSSPath=Nova Pasta1
+         FilesCount=39
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATA01.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\SETSEGTO.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\VALSEGTO.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATA03.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATA04.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATA05.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATA07.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATA06.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATA08.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATA09.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATA10.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATA02.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATG01.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATA11.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATA12.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATA13.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATA14.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATA16.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATA17.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATA18.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATA15.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATA20.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATA21.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATA22.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATA19.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATA25.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATA26.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATA27.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATA28.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATA29.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATA23.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATA31.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\VldQtdVen.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATA32.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATA30.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATA33.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATA34.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATA35.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATA37.PRW
+             Type=T
+         End
+      End
+      Folder Pontos de Entrada
+         VSSPath=Nova Pasta2
+         FilesCount=30
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\MA030BRW.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\MA010FIL.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\M030INC.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\MALTCLI.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\MA050TTS.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\MA040DAL.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\MA040DIN.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\MT360GRV.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\MTA360MNU.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\MTA040MNU.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\SF2460I.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\MSD2520.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\A410CONS.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\M460QRY.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\MT440STTS.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\MTA410T.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\M460FIL.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\SF2520E.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\M116ACOL.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\M460FIM.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\FT080RDES.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\M410PVNF.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\MA010BUT.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\MA410MNU.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\MA920BUT.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\MTA440C9.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\MTA410.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\MT410ACE.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\M410VRES.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\MA040BRW.prw
+             Type=T
+         End
+      End
+      Folder Relatorios
+         VSSPath=Nova Pasta3
+         FilesCount=17
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATR01.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATR02.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATR04.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATR05.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATR03.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATR07.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATR08.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATR10.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATR09.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATR10b.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATR06.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATR11.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATC13.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATR14.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATR15.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATR16.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATR17.PRW
+             Type=T
+         End
+      End
+      Folder Consulta
+         VSSPath=Nova Pasta4
+         FilesCount=1
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATC01.prw
+             Type=T
+         End
+      End
+      Folder Gatilhos
+         VSSPath=Nova Pasta5
+         FilesCount=1
+         File \TOTVS 11\Microsiga\Protheus\my projects\Faturamento\IFATG03.PRW
+             Type=T
+         End
+      End
+   End
+   Project Estoque
+      FoldersCount=3
+      Folder Processos
+         VSSPath=Nova Pasta1
+         FilesCount=22
+         File \TOTVS 11\Microsiga\Protheus\my projects\Estoque\IESTA02.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Estoque\IESTA03.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Estoque\IESTA04.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Estoque\IESTA05.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Estoque\IESTA06.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Estoque\IESTA07.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Estoque\IESTA08.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Estoque\IESTA09.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Estoque\IESTA10.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Estoque\IESTA11.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Estoque\IESTA12.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Estoque\XSLDPROD.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Estoque\XSLDPRD2.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Estoque\IESTA13.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Estoque\IESTA01.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Estoque\IESTA14.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Estoque\JOBM330.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Estoque\IESTA16.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Estoque\IESTA15.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Estoque\IESTA17.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Estoque\XSLDPROD3.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Estoque\XSLDPROD4.PRW
+             Type=T
+         End
+      End
+      Folder Ponto de Entrada
+         VSSPath=Nova Pasta2
+         FilesCount=15
+         File \TOTVS 11\Microsiga\Protheus\my projects\Estoque\MT103PN.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Estoque\MT010ALT.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Estoque\MT010INC.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Estoque\MT180GRV.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Estoque\MT340B2.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Estoque\SF1140I.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Estoque\A140EXC.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Estoque\MT103FIM.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Estoque\MTA270MNU.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Estoque\MT140CPO.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Estoque\MT240INC.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Estoque\MT241GRV.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Estoque\MT241EST.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Estoque\SD3240E.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Estoque\MT100AG.PRW
+             Type=T
+         End
+      End
+      Folder Relatórios
+         VSSPath=Nova Pasta3
+         FilesCount=9
+         File \TOTVS 11\Microsiga\Protheus\my projects\Estoque\Imatr650.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Estoque\Imatr720.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Estoque\IESTCR03.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Estoque\IESTCR04.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Estoque\IESTR05.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Estoque\IESTR06.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Estoque\IESTR07.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Estoque\IESTR02.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Estoque\IESTR01.PRW
+             Type=T
+         End
+      End
+   End
+   Project Compras
+      FoldersCount=6
+      Folder Processos
+         VSSPath=Nova Pasta1
+         FilesCount=25
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\ICOMA01.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\ICOMA02.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\ICOMA03.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\ICOMA04.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\ICOMA05.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\CROSSD_MVC.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\ICOMA06.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\ICOMA07.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\ICOMA08.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\ICOMA10.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\ICOMA09.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\ICOMA11.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\ICOMA12.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\ICOMP01.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\ICOMP02.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\MTABPRC.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\ICOMP03.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\ICOMP04.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\MCROSSD.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\updszv.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\ICOMP05.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\ICOMP06.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\ICOMA16.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\ICOMA15.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\IFATA38.prw
+             Type=T
+         End
+      End
+      Folder Pontos de Entrada
+         VSSPath=Nova Pasta2
+         FilesCount=27
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\MA020FIL.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\MTA035MNU.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\MTA180MNU.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\MA103BUT.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\MT120FIL.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\M020ALT.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\M020INC.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\SF1100I.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\SF1100E.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\SD1100I.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\SD1100E.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\MA120BUT.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\A100DEL.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\Mt100TOk.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\MA103OPC.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\MTA010MNU.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\MT120FIM.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\MT120TEL.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\MT103IPC.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\MT140TOK.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\SD1140E.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\SD1140I.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\MT103MSD.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\MT100GE2.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\MT100AGR.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\MT103EXC.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\MT103NAT.prw
+             Type=T
+         End
+      End
+      Folder Relatorios
+         VSSPath=Nova Pasta3
+         FilesCount=13
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\ICOMR03.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\ICOMR02.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\ICOMR04.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\ICOMR05.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\ICOMR06.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\ICOMR07.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\ICOMR08.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\ICOMR09.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\ICOMR10.prx
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\ICOMR11.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\ICOMR12.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\ICOMR13.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\ICOMR04X.PRW
+             Type=T
+         End
+      End
+      Folder Consulta
+         VSSPath=Nova Pasta4
+         FilesCount=7
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\ICOMC01.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\ICOMC02.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\ICOMC03.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\ICOMC04.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\ICOMC05.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\ICOMC06.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\ICOMC07.prw
+             Type=T
+         End
+      End
+      Folder Atualizações
+         VSSPath=Nova Pasta5
+         FilesCount=1
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\ICOMA13.prw
+             Type=T
+         End
+      End
+      Folder Gatilhos
+         VSSPath=Nova Pasta6
+         FilesCount=1
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\ICOMG01.PRW
+             Type=T
+         End
+      End
+   End
+   Project Financeiro
+      FoldersCount=9
+      Folder Relatórios
+         VSSPath=Nova Pasta1
+         FilesCount=18
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\IFINR01.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\IFINR02.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\IFINR03.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\IFINR04.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\IFINR05.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\IFINR06.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\IFINR07.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\IFINR08.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\IFINR10.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\IFINR09.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\IFINR12.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\IFINR11.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\IFINR14.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\IFINR15.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\IFINR16.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\IFINR17.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\IFINR18.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\IFINR19.prw
+             Type=T
+         End
+      End
+      Folder Processos
+         VSSPath=Nova Pasta2
+         FilesCount=20
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\IFINA01.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\IFINA02.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\F200FIM.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\IFINA03.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\IFINP01.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\IFINA04.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\IFINP02.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\IFINA05.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\IFINA09.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\IFINA10.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\IFINA11.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\IFINA12.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\IFINA13.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\IFINA14.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\IFINA15.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\IFINA16.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\IFINA17.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\IFINA20.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\F040BROW.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\FI040ROT.prw
+             Type=T
+         End
+      End
+      Folder Gatilho
+         VSSPath=Nova Pasta3
+         FilesCount=4
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\Gatilho Codbar\CONVLD.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\Gatilho Codbar\codbar.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\Gatilho Codbar\IFING01.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\IFING10.prw
+             Type=T
+         End
+      End
+      Folder Atualizações
+         VSSPath=Nova Pasta4
+         FilesCount=1
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\IFINA08.PRW
+             Type=T
+         End
+      End
+      Folder Ponto de Entrada
+         VSSPath=Nova Pasta5
+         FilesCount=15
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\F050ROT.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\F240CONF.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\F240BORD.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\F240IND.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\Pagban.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\F050BROW.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\F340FLCP.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\F590CAN.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\F240CAN.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\F200Var.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\FA050FIN.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\FO10FILT.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\F040BUT.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\F050INC.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\FA050DEL.PRW
+             Type=T
+         End
+      End
+      Folder CNAB_HSBC
+         VSSPath=Nova Pasta6
+         FilesCount=6
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\Cnab_HSBC\IFIN001.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\Cnab_HSBC\IFIN002.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\Cnab_HSBC\IFIN003.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\Cnab_HSBC\IFIN004.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\Cnab_HSBC\IFIN005.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\Cnab_HSBC\IFIN006.prw
+             Type=T
+         End
+      End
+      Folder Sispag - Itau
+         VSSPath=Nova Pasta7
+         FilesCount=6
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\SISPAG\FFING001.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\Sispag Tributos\_SegJ31.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\Sispag Tributos\F240AlMod.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\Sispag Tributos\isaCodBar.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\Sispag Tributos\isatrib.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\Sispag Tributos\lF240SumA.prw
+             Type=T
+         End
+      End
+      Folder Pagfor - Bradesco
+         VSSPath=Nova Pasta8
+         FilesCount=1
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\IFINA06.PRW
+             Type=T
+         End
+      End
+      Folder Consultas
+         VSSPath=Nova Pasta9
+         FilesCount=6
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\IFINC01.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\IFINC02.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\IFINC03.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\IFINC04.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\IFINC05.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Financeiro\FC010BOL.prw
+             Type=T
+         End
+      End
+   End
+   Project Call Center
+      FoldersCount=5
+      Folder Ponto de Entrada
+         VSSPath=Nova Pasta1
+         FilesCount=29
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\TK271SQL.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\TMK150EXC.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\TMKMEX.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\TMKVOK.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\TMKOUT.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\TMKVDEL.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\MA035VLD.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\TMKLIMPA.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\TMKCBPRO.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\TK271ROTM.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\TK271ABR.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\TK503CMP.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\TMKVFIM.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\TK503AFIL.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\TMK150DEL.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\TMKVPED.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\TKEVALI.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\TK271BOK.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\TMKACTIVE.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\TK510GRV.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\TK510END.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\TMKVPA.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\TMKR3A.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\TK510ABTN.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\TKVLDTRN.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\TK503LEG.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\TK510LEG.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\TK510COR.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\TKSU9FIL.prw
+             Type=T
+         End
+      End
+      Folder Processos
+         VSSPath=Nova Pasta2
+         FilesCount=45
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKA01.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKA02.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKA03.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKA04.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKA05.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKA06.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKA07.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKA08.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKA09.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKA10.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKA11.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKA13.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKA12.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKA14.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKA15.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKA16.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKA17.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKA18.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKA20.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKA19.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKA21.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKA23.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKA24.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKA25.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ETMK010.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ETMK011.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKA26.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKEST1.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKA27.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKA28.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKA29.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKA22.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKA30.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKA32.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKA31.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKA33.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKA34.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKA35.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKP02.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKA25B.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKA36.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKA25c.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKCAL.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ETMK012.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKGRON.PRW
+             Type=T
+         End
+      End
+      Folder Relatorios
+         VSSPath=Nova Pasta3
+         FilesCount=15
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKR01.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKR03.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKR04.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKR06.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKR07.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKR05.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKR08.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKR09.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKR11.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKR12.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKR13.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKR14.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKR15.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKR16.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKR17.prw
+             Type=T
+         End
+      End
+      Folder Consultas
+         VSSPath=Nova Pasta4
+         FilesCount=13
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKC02.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKC01.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKC03.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKC04.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKC05.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKC06.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKC07.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKC08.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKC09.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKC10.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKC11.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKC12.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKC14.PRW
+             Type=T
+         End
+      End
+      Folder Validador
+         VSSPath=Nova Pasta5
+         FilesCount=4
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKP01.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKP03.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKP04.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\CallCenter\ITMKP05.prw
+             Type=T
+         End
+      End
+   End
+   Project Genericos
+      FoldersCount=3
+      Folder Processos
+         VSSPath=Nova Pasta1
+         FilesCount=27
+         File \TOTVS 11\Microsiga\Protheus\my projects\Genericos\IGENM01.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Genericos\IGENM02.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Genericos\IGENM03.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Genericos\IGENM06.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Genericos\IGENM07.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Genericos\IGENM08.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Genericos\IGENM09.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Genericos\IGENM10.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Genericos\IGENM11.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Genericos\IGENM12.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Genericos\BACA08.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Genericos\IGENM13.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Genericos\IGENM14.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Genericos\IGENM15.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Genericos\IGENM16.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Genericos\IGENM17.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Genericos\IGENM18.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Genericos\IGENM04.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Genericos\IGENM19.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Genericos\IGENM20.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Genericos\IGENM21.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Genericos\IGENM23.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Genericos\IGENM24.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Genericos\IGENM25.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Genericos\IGENM26.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Genericos\IGENM27.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Genericos\IGENM29.PRW
+             Type=T
+         End
+      End
+      Folder Validadores
+         VSSPath=Nova Pasta2
+         FilesCount=3
+         File \TOTVS 11\Microsiga\Protheus\my projects\Genericos\IGENM05.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Genericos\IGENG01.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Genericos\IGENM26.PRW
+             Type=T
+         End
+      End
+      Folder Update
+         VSSPath=Nova Pasta3
+         FilesCount=4
+         File \TOTVS 11\Microsiga\Protheus\my projects\Genericos\updtab.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Genericos\IGENUPAD7.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Genericos\IGENDEAD7.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Genericos\REP_REOA.PRW
+             Type=T
+         End
+      End
+   End
+   Project Ponto Eletronico
+      FoldersCount=2
+      Folder Relatorios
+         VSSPath=Nova Pasta1
+         FilesCount=1
+         File \TOTVS 11\Microsiga\Protheus\my projects\Ponto Eletronico\IPONR01.PRW
+             Type=T
+         End
+      End
+      Folder Processos
+         VSSPath=Nova Pasta2
+         FilesCount=1
+         File \TOTVS 11\Microsiga\Protheus\my projects\Ponto Eletronico\AJUSSP8.PRW
+             Type=T
+         End
+      End
+   End
+   Project Folha
+      FoldersCount=2
+      Folder Processos
+         VSSPath=Nova Pasta1
+         FilesCount=6
+         File \TOTVS 11\Microsiga\Protheus\my projects\Folha\IFOLA001.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Folha\IFOLA002.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Folha\IFOLA003.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Folha\IFOLA004.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Folha\IFOLA005.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Folha\IFOLA006.PRW
+             Type=T
+         End
+      End
+      Folder Relatorios
+         VSSPath=Nova Pasta2
+         FilesCount=3
+         File \TOTVS 11\Microsiga\Protheus\my projects\Folha\IFOLR001.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Folha\IFOLR002.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Folha\IFOLR003.PRW
+             Type=T
+         End
+      End
+   End
+   Project Fiscal
+      FoldersCount=3
+      Folder Processos
+         VSSPath=Nova Pasta1
+         FilesCount=6
+         File \TOTVS 11\Microsiga\Protheus\my projects\Fiscal\IFISA01.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Fiscal\IFISA02.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Fiscal\IFISV01.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Fiscal\IFISA04.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Fiscal\IFISR06.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Fiscal\IFISA07.prw
+             Type=T
+         End
+      End
+      Folder Pontos de Entrada
+         VSSPath=Nova Pasta2
+         FilesCount=2
+         File \TOTVS 11\Microsiga\Protheus\my projects\Fiscal\MT089UNC.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Fiscal\PE01NFESEFAZ.PRW
+             Type=T
+         End
+      End
+      Folder Relatorios
+         VSSPath=Nova Pasta3
+         FilesCount=6
+         File \TOTVS 11\Microsiga\Protheus\my projects\Fiscal\IFISR01.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Fiscal\IFISR02.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Fiscal\IFISR06.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Fiscal\IFISR03.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Fiscal\IFISR04.PRW
+             Type=T
+         End
+         File \TOTVS 11\MICROSIGA\PROTHEUS\MY PROJECTS\FISCAL\IFISR05.PRW
+             Type=T
+         End
+      End
+   End
+   Project Compatibilizadores
+      FoldersCount=1
+      Folder Fontes
+         VSSPath=Nova Pasta1
+         FilesCount=1
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compatibilizadores\updcross.prw
+             Type=T
+         End
+      End
+   End
+   Project Integrações
+      FoldersCount=2
+      Folder Webline
+         VSSPath=Nova Pasta1
+         FilesCount=2
+         File \TOTVS 11\Microsiga\Protheus\my projects\Integrações\IWEBEST01.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Integrações\MWEBLINE.PRW
+             Type=T
+         End
+      End
+      Folder MHA
+         VSSPath=Nova Pasta2
+         FilesCount=2
+         File \TOTVS 11\Microsiga\Protheus\my projects\Compras\MTA140MNU.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Integrações\MHA\IWMSINV1.prw
+             Type=T
+         End
+      End
+   End
+   Project Sped
+      FoldersCount=1
+      Folder NFE
+         VSSPath=Nova Pasta1
+         FilesCount=6
+         File \TOTVS 11\Microsiga\Protheus\my projects\DANFE 3.0\danfeii.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\DANFE 3.0\danfeiii.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\DANFE 3.0\nfesefaz.prw
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\Fiscal\PE01NFESEFAZ.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\DANFE 3.0\IFATP05.PRW
+             Type=T
+         End
+         File \TOTVS 11\Microsiga\Protheus\my projects\DANFE 3.0\IFATP01.prw
+             Type=T
+         End
+      End
+   End
+   Project Frete
+      FoldersCount=1
+      Folder Relatorio
+         VSSPath=Nova Pasta1
+         FilesCount=1
+         File \TOTVS 11\Microsiga\Protheus\my projects\Frete\GFEA052NEW.prw
+             Type=T
+         End
+      End
+   End
+   Project Contabil
+      FoldersCount=1
+      Folder Atualizacao
+         VSSPath=Nova Pasta1
+         FilesCount=1
+         File \TOTVS 11\Microsiga\Protheus\my projects\Contabil\ICON01.PRW
+             Type=T
+         End
+      End
+   End
+End

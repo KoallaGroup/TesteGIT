@@ -1,0 +1,103 @@
+#include "rwmake.ch"        // incluido pelo assistente de conversao do AP6 IDE em 25/06/04
+#IFNDEF WINDOWS
+	#DEFINE PSAY SAY
+#ENDIF
+
+User Function BROC020O()        // incluido pelo assistente de conversao do AP6 IDE em 25/06/04
+
+//ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+//³ Declaracao de variaveis utilizadas no programa atraves da funcao    ³
+//³ SetPrvt, que criara somente as variaveis definidas pelo usuario,    ³
+//³ identificando as variaveis publicas do sistema utilizadas no codigo ³
+//³ Incluido pelo assistente de conversao do AP6 IDE                    ³
+//ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+SetPrvt("CCABEC1,CCABEC2,CTAMANHO,CNOMEPROG,CBTXT,CBCONT")
+SetPrvt("LI,M_PAG,CCAMPO,X,")
+
+#IFNDEF WINDOWS
+// Movido para o inicio do arquivo pelo assistente de conversao do AP5 IDE em 25/06/04 ==> 	#DEFINE PSAY SAY
+#ENDIF
+
+/*
+ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+±±ÚÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄ¿±±
+±±³Fun‡…o    ³ BROC020O ³ Autor ³ Fabricio Carlos David ³ Data ³ 21/09/97 ³±±
+±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄ´±±
+±±³Descri‡…o ³ Envia para funcao que faz a impressao da consulta.         ³±±
+±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´±±
+±±³ Uso      ³ MATC050                                                    ³±±
+±±ÀÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ±±
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+*/
+cCabec1  :="Consulta Geral ao Produto"
+cCabec2  :=""
+cTamanho :="P"
+cNomeProg:="MATC050"
+cbtxt    := SPACE(10)
+cbcont   := 0
+
+li       := 80
+m_pag    := 1
+
+cabec(cTitulo,cCabec1,cCabec2,cNomeProg,cTamanho)
+li:=li+1
+
+dbSelectArea("TRB")
+dbGoTop()
+SetRegua(RecCount())            // Total de Elementos da Regua
+
+While !EOF()
+
+   IncRegua()
+
+	IF li > 62
+		li:=li+1
+		@ li,65 PSAY "Continua......."
+		cabec(cTitulo,cCabec1,cCabec2,cNomeProg,cTamanho)
+	EndIF
+
+	// Substituir os caracteres graficos antes da impressao. //
+	cCampo:=""
+	For x:=1 to Len(LINHA)
+		If Subs(LINHA,x,1) $ "Ú¿ÀÙ"
+			cCampo := cCampo + "+"
+	   ElseIf Subs(LINHA,x,1) == "Ä"
+		   cCampo := cCampo + "-"
+	   ElseIf Subs(LINHA,x,1) == "„"
+		   cCampo := cCampo + "a"
+	   ElseIf Subs(LINHA,x,1) == "‡"
+		   cCampo := cCampo + "c"
+	   ElseIf Subs(LINHA,x,1) == "³"
+		   cCampo := cCampo + "|"
+		Else
+			cCampo := cCampo + Subs(LINHA,x,1)
+		Endif
+	Next
+
+	li:=li+1
+	@ li,05 PSAY cCampo
+	dbSkip()
+
+EndDO
+
+IF li != 80
+	li:=li+1
+	roda(cbcont,cbtxt,"P")
+EndIF
+
+Set Device To Screen
+
+If aReturn[5] == 1
+	Set Printer TO 
+	dbCommitAll()
+	ourspool(wnrel)
+Endif
+
+MS_FLUSH()
+// Substituido pelo assistente de conversao do AP6 IDE em 25/06/04 ==> __Return (.T.)
+Return(.T.)        // incluido pelo assistente de conversao do AP6 IDE em 25/06/04
+
+

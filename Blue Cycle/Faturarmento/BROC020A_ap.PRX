@@ -1,0 +1,119 @@
+#include "rwmake.ch"        // incluido pelo assistente de conversao do AP6 IDE em 25/06/04
+
+User Function BROC020A()        // incluido pelo assistente de conversao do AP6 IDE em 25/06/04
+
+//зддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд©
+//Ё Declaracao de variaveis utilizadas no programa atraves da funcao    Ё
+//Ё SetPrvt, que criara somente as variaveis definidas pelo usuario,    Ё
+//Ё identificando as variaveis publicas do sistema utilizadas no codigo Ё
+//Ё Incluido pelo assistente de conversao do AP6 IDE                    Ё
+//юддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды
+
+SetPrvt("AFIELDS,AHEADER,ACOLS,CTRBARQ,AC,CCOD")
+SetPrvt("CNOM,ACGD,CLINOK,CTUDOK,LRETMOD2,")
+
+/*
+╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠
+╠╠зддддддддддбддддддддддбдддддддбдддддддддддддддддддддддбддддддбдддддддддд©╠╠
+╠╠ЁFun┤┘o    Ё BROC020A Ё Autor Ё Pedro Hiroshi         Ё Data Ё 26/09/97 Ё╠╠
+╠╠цддддддддддеддддддддддадддддддадддддддддддддддддддддддаддддддадддддддддд╢╠╠
+╠╠ЁDescri┤┘o Ё Visualizacao de pedidos de compra.                         Ё╠╠
+╠╠цддддддддддедддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд╢╠╠
+╠╠Ё Uso      Ё BROC020                                                    Ё╠╠
+╠╠юддддддддддадддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды╠╠
+╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠╠
+*/
+//здддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд©
+//Ё Definir array para geracao do arquivo de trabalho.           Ё
+//юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды
+aFields:={}
+aHeader:={}
+aCols:={}
+AADD(aFields,{"C7_FILIAL" ,"C",02,0 } )
+AADD(aFields,{"C7_NUM"	  ,"C",06,0 } )
+AADD(aFields,{"C7_ITEM"   ,"C",15,0 } )
+AADD(aFields,{"C7_QUANT"  ,"N",09,2 } )
+AADD(aFields,{"C7_ENTREG" ,"D",08,0 } )
+
+cTrbArq := CriaTrab(aFields)
+dbUseArea( .T.,, cTrbArq, "TMP", .T. , .F. )
+
+
+dbSelectArea("SM0")
+_nrecno := recno()
+_cEmpresa := SM0->M0_CODIGO
+dbGotop()
+While !Eof() .and. SM0->M0_CODIGO==_cEmpresa
+	dbSelectArea("SC7")
+	dbSetOrder(2)
+	dbSeek(SM0->M0_CODFIL+SB1->B1_COD,.T.)
+	While !EOF() .And. SC7->C7_PRODUTO == SB1->B1_COD
+		If (SC7->C7_QUANT - SC7->C7_QUJE) > 0
+			dbSelectArea("TMP")
+			RecLock("TMP",.T.)
+			TMP->C7_FILIAL  := SC7->C7_FILIAL
+			
+			IF EMPTY(SC7->C7_PO_EIC)
+			TMP->C7_NUM     := SC7->C7_NUM
+			ELSE
+			TMP->C7_NUM     := SC7->C7_PO_EIC			
+			ENDIF
+			
+			TMP->C7_ITEM	:= SC7->C7_ITEM
+			TMP->C7_QUANT	:= SC7->C7_QUANT - SC7->C7_QUJE
+			TMP->C7_ENTREG	:= SC7->C7_DATPRF
+			MsUnlock()
+		EndIf
+		dbSelectArea("SC7")
+		dbSkip()
+	End
+	dbSelectArea("SM0")
+	dbSkip()
+End
+dbSelectArea("SM0")
+dbGoto(_nRecno)
+
+//здддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд©
+//Ё Definicao do aHeader.                                        Ё
+//юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды
+AADD(aHeader,{"Filial"	      ,"TMP->C7_FILIAL", "@!", 02, 0, , , "C", , } )
+AADD(aHeader,{"N╖ Pedido"     ,"TMP->C7_NUM"	, "@!", 15, 0, , , "C", , } )
+AADD(aHeader,{"Item"          ,"TMP->C7_ITEM"	, "@!", 02, 0, , , "C", , } )
+AADD(aHeader,{"Qtd.Comprada"  ,"TMP->C7_QUANT"	, "@!", 09, 2, , , "N", , } )
+AADD(aHeader,{"Entrega"       ,"TMP->C7_ENTREG"	, "@!", 08, 0, , , "D", , } )
+
+//здддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд©
+//Ё Definicao do aCols.                                          Ё
+//юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды
+dbSelectArea("TMP")
+dbGotop()
+While !Eof()
+	AADD(aCols,{C7_FILIAL,C7_NUM,C7_ITEM,C7_QUANT,C7_ENTREG,.F. } )
+	DBSELECTAREA("TMP")
+	dbSkip()
+End
+
+aCols := aSort(aCols,,,{|x,y| x[5] < y[5]})
+
+aC := {}
+
+cCod := SB1->B1_COD
+cNom := SB1->B1_DESC
+
+AADD(aC,{"cCod" , {15,001} ,"Codigo" , "@!",,,.F.})
+AADD(aC,{"cNom" , {15,120} ,"Descricao"   , "@!",,,.F.})
+
+DBSELECTAREA("TMP")
+dbGoTop()
+If EOF()
+	MsgBox ("Nфo existe pedido de compra para este produto","INFO")
+Else
+	aCGD     := {30,5,118,315}
+	cLinOk:="AllWaysTrue()"
+	cTudOk:="AllWaysTrue()"
+	lRetMod2 := Modelo2(OemToAnsi("Previs└o de entrega do produto"),aC,"",aCGD,2,cLinOk,cTudOk)
+EndIf
+dbCloseArea("TMP")
+FErase(cTrbArq + ".DBF")
+// Substituido pelo assistente de conversao do AP6 IDE em 25/06/04 ==> __Return( .T. )
+Return( .T. )        // incluido pelo assistente de conversao do AP6 IDE em 25/06/04

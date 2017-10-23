@@ -1,0 +1,132 @@
+#include "rwmake.ch"        // incluido pelo assistente de conversao do AP6 IDE em 25/06/04
+#IFNDEF WINDOWS
+	#DEFINE PSAY SAY
+#ENDIF
+
+User Function BROC020I()        // incluido pelo assistente de conversao do AP6 IDE em 25/06/04
+
+//ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+//³ Declaracao de variaveis utilizadas no programa atraves da funcao    ³
+//³ SetPrvt, que criara somente as variaveis definidas pelo usuario,    ³
+//³ identificando as variaveis publicas do sistema utilizadas no codigo ³
+//³ Incluido pelo assistente de conversao do AP6 IDE                    ³
+//ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+SetPrvt("CSAVSCR,CSAVCUR10,CSAVROW10,CSAVCOL10,CSAVCOR10,CSAVSCR10")
+SetPrvt("CSAVTRB,ACAMPOS,NCUSMED,CSALINI,CNOMARQ,CMENS")
+SetPrvt("CALIAS,CFUNCAO,NT,NL,NB,NR")
+
+#IFNDEF WINDOWS
+// Movido para o inicio do arquivo pelo assistente de conversao do AP5 IDE em 25/06/04 ==> 	#DEFINE PSAY SAY
+#ENDIF
+
+/*
+ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+±±ÚÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄ¿±±
+±±³Fun‡…o    ³ BROC020I ³ Autor ³ Fabricio Carlos David ³ Data ³ 21/09/97 ³±±
+±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄ´±±
+±±³Descri‡…o ³ Envia para funcao que monta o arquivo de trabalho com as   ³±±
+±±³          ³ movimentacoes e mostra-o na tela                           ³±±
+±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´±±
+±±³ Uso      ³ BROC020                                                    ³±±
+±±ÀÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ±±
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+*/
+cSavScr:=""
+cSavCur10:=""
+cSavRow10:=""
+cSavCol10:=""
+cSavCor10:=""
+cSavScr10:=""
+cSavTrb:=""
+aCampos := {} 
+nCusMed := 0 
+cSalIni := ""
+
+//ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+//³ Define array para arquivo de trabalho                        ³
+//ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+AADD(aCampos,{"LINHA","C",80,0 } )
+
+//ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+//³ Cria arquivo de Trabalho                                     ³
+//ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+cNomArq := CriaTrab(aCampos)
+dbUseArea( .T.,, cNomArq, "Trb", if(.F. .OR. .F., !.F., NIL), .F. )
+
+#IFNDEF WINDOWS
+	cSavScr := SaveScreen(0,0,MaxRow(),MaxCol())
+	cSavTrb := SaveScreen(09,18,12,65)
+
+	SetColor("w+/bg,,")
+	DrawAdvWindow("Aguarde",09,17,13,54)
+	@ 10,19 PSAY "ÚÄÄÄ¿"
+	@ 11,19 PSAY "³ ÀÄ³  Gerando Arquivo de Trabalho"
+	@ 12,19 PSAY "ÀÄÄÄÙ"
+#ENDIF
+//ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+//³ Grava as movimentacoes no arquivo de trabalho                ³
+//ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+//DebugIXB("BROC020X._IX")
+#IFDEF WINDOWS
+	cMens:="Aguarde..."
+	MsgRun( OemToAnsi( "Gerando arquivo de trabalho..." ),;
+			  OemToAnsi( cMens ),;
+			  { || ExecBlock("BROC020X",.F.,.F.)  } )
+#ELSE
+	ExecBlock("BROC020X",.F.,.F.)
+#ENDIF
+		
+#IFNDEF WINDOWS
+	RestScreen(10,18,12,65,cSavTrb)
+#ENDIF	
+
+If File(cNomArq+".dbf")
+
+	dbSelectArea("TRB")
+
+	If RecCount() > 0
+		#IFNDEF WINDOWS
+			cSavScr10 := SaveScreen(6,1,24,79)
+			cSavCur10 := SetCursor(0)
+			cSavRow10 := Row()
+			cSavCol10 := Col()
+			cSavCor10 := SetColor("bg+/b,,,")
+			SetColor("w+/bg,,")
+			DrawAdvWindow("Analise Produto",6,4,20,77)
+			SetColor("r/w,,")
+			@ 20,40 PSAY "[Alt+P] Envia para Impressora."
+			SetColor("w+/bg,,")
+			cAlias:="TRB"
+			cFuncao:="MC050skip"
+			nT:=07
+			nL:=05
+			nB:=19
+			nR:=76
+			ExecBlock("BROC020N",.F.,.F.)
+		#ELSE
+			cAlias:="TRB"
+			ExecBlock("BROC020N",.F.,.F.)
+		#ENDIF	
+	Else
+		Help("",1,"MC050NOREC")
+	Endif
+	
+	dbSelectArea("TRB")
+	dbCloseArea()
+	//FERASE(cNomArq+".dbf")
+
+Else
+	Help("",1,"MC050NOARQ")
+Endif
+
+#IFNDEF WINDOWS
+	RestScreen(0,0,MaxRow(),MaxCol(),cSavScr)
+#ENDIF
+
+dbSelectArea("SB1")
+
+// Substituido pelo assistente de conversao do AP6 IDE em 25/06/04 ==> __Return (.T.)
+Return(.T.)        // incluido pelo assistente de conversao do AP6 IDE em 25/06/04

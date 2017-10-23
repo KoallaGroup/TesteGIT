@@ -1,0 +1,1103 @@
+#include "rwmake.ch"        // incluido pelo assistente de conversao do AP6 IDE em 25/06/04
+#IFNDEF WINDOWS
+	#DEFINE PSAY SAY
+#ENDIF
+
+User Function BROC020X()        // incluido pelo assistente de conversao do AP6 IDE em 25/06/04
+
+//ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+//³ Declaracao de variaveis utilizadas no programa atraves da funcao    ³
+//³ SetPrvt, que criara somente as variaveis definidas pelo usuario,    ³
+//³ identificando as variaveis publicas do sistema utilizadas no codigo ³
+//³ Incluido pelo assistente de conversao do AP6 IDE                    ³
+//ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+SetPrvt("CSTRING,LTUDOOK,CFIMBLOC,NQ,CBRANCBLOC,LFIRST")
+SetPrvt("NTOTLOCAL,NTOTGERAL,NSALDOINI,DDATAFIM,ATOTGERAL,CTAM")
+SetPrvt("NSALDO,ASALDOTER,AESTRU,ASALDO,AMRP,CVAR")
+SetPrvt("CALIAS,CARQ,CPICTURE,CCONTEUDO,NTOTQTD,NTOTENT")
+SetPrvt("NTOTSAL,DDATA,NQTD,CTIPO,NTOTPER,NTOTCOM")
+SetPrvt("NTOTSAI,NTOTINT,NQTDGER,NENTGER,NINTGER,CIDENTB6")
+SetPrvt("NREGSB6,NQUANT,CPICTQTD,CDADOS,NANO,K")
+SetPrvt("NMES,CCAMPO,CMES,CANO,CLOCAL,CVER")
+SetPrvt("LY,KL,")
+
+#IFNDEF WINDOWS
+// Movido para o inicio do arquivo pelo assistente de conversao do AP5 IDE em 25/06/04 ==> 	#DEFINE PSAY SAY
+#ENDIF
+
+cString:=""
+lTudoOk:=.T.
+cFimBloc:=CHR(192)+Repli(CHR(196),70)+CHR(217)
+nQ:=0
+cBrancBloc:="³"+Repli(" ",70)+"³"
+lFirst:=.T.
+nTotLocal:=0
+nTotGeral:=0
+nSaldoINi:=0
+dDataFim:=CtoD("//")
+aTotGeral := {0,0,0,0,0,0}
+cTam:=""
+nSaldo:= 0
+aSaldoTer:={}
+aEstru:={}
+aSaldo:={}
+aMRP:={}
+//---------- Dados Cadastrais do Produto (SB1)
+cString:=" Dados Cadastrais "
+cVar:=CHR(218)+cString+Repli(CHR(196),(70-Len(cString)))+CHR(191)
+cAlias:=Alias()
+ExecBlock("BROC020Z",.F.,.F.)
+dbSelectArea("SB1")
+aEstru := {}
+AADD(aEstru,{"B1_COD"   ,"",0,"",""})
+AADD(aEstru,{"B1_TIPO"  ,"",0,"",""})
+AADD(aEstru,{"B1_DESC"  ,"",0,"",""})
+AADD(aEstru,{"B1_UM"    ,"",0,"",""})
+AADD(aEstru,{"B1_SEGUM" ,"",0,"",""})
+AADD(aEstru,{"B1_FORPRZ","",0,"",""})
+AADD(aEstru,{"B1_GRUPO" ,"",0,"",""})
+AADD(aEstru,{"B1_LOCPAD","",0,"",""})
+AADD(aEstru,{"B1_EMIN"  ,"",0,"",""})
+AADD(aEstru,{"B1_ESTFOR","",0,"",""})
+AADD(aEstru,{"B1_LE"    ,"",0,"",""})
+AADD(aEstru,{"B1_QE"    ,"",0,"",""})
+cArq:=Alias()
+ExecBlock("BROC020Y",.F.,.F.)
+cString:="³"
+For nQ:=1 to Len(aEstru)
+	If Len(cString)+Len(Alltrim(aEstru[nQ][2]))+aEstru[nQ][3]+3 < 72
+		cPicture	 := aEstru[nQ][4]
+		cConteudo := aEstru[nQ][1]
+		If aEstru[nQ][5] $ "ND"
+			cConteudo := Transform(&cConteudo,cPicture)
+		ElseIf aEstru[nQ][5]=="C"
+			cConteudo := &cConteudo
+	 	Endif
+		cString   := cString + Alltrim(aEstru[nQ][2])+": "+cConteudo+" "
+	Else
+		cString := cString + Space( ( ( 72-Len(cString)) - 1 ) )+"³"
+		ExecBlock("BROC020S",.F.,.F.)
+		ExecBlock("BROC020Z",.F.,.F.)
+		cString:="³"		
+		cPicture  := aEstru[nQ][4]
+		cConteudo := aEstru[nQ][1]
+		If aEstru[nQ][5] $ "ND"
+			cConteudo := Transform(&cConteudo,cPicture)
+		ElseIf aEstru[nQ][5]=="C"
+			cConteudo := &cConteudo			
+			cTam      := len(aEstru[nQ][2])	
+			If (70-cTam) < len(cConteudo) 
+				cTam      := 70 - cTam  
+				cConteudo := substr(cConteudo,1,cTam)
+			EndIf	
+	 	Endif
+		cString   := cString + Alltrim(aEstru[nQ][2])+": "+cConteudo+" "
+	Endif
+Next nQ
+If Len(cString) > 1
+	cString := cString + Space( ( ( 72-Len(cString) ) - 1 ) )+"³"
+	ExecBlock("BROC020S",.F.,.F.)
+	ExecBlock("BROC020Z",.F.,.F.)
+Endif
+cString:=""
+//----------- Dados Adicionais do Produto (SB5)
+dbSelectArea("SB5")
+dbSetOrder(1)
+dbSeek(xFilial("SB5")+SB1->B1_COD)
+If Found()
+	aEstru := {}
+	AADD(aEstru,{"B5_CEME"   ,"",0,"",""})
+	cArq:=Alias()
+	ExecBlock("BROC020Y",.F.,.F.)
+	cString:="³"
+	For nQ:=1 to Len(aEstru)
+		cConteudo := aEstru[nQ][1]
+		cConteudo := &cConteudo
+		cString   := cString + Alltrim(aEstru[nQ][2])+": "+Subs(Alltrim(cConteudo),1,50)+" "
+		cString   := cString + Space( ( ( 72-Len(cString) ) - 1 ) )+"³"
+		ExecBlock("BROC020S",.F.,.F.)
+		ExecBlock("BROC020Z",.F.,.F.)
+	Next nQ
+Endif
+cVar:=cFimBloc
+cAlias:=Alias()
+ExecBlock("BROC020Z",.F.,.F.)
+//----------- Amarracao Produto X Fornecedor (SA5)
+dbSelectArea("SA5")
+dbSetOrder(2)
+dbSeek(xFilial()+SB1->B1_COD)
+If Found()
+	cString:=" Amarracao Produto X Fornecedor "
+	cVar:=CHR(218)+cString+Repli(CHR(196),(70-Len(cString)))+CHR(191)
+	cAlias:=Alias()
+	ExecBlock("BROC020Z",.F.,.F.)
+	cString:=""
+	aEstru := {}
+	AADD(aEstru,{"A5_FORNECE"   ,"",0,"",""})
+	AADD(aEstru,{"A5_LOJA"      ,"",0,"",""})
+	AADD(aEstru,{"A5_NOMEFOR"   ,"",0,"",""})
+	AADD(aEstru,{"A5_NOMPROD"   ,"",0,"",""})
+	AADD(aEstru,{"A5_CODPRF"    ,"",0,"",""})
+	cArq:=Alias()
+	ExecBlock("BROC020Y",.F.,.F.)
+	While !Eof() .and. A5_FILIAL+A5_PRODUTO == xFilial()+SB1->B1_COD
+		cString:="³"
+		For nQ:=1 to Len(aEstru)
+			If Len(cString)+Len(Alltrim(aEstru[nQ][2]))+aEstru[nQ][3]+3 < 72
+				cPicture	 := aEstru[nQ][4]
+				cConteudo := aEstru[nQ][1]
+				If aEstru[nQ][5] $ "ND"
+					cConteudo := Transform(&cConteudo,cPicture)
+				ElseIf aEstru[nQ][5]=="C"
+					cConteudo := &cConteudo
+			 	Endif
+				cString   := cString + Alltrim(aEstru[nQ][2])+": "+cConteudo+" "
+			Else
+				nQ:=nQ-1
+				cString := cString + Space( ( ( 72-Len(cString) ) - 1 ) )+"³"
+				ExecBlock("BROC020S",.F.,.F.)
+				ExecBlock("BROC020Z",.F.,.F.)
+				cString:="³"
+			Endif
+		Next nQ
+		If Len(cString) > 1
+			cString := cString + Space( ( ( 72-Len(cString) ) - 1 ) )+"³"
+			ExecBlock("BROC020S",.F.,.F.)
+			ExecBlock("BROC020Z",.F.,.F.)
+		Endif
+		cVar:=cBrancBloc
+		cAlias:=Alias()
+		ExecBlock("BROC020Z",.F.,.F.)
+		Skip
+	End
+	cVar:=cFimBloc
+	cAlias:=Alias()
+	ExecBlock("BROC020Z",.F.,.F.)
+End
+//--------------- Amarracao Grupo X Fornecedor (SAD)
+dbSelectArea("SAD")
+dbSetOrder(2)
+dbSeek(xFilial()+SB1->B1_GRUPO)
+If Found()
+	cString:=" Amarracao Grupo X Fornecedor "
+	cVar:=CHR(218)+cString+Repli(CHR(196),(70-Len(cString)))+CHR(191)
+	cAlias:=Alias()
+	ExecBlock("BROC020Z",.F.,.F.)
+	cString:=""
+	aEstru := {}
+	AADD(aEstru,{"AD_FORNECE"   ,"",0,"",""})
+	AADD(aEstru,{"AD_LOJA"      ,"",0,"",""})
+	AADD(aEstru,{"AD_NOMEFOR"   ,"",0,"",""})
+	AADD(aEstru,{"AD_NOMGRUP"   ,"",0,"",""})
+	cAlias:=Alias()
+	ExecBlock("BROC020Y",.F.,.F.)
+	While !Eof() .and. AD_FILIAL+AD_GRUPO == xFilial()+SB1->B1_GRUPO
+		cString:="³"
+		For nQ:=1 to Len(aEstru)
+			If Len(cString)+Len(Alltrim(aEstru[nQ][2]))+aEstru[nQ][3]+3 < 72
+				cPicture	 := aEstru[nQ][4]
+				cConteudo := aEstru[nQ][1]
+				If aEstru[nQ][5] $ "ND"
+					cConteudo := Transform(&cConteudo,cPicture)
+				ElseIf aEstru[nQ][5]=="C"
+					cConteudo := &cConteudo
+			 	Endif
+				cString   := cString + Alltrim(aEstru[nQ][2])+": "+cConteudo+" "
+			Else
+				nQ:=nQ-1
+				cString := cString + Space( ( ( 72-Len(cString) ) - 1 ) )+"³"
+				ExecBlock("BROC020S",.F.,.F.)
+				ExecBlock("BROC020Z",.F.,.F.)
+				cString:="³"
+			Endif
+		Next nQ
+		If Len(cString) > 1
+			cString := cString + Space( ( ( 72-Len(cString) ) - 1 ) )+"³"
+			ExecBlock("BROC020S",.F.,.F.)
+			ExecBlock("BROC020Z",.F.,.F.)
+		Endif
+		cVar:=cBrancBloc
+		cAlias:=Alias()
+		ExecBlock("BROC020Z",.F.,.F.)
+		Skip
+	End
+	cVar:=cFimBloc
+	cAlias:=Alias()
+	ExecBlock("BROC020Z",.F.,.F.)
+End
+//--------------Dados Amarracao Produto X Cliente (SA7)
+dbSelectArea("SA7")
+dbSetOrder(2)
+dbSeek(xFilial()+SB1->B1_COD)
+If Found()
+	cString:=" Amarracao Produto X Cliente "
+	cVar:=CHR(218)+cString+Repli(CHR(196),(70-Len(cString)))+CHR(191)
+	cAlias:Alias()
+	ExecBlock("BROC020Z",.F.,.F.)
+	cString:=""
+	aEstru := {}
+	AADD(aEstru,{"A7_CLIENTE"   ,"",0,"",""})
+	AADD(aEstru,{"A7_LOJA"      ,"",0,"",""})
+	AADD(aEstru,{"A7_CODCLI"    ,"",0,"",""})
+	AADD(aEstru,{"A7_DESCCLI"   ,"",0,"",""})
+	cArq:=Alias()
+	ExecBlock("BROC020Y",.F.,.F.)
+	While !Eof() .and. A7_FILIAL+A7_PRODUTO == xFilial()+SB1->B1_COD
+		cString:="³"
+		For nQ:=1 to Len(aEstru)
+			If Len(cString)+Len(Alltrim(aEstru[nQ][2]))+aEstru[nQ][3]+3 < 72
+				cPicture	 := aEstru[nQ][4]
+				cConteudo := aEstru[nQ][1]
+				If aEstru[nQ][5] $ "ND"
+					cConteudo := Transform(&cConteudo,cPicture)
+					ElseIf aEstru[nQ][5]=="C"
+						cConteudo := &cConteudo
+				 	Endif
+					cString   := cString + Alltrim(aEstru[nQ][2])+": "+cConteudo+" "
+				Else
+					nQ:=nQ-1
+					cString := cString + Space( ( ( 72-Len(cString) ) - 1 ) )+"³"
+					ExecBlock("BROC020S",.F.,.F.)
+					ExecBlock("BROC020Z",.F.,.F.)
+					cString:="³"
+				Endif
+		Next nQ
+		If Len(cString) > 1
+			cString := cString + Space( ( ( 72-Len(cString) ) - 1 ) )+"³"
+			ExecBlock("BROC020S",.F.,.F.)
+			ExecBlock("BROC020Z",.F.,.F.)
+		Endif
+		cVar:=cBrancBloc
+		cAlias:=Alias()
+		ExecBlock("BROC020Z",.F.,.F.)
+		Skip
+	End
+	cVar:=cFimBloc
+	cAlias:=Alias()
+	ExecBlock("BROC020Z",.F.,.F.)
+Endif
+//--------------------- Dados Movimentos em Aberto                           
+cString:=" Movimentos em Aberto "
+cVar:=CHR(218)+cString+Repli(CHR(196),(70-Len(cString)))+CHR(191)
+cAlias:=Alias()
+ExecBlock("BROC020Z",.F.,.F.)
+dbSelectArea("SC1")
+dbSetOrder(2)
+dbSeek("  "+SB1->B1_COD,.T.)
+If Found()
+	lFirst:=.T.
+	nTotQtd:=0.00
+	nTotEnt:=0.00
+	nTotSal:=0.00
+ 	While !Eof() .And. C1_PRODUTO == SB1->B1_COD
+		IF C1_QUJE >= C1_QUANT .or. C1_EMISSAO < mv_par01 .or. C1_EMISSAO > mv_par02
+			dbSkip()	
+			Loop
+		Endif
+		If lFirst
+			cVar:=cBrancBloc
+			cAlias:=Alias()
+			ExecBlock("BROC020Z",.F.,.F.)
+			cString:="³ Solicitacoes de Compra                                               ³"
+			ExecBlock("BROC020S",.F.,.F.)
+			ExecBlock("BROC020Z",.F.,.F.)
+			cString:="³Solicit.  Dt.Entr. Cotac.   Quant.Inf.  Quant.Entr.        Saldo      ³"
+			ExecBlock("BROC020S",.F.,.F.)
+			ExecBlock("BROC020Z",.F.,.F.)
+			lFirst := .F.
+		Endif
+		If (C1_DATPRF - CalcPrazo(SB1->B1_COD,SB1->B1_LE)) < dDataBase
+			dDataFim := dDataBase + CalcPrazo(SB1->B1_COD,SB1->B1_LE)
+		Else
+			dDataFim := C1_DATPRF
+		Endif
+		cString := "³"+C1_NUM+" "+C1_ITEM+" "+dtoc(dDataFim)+C1_COTACAO+"  "+;
+						Transform(C1_QUANT,"@E 999999999.99")+" "+;
+						Transform(C1_QUJE,"@E 999999999.99")+" "+;
+						Transform(C1_QUANT-C1_QUJE,"@E 999999999.99")
+		cString := cString + Space( ( ( 72-Len(cString) ) - 1 ) )+"³"
+		ExecBlock("BROC020S",.F.,.F.)
+		ExecBlock("BROC020Z",.F.,.F.)
+		nTotQtd:= nTotQtd + C1_QUANT
+		nTotEnt:= nTotEnt + C1_QUJE
+		nTotSal:= nTotSal + ( C1_QUANT - C1_QUJE )
+		dData:=dDataFim
+		nQtd:=( C1_QUANT - C1_QUJE )
+		cTipo:="E"
+		ExecBlock("BROC020T",.F.,.F.)
+		Skip
+	End
+	If !lFirst
+		cVar:=cBrancBloc
+		cAlias:=Alias()
+		ExecBlock("BROC020Z",.F.,.F.)
+		cString:="³Qtd.Tot.: "+Transform(nTotQtd,"@E 999999999.99")+;
+			   " Qtd.Entr.: "+Transform(nTotEnt,"@E 999999999.99")+;
+			   " Sld.: "+Transform(nTotSal,"@E 99999999.99")
+		cString := cString + Space( ( ( 72-Len(cString) ) - 1 ) )+"³"
+		ExecBlock("BROC020S",.F.,.F.)
+		ExecBlock("BROC020Z",.F.,.F.)
+	Endif
+Endif	
+// --------------------- Pedido de Compra (SC7)
+dbSelectArea("SC7")
+dbSetOrder(2)
+dbSeek("  "+SB1->B1_COD,.T.)
+If Found()
+	lFirst:=.T.
+	nTotQtd:=0.00
+	nTotEnt:=0.00
+	nTotSal:=0.00
+	While !Eof() .And. C7_PRODUTO == SB1->B1_COD
+		IF C7_QUJE >= C7_QUANT .or. C7_EMISSAO < mv_par01 .or. C7_EMISSAO > mv_par02 .or. ;
+			!Empty(C7_RESIDUO)
+			dbSkip()	
+			Loop
+		Endif
+		If lFirst
+			cVar:=cBrancBloc
+			cAlias:=Alias()
+			ExecBlock("BROC020Z",.F.,.F.)
+			cString:="³ Pedidos de Compra                                                    ³"
+			ExecBlock("BROC020S",.F.,.F.)
+			ExecBlock("BROC020Z",.F.,.F.)
+			cString:="³Pedido Dt.Entr. Forneced.   Quant.Inf.          Saldo  Saldo em Valor ³"
+			ExecBlock("BROC020S",.F.,.F.)
+			ExecBlock("BROC020Z",.F.,.F.)
+			lFirst:=.F.
+		Endif
+		If C7_DATPRF < dDataBase
+			dDataFim := dDataBase
+		Else	
+			dDataFim := C7_DATPRF
+		Endif
+		cString := "³"+C7_NUM+" "+dtoc(dDataFim)+" "+C7_FORNECE+"/"+C7_LOJA+" "+;
+						Transform(C7_QUANT,"@E 999999999.99")+" "+;
+						Transform((C7_QUANT-C7_QUJE),"@E 999,999,999.99")+"  "+;
+						Transform((C7_QUANT-C7_QUJE)*C7_PRECO,"@E 999,999,999.99")
+		cString := cString + Space( ( ( 72-Len(cString) ) - 1 ) )+"³"
+		ExecBlock("BROC020S",.F.,.F.)
+		ExecBlock("BROC020Z",.F.,.F.)
+		nTotQtd:= nTotQtd + C7_QUANT
+		nTotEnt:= nTotEnt + C7_QUJE
+		nTotSal:= nTotSal + ( C7_QUANT - C7_QUJE ) * C7_PRECO
+		dData:=dDataFim
+		nQtd:=( C7_QUANT - C7_QUJE )
+		cTipo:="E"
+		ExecBlock("BROC020T",.F.,.F.)
+		Skip
+	End
+	If !lFirst
+		cVar:=cBrancBloc
+		cAlias:=Alias()
+		ExecBlock("BROC020Z",.F.,.F.)
+		cString:="³Qtd.Tot.: "+Transform(nTotQtd,"@E 999999999.99")+" Qtd.Entr.: "+Transform(nTotEnt,"@E 999999999.99")+;
+				   " Sld.Vl.: "+Transform(nTotSal,"@E 99999999.99")
+		cString := cString + Space( ( ( 72-Len(cString) ) - 1 ) )+"³"
+		ExecBlock("BROC020S",.F.,.F.)
+		ExecBlock("BROC020Z",.F.,.F.)
+	Endif
+Endif
+// ---------------------- Empenhos em Aberto (SD4)
+dbSelectArea("SD4")
+dbSetOrder(1)						
+dbSeek(xFilial()+SB1->B1_COD)
+If Found()
+	lFirst:=.T.
+	nTotQtd:=0.00
+	While !Eof() .and. D4_FILIAL+D4_COD == xFilial()+SB1->B1_COD
+		IF D4_QUANT  <= 0
+			dbSkip()	
+			Loop
+		Endif
+		If lFirst
+			cVar:=cBrancBloc
+			cAlias:=Alias()
+			ExecBlock("BROC020Z",.F.,.F.)
+			cString:="³ Empenhos                                                             ³"
+			ExecBlock("BROC020S",.F.,.F.)
+			ExecBlock("BROC020Z",.F.,.F.)
+			cString:="³Almox. Ordem Prod. Dt. Emp. Quantidade                                ³"
+			ExecBlock("BROC020S",.F.,.F.)
+			ExecBlock("BROC020Z",.F.,.F.)
+			lFirst:=.F.
+		Endif
+		cString := "³ "+D4_LOCAL+"    "+D4_OP+" "+DtoC(D4_DATA)+Transform(D4_QUANT,"@E 999999999.99")
+		cString := cString + Space( ( ( 72-Len(cString) ) - 1 ) )+"³"
+		ExecBlock("BROC020S",.F.,.F.)
+		ExecBlock("BROC020Z",.F.,.F.)
+		nTotQtd := nTotQtd + D4_QUANT
+		If D4_DATA < dDataBasE
+			dDataFim := dDataBase
+		Else	
+			dDataFim := D4_DATA
+		Endif
+		dData:=dDataFim
+		nQtd:=D4_QUANT
+		cTipo:="S"
+		ExecBlock("BROC020T",.F.,.F.)
+		Skip
+	End
+	If !lFirst
+		cVar:=cBrancBloc
+		cAlias:=Alias()
+		ExecBlock("BROC020Z",.F.,.F.)
+		cString :="³ Quantidade Total empenhada : "+Transform(nTotQtd,"@E 999999999.99")
+		cString := cString + Space( ( ( 72-Len(cString) ) - 1 ) )+"³"
+		ExecBlock("BROC020S",.F.,.F.)
+		ExecBlock("BROC020Z",.F.,.F.)
+	Endif
+Endif	
+// ------------------------ Pedido de Venda (SC6)
+dbSelectArea("SC6")
+dbSetOrder(2)
+dbSeek("  "+SB1->B1_COD,.T.)
+If Found()
+	lFirst:=.T.
+	nTotQtd:=0.00
+	nTotEnt:=0.00
+	While !Eof() .And. C6_PRODUTO == SB1->B1_COD
+		dbSelectArea("SF4")
+		dbSeek(xFilial()+SC6->C6_TES)
+		dbSelectArea("SC6")
+		IF C6_QTDENT >= C6_QTDVEN .or. SF4->F4_ESTOQUE #"S" 
+			dbSkip()	
+			Loop
+		Endif
+		If lFirst
+			cVar:=cBrancBloc
+			cAlias:=Alias()
+			ExecBlock("BROC020Z",.F.,.F.)
+			cString:="³ Pedidos de Venda                                                     ³"
+			ExecBlock("BROC020S",.F.,.F.)
+			ExecBlock("BROC020Z",.F.,.F.)
+			cString:="³Pedido/It Cliente    Quant.Inf.      Vlr.Total Reserva       Saldo    ³"
+			ExecBlock("BROC020S",.F.,.F.)
+			ExecBlock("BROC020Z",.F.,.F.)
+			lFirst:=.F.
+		Endif
+		cString := "³"+C6_NUM+" "+C6_ITEM+" "+C6_CLI+"/"+C6_LOJA+;
+						Transform(C6_QTDVEN,"@E 999999999.99")+" "+;
+						Transform((C6_QTDVEN-C6_QTDENT)*C6_PRCVEN,"@E 999,999,999.99")+" "+;
+						C6_RESERVA+" "+Transform(C6_QTDVEN-C6_QTDENT,"@E 999999999.99")
+		cString := cString + Space( ( ( 72-Len(cString) ) - 1 ) )+"³"
+		ExecBlock("BROC020S",.F.,.F.)
+		ExecBlock("BROC020Z",.F.,.F.)
+		nTotQtd := nTotQtd + C6_QTDVEN
+		nTotEnt := nTotEnt + (C6_QTDVEN - C6_QTDENT)
+		If C6_ENTREG < dDataBasE
+			dDataFim := dDataBase
+		Else	
+			dDataFim := C6_ENTREG
+		Endif
+		dData:=dDataFim
+		nQtd:=( C6_QTDVEN - C6_QTDENT )
+		cTipo:="S"
+		ExecBlock("BROC020T",.F.,.F.)
+		Skip
+	End
+	If !lFirst
+		cVar:=cBrancBloc
+		cAlias:=Alias()
+		ExecBlock("BROC020Z",.F.,.F.)
+		cString:="³Qtd.Total: "+Transform(nTotQtd,"@E 999999999.99")+;
+			   " Saldo Total  : "+Transform(nTotEnt,"@E 999999999.99")
+		cString := cString + Space( ( ( 72-Len(cString) ) - 1 ) )+"³"
+		ExecBlock("BROC020S",.F.,.F.)
+		ExecBlock("BROC020Z",.F.,.F.)
+	endif
+Endif
+// ------------------------- Ordens de Producao (SC2)
+dbSelectArea("SC2")
+dbSetOrder(2)
+dbSeek("  "+SB1->B1_COD,.T.)
+If Found()
+	lFirst:=.T.
+	nTotQtd:=0.00
+	nTotEnt:=0.00
+	nTotPer:=0.00
+	While !Eof() .And. C2_PRODUTO == SB1->B1_COD
+		IF !Empty(C2_DATRF) //.and. (C2_QUJE + C2_PERDA) <= C2_QUANT
+			dbSkip()	
+			Loop
+		Endif
+		If lFirst
+			cVar:=cBrancBloc
+			cAlias:=Alias()
+			ExecBlock("BROC020Z",.F.,.F.)
+			cString:="³ Ordens de Producao                                                   ³"
+			ExecBlock("BROC020S",.F.,.F.)
+			ExecBlock("BROC020Z",.F.,.F.)
+			cString:="³O.Prod/It/Seq Loc  Quant.Inf.  Quant.Entr.     Perda    P.Ini  P.Final³"
+			ExecBlock("BROC020S",.F.,.F.)
+			ExecBlock("BROC020Z",.F.,.F.)
+			lFirst:=.F.
+		Endif
+		cString := "³"+C2_NUM+" "+C2_ITEM+" "+C2_SEQUEN+" "+C2_LOCAL+" "+;
+						Transform(C2_QUANT,"@E 999999999.99")+" "+;
+						Transform(C2_QUJE ,"@E 999999999.99")+;
+						Transform(C2_PERDA,"@E 9999999.99")+" "+;
+						dToc(C2_DATPRI)+" "+dToc(C2_DATPRF)
+		cString := cString + Space( ( ( 72-Len(cString) ) - 1 ) )+"³"
+		ExecBlock("BROC020S",.F.,.F.)
+		ExecBlock("BROC020Z",.F.,.F.)
+		nTotQtd:= nTotQtd + C2_QUANT
+		nTotEnt:= nTotEnt + C2_QUJE
+		nTotPer:= nTotPer + C2_PERDA
+		If C2_DATPRF < dDataBasE
+			dDataFim := dDataBase + CalcPrazo(SB1->B1_COD,SB1->B1_LE)
+		Else	
+			dDataFim := C2_DATPRF
+		Endif
+		dData:=dDataFim
+		nQtd:=( C2_QUANT - C2_QUJE - C2_PERDA )
+		cTipo:="E"
+		ExecBlock("BROC020T",.F.,.F.)
+		Skip
+	End
+	If !lFirst
+		cVar:=cBrancBloc
+		cAlias:=Alias()
+		ExecBlock("BROC020Z",.F.,.F.)
+		cString:="³Qtd.Total: "+Transform(nTotQtd,"@E 999999999.99")+;
+			   " Qtd.Entreg.: "+Transform(nTotEnt,"@E 999999999.99")+;
+			   " Perda:"+Transform(nTotPer,"@E 99999999.99")
+		cString := cString + Space( ( ( 72-Len(cString) ) - 1 ) )+"³"
+		ExecBlock("BROC020S",.F.,.F.)
+		ExecBlock("BROC020Z",.F.,.F.)
+	Endif
+Endif
+cVar:=cFimBloc
+cAlias:=Alias()
+ExecBlock("BROC020Z",.F.,.F.)
+//--------- Define Dados Historicos de Movimentacoes                    
+cString:=" Historicos de Movimentacoes "
+cVar:=CHR(218)+cString+Repli(CHR(196),(70-Len(cString)))+CHR(191)
+cAlias:=Alias()
+ExecBlock("BROC020Z",.F.,.F.)
+// --------- Movimentos de Entrada (SD1)
+dbSelectArea("SD1")
+dbSetOrder(7)
+dbSeek(xFilial()+SB1->B1_COD)
+If Found()
+	lFirst:=.T.
+	nTotEnt:=0.00
+	nTotQtd:=0.00
+	nTotCom:=0
+	While !Eof() .and. D1_FILIAL+D1_COD == xFilial()+SB1->B1_COD
+		dbSelectArea("SF4")
+		dbSeek(xFilial()+SD1->D1_TES)
+		dbSelectArea("SD1")
+		If Empty(D1_TES) .or. D1_DTDIGIT < mv_par01 .or. D1_DTDIGIT > mv_par02
+			dbSkip()	
+			Loop
+		Endif
+		If lFirst
+			cVar:=cBrancBloc
+			cAlias:=Alias()
+			ExecBlock("BROC020Z",.F.,.F.)
+			cString:="³ Lancamentos de Entrada                                               ³"
+			ExecBlock("BROC020S",.F.,.F.)
+			ExecBlock("BROC020Z",.F.,.F.)
+			If mv_par03==1
+				cString:="³TP  N.Fiscal  Emissao  Entrada Forneced. Quantidade    Vlr. Total Est.³"
+				ExecBlock("BROC020S",.F.,.F.)
+				ExecBlock("BROC020Z",.F.,.F.)
+			Endif
+			lFirst:=.F.
+		Endif
+		If mv_par03==1
+			cString := "³"+D1_TIPO+" "+D1_DOC+"/"+D1_SERIE+" "+DtoC(D1_EMISSAO)+" "+;
+					   DtoC(D1_DTDIGIT)+" "+D1_FORNECE+"-"+D1_LOJA+" "+;	
+						Transform(D1_QUANT,"@E 9999999.99")+" "+;
+						Transform(D1_TOTAL,"@E 99,999,999.99")+"  "+SF4->F4_ESTOQUE
+			cString := cString + Space( ( ( 72-Len(cString) ) - 1 ) )+"³"
+			ExecBlock("BROC020S",.F.,.F.)
+			ExecBlock("BROC020Z",.F.,.F.)
+		Endif
+		nTotQtd:=nTotQtd + D1_QUANT
+		nTotEnt:=nTotEnt + D1_TOTAL
+		nTotCom:=nTotCom + 1
+		Skip
+	End
+	If nTotQtd > 0
+		cVar:=cBrancBloc
+		cAlias:=Alias()
+		ExecBlock("BROC020Z",.F.,.F.)
+		cString:="³Qtd.Total: "+Transform(nTotQtd,"@E 999999999.99")+;
+				   " Vlr.Total: "+Transform(nTotEnt,"@E 999,999,999.99")+;
+				   " Num.Movim. "+Transform(nTotCom,"9999")
+		cString := cString + Space( ( ( 72-Len(cString) ) - 1 ) )+"³"
+		ExecBlock("BROC020S",.F.,.F.)
+		ExecBlock("BROC020Z",.F.,.F.)
+	Endif
+Endif
+// ------------------- Movimentos de Saida (SD2)
+dbSelectArea("SD2")
+dbSetOrder(6)
+dbSeek(xFilial()+SB1->B1_COD)
+If Found()
+	lFirst:=.T.
+	nTotQtd:=0.00
+	nTotEnt:=0.00
+	nTotSai:=0
+	While !Eof() .and. D2_FILIAL+D2_COD == xFilial()+SB1->B1_COD
+		dbSelectArea("SF4")
+		dbSeek(xFilial()+SD2->D2_TES)
+		dbSelectArea("SD2")
+		If Empty(D2_TES) .or. D2_EMISSAO < mv_par01 .or. D2_EMISSAO > mv_par02
+			dbSkip()	
+			Loop
+		Endif
+		If lFirst
+			cVar:=cBrancBloc
+			cAlias:=Alias()
+			ExecBlock("BROC020Z",.F.,.F.)
+			cString:="³ Lancamentos de Saida                                                 ³"
+			ExecBlock("BROC020S",.F.,.F.)
+			ExecBlock("BROC020Z",.F.,.F.)
+			If mv_par03==1
+				cString:="³TP  N.Fiscal Pedido  Emissao Cliente    Quantidade    Vlr. Total Est. ³"
+				ExecBlock("BROC020S",.F.,.F.)
+				ExecBlock("BROC020Z",.F.,.F.)
+			Endif
+			lFirst:=.F.
+		Endif
+		If mv_par03==1
+			cString := "³"+D2_TIPO+" "+D2_DOC+"/"+D2_SERIE+" "+D2_PEDIDO+" "+;
+					   DtoC(D2_EMISSAO)+" "+D2_CLIENTE+"-"+D2_LOJA+" "+;	
+						Transform(D2_QUANT,"@E 99999999.99")+" "+;
+						Transform(D2_TOTAL,"@E 99,999,999.99")+"  "+SF4->F4_ESTOQUE
+			cString := cString + Space( ( ( 72-Len(cString) ) - 1 ) )+"³"
+			ExecBlock("BROC020S",.F.,.F.)
+			ExecBlock("BROC020Z",.F.,.F.)
+		Endif
+		nTotQtd:=nTotQtd + D2_QUANT
+		nTotEnt:=nTotEnt + D2_TOTAL
+		nTotSai:=nTotSai + 1
+		Skip
+	End
+	If nTotQtd > 0
+		cVar:=cBrancBloc
+		cAlias:=Alias()
+		ExecBlock("BROC020Z",.F.,.F.)
+		cString:="³Qtd.Total: "+Transform(nTotQtd,"@E 999999999.99")+;
+				   " Vlr.Total: "+Transform(nTotEnt,"@E 999,999,999.99")+;
+					" Num.Movim. "+Transform(nTotSai,"9999")
+		cString := cString + Space( ( ( 72-Len(cString) ) - 1 ) )+"³"
+		ExecBlock("BROC020S",.F.,.F.)
+		ExecBlock("BROC020Z",.F.,.F.)
+	Endif
+Endif
+// --------------------- Movimentos Internos (SD3)
+dbSelectArea("SD3")
+dbSetOrder(7)						
+dbSeek(xFilial()+SB1->B1_COD)
+If Found()
+	lFirst:=.T.
+	nTotQtd:=0.00
+	nTotEnt:=0.00
+	nTotInt:=0
+	While !Eof() .and. D3_FILIAL+D3_COD == xFilial()+SB1->B1_COD
+		If D3_EMISSAO < mv_par01 .or. D3_EMISSAO > mv_par02
+			dbSkip()	
+			Loop
+		Endif
+		If lFirst
+			cVar:=cBrancBloc
+			cAlias:=Alias()
+			ExecBlock("BROC020Z",.F.,.F.)
+			cString:="³ Lancamentos Internos                                                 ³"
+			ExecBlock("BROC020S",.F.,.F.)
+			ExecBlock("BROC020Z",.F.,.F.)
+			If mv_par03==1
+				cString:="³TP N.Fiscal  Emissao    Quantidade  RE/DE Local OP/Documento          ³"
+				ExecBlock("BROC020S",.F.,.F.)
+				ExecBlock("BROC020Z",.F.,.F.)
+			Endif
+			lFirst:=.F.
+		Endif
+		If mv_par03==1
+			cString := "³"+D3_TIPO+" "+D3_DOC+"   "+ DtoC(D3_EMISSAO)+"  "+;
+						Transform(D3_QUANT,"@E 999999999.99")+"    "+D3_CF+" "+D3_LOCAL+"    "+D3_OP
+			cString := cString + Space( ( ( 72-Len(cString) ) - 1 ) )+"³"
+			ExecBlock("BROC020S",.F.,.F.)
+			ExecBlock("BROC020Z",.F.,.F.)
+		Endif
+		nTotQtd:=nTotQtd + D3_QUANT
+		nTotInt:=nTotInt + 1
+		Skip
+	End
+	If nTotQtd > 0
+		cVar:=cBrancBloc
+		cAlias:=Alias()
+		ExecBlock("BROC020Z",.F.,.F.)
+		cString:="³Qtd.Total: "+Transform(nTotQtd,"@E 999999999.99")+;
+					" Num.Lanctos "+Transform(nTotInt,"9999")
+		cString := cString + Space( ( ( 72-Len(cString) ) - 1 ) )+"³"
+		ExecBlock("BROC020S",.F.,.F.)
+		ExecBlock("BROC020Z",.F.,.F.)
+	Endif
+Endif
+// -------------- Movimentos controle Poder Terceiros (SB6)
+dbSelectArea("SB6")
+dbSetOrder(1)
+dbSeek(xFilial()+SB1->B1_COD)
+If Found()
+	lFirst:=.T.
+	nTotQtd:=0.00
+	nTotEnt:=0.00
+	nTotInt:=0
+	nQtdGer:=0.00  
+	nEntGer:=0.00
+	nIntGer:=0.00
+	cIdentB6 := B6_IDENT
+	While !Eof() .and. B6_FILIAL+B6_PRODUTO == xFilial()+SB1->B1_COD
+		If B6_EMISSAO < mv_par01 .or. B6_EMISSAO > mv_par02
+			dbSkip()	
+			Loop
+		Endif
+		If lFirst
+			cVar:=cBrancBloc
+			cAlias:=Alias()
+			ExecBlock("BROC020Z",.F.,.F.)
+			cString:="³ Lancamentos Controle Poder Terceiros                                 ³"
+			ExecBlock("BROC020S",.F.,.F.)
+			ExecBlock("BROC020Z",.F.,.F.)
+			If mv_par03==1
+				cString:="³TP  N.Fiscal  Emissao Clie/Forn Lc  Quantidade  Vl. Unit.  Ult.Entr   ³"
+				ExecBlock("BROC020S",.F.,.F.)
+				ExecBlock("BROC020Z",.F.,.F.)
+			Endif
+			lFirst:=.F.
+		Endif
+		nRegSB6 := Recno()						
+		If mv_par03 == 1
+			If SB6->B6_IDENT <> cIdentB6				
+				If nTotQtd > 0
+					cString:="³    Qtd : "+Transform(nTotQtd,"@E 999999999.99")+;
+								" Qtd.Entr.: "+Transform(nTotEnt,"@E 999999999.99")+;
+								" Num.Lanctos "+Transform(nTotInt,"9999")
+					cString := cString + Space( ( ( 72-Len(cString) ) - 1 ) )+"³"
+					ExecBlock("BROC020S",.F.,.F.)
+					ExecBlock("BROC020Z",.F.,.F.)
+					cVar:=cBrancBloc
+					cAlias:=Alias()			
+					ExecBlock("BROC020Z",.F.,.F.)
+				Endif
+				cIdentB6 := SB6->B6_IDENT
+				nTotQtd:=0.00
+				nTotEnt:=0.00
+				nTotInt:=0
+			Endif				
+			cString := "³"+SB6->B6_TIPO+" "+SB6->B6_DOC+"/"+SB6->B6_SERIE+" "+DtoC(SB6->B6_EMISSAO)+" "+;
+							SB6->B6_CLIFOR+"-"+SB6->B6_LOJA+" "+SB6->B6_LOCAL+" "+Transform(SB6->B6_QUANT,"@E 99999999.99")+;
+							" "+Transform(SB6->B6_PRUNIT,"@E 9999999.99")+"  "+DtoC(SB6->B6_UENT)
+		Endif
+		dbSelectArea("SF4")
+		dbSeek(xFilial()+SB6->B6_TES)						
+		If SF4->F4_PODER3 == "R"				
+			nQuant   := SB6->B6_QUANT
+			aSaldoTer:= CalcTerc(SB6->B6_PRODUTO, SB6->B6_CLIFOR, SB6->B6_LOJA,SB6->B6_IDENT,SB6->B6_TES)
+			nSaldo   := nQuant - aSaldoTer[1]
+		Else	
+			nQuant  := 0
+			nSaldo  := 0
+		Endif	
+		If mv_par03==1				
+			cString := cString + Space( ( ( 72-Len(cString) ) - 1 ) )+"³"
+			ExecBlock("BROC020S",.F.,.F.)
+			ExecBlock("BROC020Z",.F.,.F.)
+		Endif	
+		nTotQtd:=nTotQtd + nQuant
+		nTotEnt:=nTotEnt + nSaldo
+		nTotInt:=nTotInt + 1
+		nQtdGer:=nQtdGer + nQuant
+		nEntGer:=nEntGer + nSaldo
+		nIntGer:=nIntGer + 1
+		dbSelectArea("SB6")
+		dbGoto(nRegSB6)
+		dbSkip()
+	End
+	If mv_par03 == 1	
+		If nTotQtd > 0
+			cString:="³    Qtd : "+Transform(nTotQtd,"@E 999999999.99")+;
+						" Qtd.Entr.: "+Transform(nTotEnt,"@E 999999999.99")+;
+						" Num.Lanctos "+Transform(nTotInt,"9999")
+			cString := cString + Space( ( ( 72-Len(cString) ) - 1 ) )+"³"
+			ExecBlock("BROC020S",.F.,.F.)
+			ExecBlock("BROC020Z",.F.,.F.)
+			cVar:=cBrancBloc
+			cAlias:=Alias()
+			ExecBlock("BROC020Z",.F.,.F.)
+		Endif
+	Endif
+	If nQtdGer > 0
+		cVar:=cBrancBloc
+		cAlias:=Alias()
+		ExecBlock("BROC020Z",.F.,.F.)
+		cString:="³Qtd.Total: "+Transform(nQtdGer,"@E 999999999.99")+;
+					" Qtd.Entr.: "+Transform(nEntGer,"@E 999999999.99")+;
+					" Num.Lanctos "+Transform(nIntGer,"9999")
+		cString := cString + Space( ( ( 72-Len(cString) ) - 1 ) )+"³"
+		ExecBlock("BROC020S",.F.,.F.)
+		ExecBlock("BROC020Z",.F.,.F.)
+	Endif
+Endif
+cVar:=cFimBloc
+cAlias:=Alias()
+ExecBlock("BROC020Z",.F.,.F.)
+cPictQtd := PesqPict("SB3","B3_Q01")
+// -----------------------Saldos e Consumos
+cString:=" Saldos e Consumos " 
+cVar:=CHR(218)+cString+Repli(CHR(196),(70-Len(cString)))+CHR(191)
+cAlias:=Alias()
+ExecBlock("BROC020Z",.F.,.F.)
+// ------------------ Consumo Ultimos Meses (SB3)
+dbSelectArea("SB3")
+dbSetOrder(1)
+dbSeek(xFilial()+SB1->B1_COD)
+If Found()
+	aEstru := {}
+	AADD(aEstru,{"B3_CLASSE"    ,"",0,"",""})
+	AADD(aEstru,{"B3_MEDIA"     ,"",0,"",""})
+	AADD(aEstru,{"B3_TOTAL"     ,"",0,"",""})
+	cArq:=Alias()
+	ExecBlock("BROC020Y",.F.,.F.)
+	cVar:=cBrancBloc
+	cAlias:=Alias()
+	ExecBlock("BROC020Z",.F.,.F.)
+	cString:="³ Consumo dos Ultimos 12 Meses                                         ³"
+	ExecBlock("BROC020S",.F.,.F.)
+	ExecBlock("BROC020Z",.F.,.F.)
+	cString:="³"
+	For nQ:=1 to Len(aEstru)
+		If Len(cString)+Len(Alltrim(aEstru[nQ][2]))+aEstru[nQ][3]+3 < 72
+			cPicture	 := aEstru[nQ][4]
+			cConteudo := aEstru[nQ][1]
+			If aEstru[nQ][5] $ "ND"
+				cConteudo := Transform(&cConteudo,cPicture)
+				ElseIf aEstru[nQ][5]=="C"
+					cConteudo := &cConteudo
+			 	Endif
+				cString   := cString + Alltrim(aEstru[nQ][2])+": "+cConteudo+" "
+			Else
+				nQ:=nQ-1
+				cString := cString + Space( ( ( 72-Len(cString) ) - 1 ) )+"³"
+				ExecBlock("BROC020S",.F.,.F.)
+				ExecBlock("BROC020Z",.F.,.F.)
+				cString:="³"
+			Endif
+	Next nQ
+	If Len(cString) > 1
+		cString := cString + Space( ( ( 72-Len(cString) ) - 1 ) )+"³"
+		ExecBlock("BROC020S",.F.,.F.)
+		ExecBlock("BROC020Z",.F.,.F.)
+	Endif
+	cVar:=cBrancBloc
+	cAlias:=Alias()	
+	ExecBlock("BROC020Z",.F.,.F.)
+	cString:="³"+Space(8)
+	cDados :="³"+Space(3)
+	nAno   := Year(dDataBase)
+	For k:=1 to 12
+		nMes := ( ( Month(dDataBase) + 1 ) - k )
+		If nMes <= 0
+			nAno := Year(dDataBase)-1
+			nMes := nMes + 12
+		Endif
+		cCampo := "B3_Q"+StrZero(nMes,2)	
+		cMes   := Subs(MesExtenso(nMes),1,3)
+		cAno   := Subs(StrZero(nAno,4),3,2)
+		cString := cString + cMes+"/"+cAno+Space(10)
+		cDados  := cDados + Transform(&cCampo,cPictQtd)
+		cDados  := cDados + Space(16-Len(Transform(&cCampo,cPictQtd)))
+		If StrZero(k,2) $ "04/08/12"
+			cString := Alltrim(cString)
+			cString := cString + Space( ( ( 72-Len(cString) ) - 1 ) )+"³"
+			ExecBlock("BROC020S",.F.,.F.)
+			ExecBlock("BROC020Z",.F.,.F.)
+			cDados  := cDados + Space( ( ( 72-Len(cDados ) ) - 1 ) )+"³"
+			cVar:=cDados
+			cAlias:=Alias()
+			ExecBlock("BROC020Z",.F.,.F.)
+			cString:="³"+Space(8)
+			cDados :="³"+Space(3)
+		Endif
+	Next k
+Endif
+// ------------------ Saldos Iniciais (SB9)
+dbSelectArea("SB9")
+dbSetOrder(1)
+dbSeek(xFilial()+SB1->B1_COD)
+If Found()
+	aEstru := {}
+	AADD(aEstru,{"B9_LOCAL"     ,"",0,"",""})
+	AADD(aEstru,{"B9_QINI"       ,"",0,"",""})
+	AADD(aEstru,{"B9_VINI1"      ,"",0,"",""})
+	cArq:=Alias()
+	ExecBlock("BROC020Y",.F.,.F.)
+	lFirst:=.T.
+	While !Eof() .and. B9_FILIAL+B9_COD == xFilial()+SB1->B1_COD
+		cLocal := B9_LOCAL
+		While !Eof() .and. B9_FILIAL+B9_COD+B9_LOCAL == xFilial()+SB1->B1_COD+cLocal
+			dbSkip()
+		End
+		dbSkip(-1)
+		cVar:=cBrancBloc
+		cAlias:=Alias()
+		ExecBlock("BROC020Z",.F.,.F.)
+		cString:="³ Saldo Ultimo Fechamento (por Almx.)                                  ³"
+		ExecBlock("BROC020S",.F.,.F.)
+		ExecBlock("BROC020Z",.F.,.F.)
+		cString:="³"
+		For nQ:=1 to Len(aEstru)
+			If Len(cString)+Len(Alltrim(aEstru[nQ][2]))+aEstru[nQ][3]+3 < 72
+				cPicture	 := aEstru[nQ][4]
+				cConteudo := aEstru[nQ][1]
+				If aEstru[nQ][5] $ "ND"
+					cConteudo := Transform(&cConteudo,cPicture)
+				ElseIf aEstru[nQ][5]=="C"
+					cConteudo := &cConteudo
+			 	Endif
+				cString   := cString + Alltrim(aEstru[nQ][2])+": "+cConteudo+" "
+			Else
+				nQ:=nQ-1
+				cString := cString + Space( ( ( 72-Len(cString) ) - 1 ) )+"³"
+				ExecBlock("BROC020S",.F.,.F.)
+				ExecBlock("BROC020Z",.F.,.F.)
+				cString:="³"
+			Endif
+		Next nQ
+		If Len(cString) > 1
+			cString := cString + Space( ( ( 72-Len(cString) ) - 1 ) )+"³"
+			ExecBlock("BROC020S",.F.,.F.)
+			ExecBlock("BROC020Z",.F.,.F.)
+		Endif
+		cVer:=cBrancBloc
+		cAlias:=Alias()
+		ExecBlock("BROC020Z",.F.,.F.)
+		Skip
+	End
+Endif
+// ------------------- Saldos Fisicos e Financeiros
+dbSelectArea("SB2")
+dbSetOrder(1)
+dbSeek(xFilial()+SB1->B1_COD)
+If Found()
+	aEstru := {}
+	AADD(aEstru,{"B2_LOCAL"     ,"",0,"",""})
+	AADD(aEstru,{"B2_CM1"       ,"",0,"",""})
+	AADD(aEstru,{"B2_QATU"      ,"",0,"",""})
+	AADD(aEstru,{"B2_VATU1"     ,"",0,"",""})
+	AADD(aEstru,{"B2_VATU2"     ,"",0,"",""})
+	AADD(aEstru,{"B2_VATU3"     ,"",0,"",""})
+	AADD(aEstru,{"B2_VATU4"     ,"",0,"",""})
+	AADD(aEstru,{"B2_VATU5"     ,"",0,"",""})
+	AADD(aEstru,{"B2_SALPEDI"   ,"",0,"",""})
+	AADD(aEstru,{"B2_RESERVA"   ,"",0,"",""})
+	AADD(aEstru,{"B2_QPEDVEN"   ,"",0,"",""})
+	AADD(aEstru,{"B2_QEMP"      ,"",0,"",""})
+	AADD(aEstru,{"B2_QTNP"      ,"",0,"",""})
+	AADD(aEstru,{"B2_QNPT"      ,"",0,"",""})
+	cArq:=Alias()
+	ExecBlock("BROC020Y",.F.,.F.)
+	lFirst:=.T.
+	aTotGeral := {0,0,0,0,0,0}
+	While !Eof() .and. B2_FILIAL+B2_COD == xFilial()+SB1->B1_COD
+		aSaldo := CalcEst(SB1->B1_COD,SB2->B2_LOCAL,ctod("31/12/99"))
+			RecLock("SB2",.F.)
+			Replace B2_QATU  With aSaldo[1], B2_VATU1 With aSaldo[2],;
+					  B2_VATU2 With aSaldo[3], B2_VATU3 With aSaldo[4],;
+					  B2_VATU4 With aSaldo[5], B2_VATU5 With aSaldo[6]
+		cVar:=cBrancBloc
+		cAlias:=Alias()
+		ExecBlock("BROC020Z",.F.,.F.)
+		cString:="³ Saldos por Almoxarifado                                              ³"
+		ExecBlock("BROC020S",.F.,.F.)
+		ExecBlock("BROC020Z",.F.,.F.)
+		cString:="³"
+		For nQ:=1 to Len(aEstru)
+			If Len(cString)+Len(Alltrim(aEstru[nQ][2]))+aEstru[nQ][3]+3 < 72
+				cPicture	 := aEstru[nQ][4]
+				cConteudo := aEstru[nQ][1]
+				If aEstru[nQ][5] $ "ND"
+					cConteudo := Transform(&cConteudo,AllTrim(cPicture))
+				ElseIf aEstru[nQ][5]=="C"
+					cConteudo := &cConteudo
+			 	Endif
+				cString   := cString + Alltrim(aEstru[nQ][2])+": "+cConteudo+" "
+			Else
+				nQ:=nQ-1
+				cString := cString + Space( ( ( 72-Len(cString) ) - 1 ) )+"³"
+				ExecBlock("BROC020S",.F.,.F.)
+				ExecBlock("BROC020Z",.F.,.F.)
+				cString:="³"
+			Endif
+		Next nQ
+		If Len(cString) > 1
+			cString := cString + Space( ( ( 72-Len(cString) ) - 1 ) )+"³"
+			ExecBlock("BROC020S",.F.,.F.)
+			ExecBlock("BROC020Z",.F.,.F.)
+		Endif
+		cVar:=cBrancBloc
+		cAlias:=Alias()
+		ExecBlock("BROC020Z",.F.,.F.)
+		For ly:= 1 To 6
+			aTotGeral[ly] := aTotGeral[ly] + aSaldo[ly]
+		Next ly
+		Skip
+	End
+	cVar:=cBrancBloc
+	cAlias:=Alias()
+	ExecBlock("BROC020Z",.F.,.F.)
+	cString := "³Total Geral: "
+	cString := cString + Space( ( ( 72-Len(cString) ) - 1 ) )+"³"
+	ExecBlock("BROC020S",.F.,.F.)
+	ExecBlock("BROC020Z",.F.,.F.)
+	cString := "³  Total Qtd. : "+Transform(aTotGeral[1],"@E 999999999.99")
+	cString := cString + Space( ( ( 72-Len(cString) ) - 1 ) )+"³"
+	ExecBlock("BROC020S",.F.,.F.)
+	ExecBlock("BROC020Z",.F.,.F.)
+	For kl:= 1 To 5
+		cString := "³  Total Vlr."+Str(kl)+": "+Transform(aTotGeral[kl+1],"@E 999999999.99")
+		cString := cString + Space( ( ( 72-Len(cString) ) - 1 ) )+"³"
+		ExecBlock("BROC020S",.F.,.F.)
+		ExecBlock("BROC020Z",.F.,.F.)
+	Next kl
+Endif
+// ------------------------------ Projecao de Saldos (mrp)
+lFirst:=.T.
+nSaldoIni:=aTotGeral[1]
+// Montar a linha com saldo inicial
+aMRP := aSort( aMRP,,, { |x,y| x[1] < y[1] } )
+For k:=1 to Len(aMRP)
+	If lFirst
+		cVar:=cBrancBloc
+		cAlias:=Alias()
+		ExecBlock("BROC020Z",.F.,.F.)
+		cString:="³ Projecao de Saldos                                                   ³"
+		ExecBlock("BROC020S",.F.,.F.)
+		ExecBlock("BROC020Z",.F.,.F.)
+		cString:="³  Data    Saldo Inic.  Qtd.Entrada    Qtd.Saida  Saldo Final          ³"
+		ExecBlock("BROC020S",.F.,.F.)
+		ExecBlock("BROC020Z",.F.,.F.)
+		lFirst:=.F.
+	Endif
+	cString :="³"+DtoC(aMRP[k][1])+" "+;
+				Transform(nSaldoIni ,"@E 999999999.99")+" "+;
+				Transform(aMRP[k][2],"@E 999999999.99")+" "+;
+				Transform(aMRP[k][3],"@E 999999999.99")+" "+;
+				Transform((nSaldoIni+aMRP[k][2])-aMRP[k][3],"@E 999999999.99")
+	cString := cString + Space( ( ( 72-Len(cString) ) - 1 ) )+"³"
+	nSaldoIni := (nSaldoIni+aMRP[k][2])-aMRP[k][3]
+	ExecBlock("BROC020S",.F.,.F.)
+	ExecBlock("BROC020Z",.F.,.F.)
+Next
+cVar:=cFimBloc
+cAlias:=Alias()
+ExecBlock("BROC020Z",.F.,.F.)
+dbCommit()
+// Substituido pelo assistente de conversao do AP6 IDE em 25/06/04 ==> __Return(.T.)
+Return(.T.)        // incluido pelo assistente de conversao do AP6 IDE em 25/06/04

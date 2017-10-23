@@ -1,0 +1,69 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Function U_MT410TOK()
+
+     Local lRetorno := .T. 
+     Local aProd          := aScan(aHeader,{|x| AllTrim(x[2]) == "C6_PRODUTO"})
+     Local aTES          := aScan(aHeader,{|x| AllTrim(x[2]) == "C6_TES"})
+     Local aCST          := aScan(aHeader,{|x| AllTrim(x[2]) == "C6_CLASFIS"})
+     Local aItem          := aScan(aHeader,{|x| AllTrim(x[2]) == "C6_ITEM"})
+     Local aQtdLib          := aScan(aHeader,{|x| AllTrim(x[2]) == "C6_QTDLIB"})
+     Local aQtdVen          := aScan(aHeader,{|x| AllTrim(x[2]) == "C6_QTDVEN"})
+     Local aQtdEmp          := aScan(aHeader,{|x| AllTrim(x[2]) == "C6_QTDEMP"})
+     Local cProduto     := ""
+     Local cTES          := ""
+     Local cCSTAtual     := ""
+     Local cItem          := ""
+     Local nX          := 0
+     Local cOrigem     := ""
+     Local cST          := ""
+     Local cCSTOk     := ""
+     Local nCont          := 0
+     Local nQtdVen := 0
+     Local nQtdEmp := 0
+
+	 M->C5__STATUS := cStatus
+
+     For nX := 1 to Len(aCols)
+          nQtdVen := aCols[nX][aQtdVen]
+
+          aCols[nX][aQtdLib] := 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     Next
+
+
+
+
+
+Return(lRetorno)

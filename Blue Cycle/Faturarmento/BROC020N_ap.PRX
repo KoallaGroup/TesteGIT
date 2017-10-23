@@ -1,0 +1,270 @@
+#include "rwmake.ch"        // incluido pelo assistente de conversao do AP6 IDE em 25/06/04
+
+User Function BROC020N()        // incluido pelo assistente de conversao do AP6 IDE em 25/06/04
+
+//ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+//³ Declaracao de variaveis utilizadas no programa atraves da funcao    ³
+//³ SetPrvt, que criara somente as variaveis definidas pelo usuario,    ³
+//³ identificando as variaveis publicas do sistema utilizadas no codigo ³
+//³ Incluido pelo assistente de conversao do AP6 IDE                    ³
+//ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+SetPrvt("NMULT,NPOSMOU,NPOSATU,NPOSANT,NAREA,NKEY")
+SetPrvt("X,WX,WY,NROWPOS,CSAVCUR,CSAVSCR4")
+SetPrvt("CSAVCUR4,CSAVCUR41,CSAVCUR5,NCNT,NPOSBCO,NPULA")
+SetPrvt("OCHOICES,SKIPBLOCK,COLORSPEC,OCOLUMN,OCOR,HITTOP")
+SetPrvt("HITBOTTOM,M_BUT,AARRAY,CCADASTRO,NITENS,")
+
+/*
+ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+±±ÚÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄ¿±±
+±±³Fun‡…o    ³ BROC020N ³ Autor ³ Fabricio Carlos David ³ Data ³ 21/09/97 ³±±
+±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄ´±±
+±±³Descri‡…o ³ Browse Arquivo de consulta                                 ³±±
+±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´±±
+±±³ Uso      ³ BROC020                                                    ³±±
+±±ÀÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ±±
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+*/
+#IFNDEF WINDOWS
+	*ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+	*³Definicao de Variaveis                                                ³
+	*ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+	//oChoices		                   // Objeto TBrowse
+	//oColumn                         // Objeto TColumn
+	nMult		:= 0
+	nPosMou		:=0
+	nPosAtu		:=0
+	nPosAnt		:=0
+	nArea		:=0
+	nKey		:=0
+	x			:=0
+	wx			:=0
+	wy			:=0
+	nRowPos		:=0
+	cSavCur		:=""
+	cSavScr4	:=""
+	cSavCur4	:=""
+	cSavCur41	:=""
+	cSavCur5	:=""
+	nCnt     := 0 
+	nPosBco 	:= 1
+
+	*ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+	*³Salva a integridade dos dados                                         ³
+	*ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+	cSavCur := SetCursor( 0 )
+	cSavScr4 := SaveScreen(2,0,4,79)
+
+	*ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+	*³Monta o objeto TBROWSE                                                ³
+	*ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+	DBGOTOP()
+
+	nPula:=0
+	oChoices := TBrowseDB( nT, nL, nB, nR )
+
+	// Inicializa o tamanho do salto na janela
+	oChoices:skipBlock := { |x| dbskip() }
+
+	// oChoices:skipBlock := { |x| x }
+	// Monta a tabela de cores
+	SetColor("b/bg,w+/b,,,r/bg")
+	// oChoices:ColorSpec := SETCOLOR()+",n/bg"
+
+	oColumn :=  TBColumnNew("",fieldBlock(fieldname(1),select()))
+	oChoices:addColumn(oColumn)
+
+	WHILE nKey != 27
+
+		nKey := 0
+
+		//mouseoff
+
+		//ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+		//³Loop de estabilizacao                                         ³
+		//ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+		WHILE !oChoices:Stabilize()
+		ENDDO
+
+		//ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+		//³Monta o cursor do mouse, se houver um instalado               ³
+		//ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+  		//MouseOn;MouseOn
+
+		//ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+		//³ Processa teclas e movimento do mouse                         ³
+		//ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+		oCor:=SetColor("bg+/b,,,")
+		WHILE .T.
+
+			nKey := INKEY()
+
+   	   //ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+      	//³ Teste de atingiu o topo ou botton                   ³
+	      //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+			IF oChoices:hitTop
+				TONE(4000,1)
+				oChoices:hitTop := !oChoices:hitTop
+			ELSEIF oChoices:hitBottom
+				TONE(4000,1)
+				oChoices:hitBottom := !oChoices:hitBottom
+			ENDIF
+
+			//ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+			//³ Se pressionou alguma tecla                          ³
+			//ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+			IF nKey != 0
+				EXIT
+			ENDIF
+
+			//ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+			//³ Se pressionou botoes do mouse                       ³
+			//ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+			IF Have_a_Mouse
+				wx:=MS_SCALE_X()
+				wy:=MS_SCALE_Y()
+	  			nArea:=BUTTON_HOT(wx,wy)
+				m_but := MS_PRESS()
+				IF M_but == 12
+					nKEY :=27
+					EXIT
+				ELSEIF M_but == 1
+ 					IF nArea == 2       // Rodape do Term Vertical
+						nKey := 24
+						EXIT
+					ELSEIF nArea == 1   // Topo do Term Vertical
+						nKey := 5
+						EXIT
+					ENDIF
+ 	
+				ELSEIF M_but == 2
+					IF nArea == 1
+						nKey := 13	
+						EXIT
+					EndIF
+					IF nArea > 10
+						EXIT
+					ENDIF
+				ENDIF
+			ENDIF	
+		EndDo
+		//ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+		//³Processa as teclas de reposicionamento do Browse              ³
+		//ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+		//MouseOff 
+
+		IF oChoices:Stable
+
+			DO CASE
+			CASE ( nKey == 24 )
+				oChoices:down()
+
+			CASE ( nKey == 5 )
+				oChoices:up()
+
+			CASE ( nKey == 3 )
+				oChoices:pageDown()
+
+			CASE ( nKey == 18)
+				oChoices:pageUp()
+
+			CASE ( nKey == 31 )
+				nPosBco:=1
+				oChoices:GoTop()
+
+			CASE ( nKey == 30 )
+				nPosBco:=LastRec()
+				oChoices:GoBottom()
+
+			CASE ( nKey == 28)
+				DrawHelp(6,13,"BROWSE","Atualizando","N")
+				LOOP
+
+			CASE ( nKey == -1)
+				Util5()
+				LOOP
+
+			CASE ( nKey == 281)
+				ExecBlock("BROC020J",.F.,.F.)
+				LOOP
+
+			CASE ( nKey == -4)
+				Shell()
+				LOOP
+
+			CASE ( nKey == -8)
+				Utils()
+				LOOP
+
+			ENDCASE
+		ENDIF
+	EndDO
+	RestScreen( 21, 3,21,74,cSavCur4)
+	SetCursor(cSavCur)
+#ELSE
+	aArray:={}
+	cCadastro := OemToAnsi("Analise do Produto")
+	nItens:=RecCount()	
+	dbSelectArea(cAlias)
+	dbGotop()
+	Do While !EOF()
+		AADD(aArray,LINHA)
+		dbSkip()
+	EndDo
+	@ 116,75 TO 405,652 DIALOG oDlg TITLE cCadastro
+	@ 14,021 LISTBOX nItens ITEMS aArray SIZE 225,110 
+	@ 14,252 BMPBUTTON TYPE 1 ACTION Close(oDlg)
+	@ 27,252 BMPBUTTON TYPE 6 ACTION ExecBlock("BROC020J",.F.,.F.)
+	ACTIVATE DIALOG oDlg CENTERED
+#ENDIF
+
+Return .T.
+
+
+/*
+ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+±±ÚÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄ¿±±
+±±³Fun‡…o    ³MC050NSkip³ Autor ³ Fabricio Carlos David ³ Data ³ 21/09/97 ³±±
+±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄ´±±
+±±³Descri‡…o ³ Adiciona saltador ao TBrowse da funcao FA060Brows          ³±±
+±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´±±
+±±³Sintaxe   ³ MC050Skip                                                  ³±±
+±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´±±
+±±³Parametros³ ExpN1 = Numero do elemento do TBrowse                      ³±±
+±±³          ³ ExpC1 = Funcao para salto                                  ³±±
+±±ÀÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ±±
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+*/
+// Substituido pelo assistente de conversao do AP6 IDE em 25/06/04 ==> Function MC050NSkip  //()
+Static Function MC050NSkip  //()
+nCnt := 0
+If nPula > 0
+	While nCnt < nPula
+		nPosBco:=nPosBco+1
+		Skip 1
+		If Eof() 
+			nPosBco:=nPosBco - 1
+			Skip -1
+			Exit
+		EndIf
+		nCnt:=nCnt+1
+	EndDo
+Else
+	While nCnt > nPula
+		nPosBco:=nPosBco - 1
+		Skip -1
+		If Bof()
+			nPosBco:=nPosBco + 1
+			Exit
+		Endif
+		nCnt:=nCnt-1
+	EndDo
+EndIf
+// Substituido pelo assistente de conversao do AP6 IDE em 25/06/04 ==> __Return(.T.)
+Return(.T.)        // incluido pelo assistente de conversao do AP6 IDE em 25/06/04
+

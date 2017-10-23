@@ -1,0 +1,84 @@
+#include "rwmake.ch"        // incluido pelo assistente de conversao do AP6 IDE em 25/06/04
+
+User Function BROC020J()        // incluido pelo assistente de conversao do AP6 IDE em 25/06/04
+
+//ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+//³ Declaracao de variaveis utilizadas no programa atraves da funcao    ³
+//³ SetPrvt, que criara somente as variaveis definidas pelo usuario,    ³
+//³ identificando as variaveis publicas do sistema utilizadas no codigo ³
+//³ Incluido pelo assistente de conversao do AP6 IDE                    ³
+//ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+SetPrvt("CTITULO,CDESC1,CDESC2,CDESC3,CSTRING,WNREL")
+SetPrvt("CSAVCUR5,CSAVSCR5,CSAVROW5,CSAVCOL5,CSAVCOR5,CPERG")
+SetPrvt("ARETURN,NLASTKEY,NOPC,NOPCA,")
+
+/*
+ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+±±ÚÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄ¿±±
+±±³Fun‡…o    ³ BROC020J ³ Autor ³ Fabricio Carlos David ³ Data ³ 21/09/97 ³±±
+±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄ´±±
+±±³Descri‡…o ³ Envia para funcao que faz a impressao da consulta.         ³±±
+±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´±±
+±±³ Uso      ³ BROC020                                                    ³±±
+±±ÀÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ±±
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+*/
+cTitulo  :="POSICAO ATUAL DE PRODUTO"
+cDesc1 	:="Este programa ira imprimir a Consulta do Produto selecionado,"
+cDesc2 	:="informando os dados cadastrais, Movimentacoes em Aberto,"
+cDesc3 	:="Historico de Movimentacoes, Saldos e Consumos."
+cString  :="SB1" 
+wnrel    :="MATC050"
+
+#IFNDEF WINDOWS
+	*ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+	*³Salva a integridade dos dados                                         ³
+	*ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+	cSavCur5 := SetCursor( 0 )
+	cSavScr5 := SaveScreen(3,0,24,79)
+	cSavRow5 := Row()
+	cSavCol5 := Col()
+	cSavCor5 := SetColor()
+#ENDIF	
+
+cPerg   :="      "
+aReturn := { "Zebrado", 1,"Administracao", 1, 2, 1, "",1 }
+nLastKey:=0
+nOpc:=2
+nOpcA:=2
+wnRel:= SetPrint(cString,wnrel,cPerg,cTitulo,cDesc1,cDesc2,cDesc3,.F.,"",,,,.F.)
+
+If nLastKey == 27
+	#IFNDEF WINDOWS
+		RestScreen(3,0,24,79,cSavScr5)
+		SetColor(cSavCor5)
+	#ENDIF
+	Return
+Endif
+
+SetDefault(aReturn,cString)
+
+If nLastKey == 27
+	#IFNDEF WINDOWS
+		RestScreen(3,0,24,79,cSavScr5)
+		SetColor(cSavCor5)
+	#ENDIF
+	Return
+Endif
+
+#IFDEF WINDOWS
+	RptStatus({|lEnd| ExecBlock("BROC020O",.F.,.F.)},ctitulo)
+#ELSE
+	ExecBlock("BROC020O",.F.,.F.)
+#ENDIF
+
+#IFNDEF WINDOWS
+	RestScreen(3,0,24,79,cSavScr5)
+	SetColor(cSavCor5)
+#ENDIF
+
+// Substituido pelo assistente de conversao do AP6 IDE em 25/06/04 ==> __Return (.T.)
+Return(.T.)        // incluido pelo assistente de conversao do AP6 IDE em 25/06/04

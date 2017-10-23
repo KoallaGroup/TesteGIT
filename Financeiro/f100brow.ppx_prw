@@ -1,0 +1,45 @@
+#line 1 "E:\TOTVS1~1\MICROS~1\PROTHEUS\INCLUDE\protheus.ch"
+#line 1 "E:\TOTVS1~1\MICROS~1\PROTHEUS\INCLUDE\Dialog.ch"
+#line 27 "protheus.ch"
+#line 1 "E:\TOTVS1~1\MICROS~1\PROTHEUS\INCLUDE\Font.ch"
+#line 28 "protheus.ch"
+#line 1 "E:\TOTVS1~1\MICROS~1\PROTHEUS\INCLUDE\PTMenu.ch"
+#line 30 "protheus.ch"
+#line 1 "E:\TOTVS1~1\MICROS~1\PROTHEUS\INCLUDE\Print.ch"
+#line 32 "protheus.ch"
+#line 1 "E:\TOTVS1~1\MICROS~1\PROTHEUS\INCLUDE\Colors.ch"
+#line 34 "protheus.ch"
+#line 1 "E:\TOTVS1~1\MICROS~1\PROTHEUS\INCLUDE\Folder.ch"
+#line 36 "protheus.ch"
+#line 1 "E:\TOTVS1~1\MICROS~1\PROTHEUS\INCLUDE\msobject.ch"
+#line 37 "protheus.ch"
+#line 1 "E:\TOTVS1~1\MICROS~1\PROTHEUS\INCLUDE\VKey.ch"
+#line 41 "protheus.ch"
+#line 1 "E:\TOTVS1~1\MICROS~1\PROTHEUS\INCLUDE\WinApi.ch"
+#line 43 "protheus.ch"
+#line 1 "E:\TOTVS1~1\MICROS~1\PROTHEUS\INCLUDE\FWCommand.ch"
+#line 46 "protheus.ch"
+#line 1 "E:\TOTVS1~1\MICROS~1\PROTHEUS\INCLUDE\FWCSS.CH"
+#line 48 "protheus.ch"
+#line 2 "e:\TOTVS1~1\MICROS~1\protheus\MYPROJ~1\FINANC~1\f100brow.prw"
+#line 1 "E:\TOTVS1~1\MICROS~1\PROTHEUS\INCLUDE\topconn.ch"
+#line 15 "e:\TOTVS1~1\MICROS~1\protheus\MYPROJ~1\FINANC~1\f100brow.prw"
+Function U_F100BROW()
+
+Local bCondicao
+
+
+if  !(__cUserID $  GETMV("MV__USRCTB"))
+   return
+EndIf
+
+
+bCondicao:= " E5_TIPO == 'GNR' "
+
+DbSelectArea("SE5")
+DbSetOrder(1)
+if ( Empty(bCondicao) );    dbClearFilter(); else;    dbSetFilter({|| &bCondicao},bCondicao ); end
+
+DbGoBottom()
+
+Return
